@@ -1,0 +1,17 @@
+// Override default variables before the import
+$cream: #FFFEF5;
+$olive: #7DA27F;
+
+$theme-colors: (
+  "primary": $olive,
+  "secondary": $cream
+);
+
+$yiq-text-light: $cream;
+
+$font-family-base: Arial;
+
+$font-weight-normal: 600;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';
