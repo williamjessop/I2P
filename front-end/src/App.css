@@ -6,3 +6,7 @@
 .navDropShadow {
   box-shadow: 0px 15px 15px #0000001a
 }
+
+.secondaryBackground {
+  background-color: #e8dfd0;
+}
