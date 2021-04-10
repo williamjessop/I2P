@@ -6,7 +6,7 @@ function Navigation() {
     return (
       <div className="navContainerDiv">
         <Navbar sticky="top" collapseOnSelect expand="md" variant="light" className="navDropShadow">
-          <Navbar.Brand href="#home">
+          <Navbar.Brand href="/">
             <img
                 alt=""
                 src="/logo.svg"
@@ -19,8 +19,8 @@ function Navigation() {
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
-              <Nav.Link href="#prevention">Prevention</Nav.Link>
-              <Nav.Link href="#communication">Communication</Nav.Link>
+              <Nav.Link href="/prevention">Prevention</Nav.Link>
+              <Nav.Link href="/communication">Communication</Nav.Link>
               <NavDropdown title="Education" id="collasible-nav-dropdown">
                 <NavDropdown.Item href="#course/coursename1">Course 1</NavDropdown.Item>
                 <NavDropdown.Item href="#course/coursename2">Course 2</NavDropdown.Item>
@@ -30,8 +30,8 @@ function Navigation() {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#aboutus">About Us</Nav.Link>
-              <Nav.Link eventKey={2} href="#resources">
+              <Nav.Link href="/aboutus">About Us</Nav.Link>
+              <Nav.Link eventKey={2} href="/resources">
                 Resources
               </Nav.Link>
             </Nav>
