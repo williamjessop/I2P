@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 110.11 110.11">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: #fff;
+      }
+
+      .cls-2 {
+        fill: url(#linear-gradient);
+      }
+
+      .cls-3 {
+        fill: url(#linear-gradient-2);
+      }
+    </style>
+    <linearGradient id="linear-gradient" x1="-4091.17" y1="-161.09" x2="-4125.04" y2="-139.84" gradientTransform="matrix(-1, 0, 0, 1, -4075.56, 186.42)" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#39b54a"/>
+      <stop offset="0.38" stop-color="#37b34a"/>
+      <stop offset="0.59" stop-color="#2eae49"/>
+      <stop offset="0.77" stop-color="#20a648"/>
+      <stop offset="0.93" stop-color="#0d9a46"/>
+      <stop offset="1" stop-color="#009245"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-2" x1="-4182.45" y1="-119.71" x2="-4216.32" y2="-98.46" gradientTransform="matrix(1, 0, 0, -1, 4276.95, -34.93)" xlink:href="#linear-gradient"/>
+  </defs>
+  <title>Favicon</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_2-2" data-name="Layer 2">
+      <g id="Favicon">
+        <rect class="cls-1" width="110.11" height="110.11" rx="28.77"/>
+        <g>
+          <g>
+            <path d="M53.55,45.32V64.78L22.13,95.14V75L47.05,51.58Z"/>
+            <polygon class="cls-2" points="42.03 56.46 53.5 45.36 21.81 14.66 22.13 37.75 42.03 56.46"/>
+          </g>
+          <g>
+            <path d="M56.55,64.79V45.32L88,15V35.09L63.06,58.53Z"/>
+            <polygon class="cls-3" points="68.07 53.64 56.61 64.75 88.3 95.45 87.98 72.36 68.07 53.64"/>
+          </g>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

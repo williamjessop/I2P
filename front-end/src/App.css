@@ -21,3 +21,12 @@
     padding: 0.5rem 0.3rem !important;
   }
 }
+
+.branchGraphic1 {
+  width: 50%;
+}
+
+.branchGraphic2 {
+  width: 20%;
+  transform: rotate(-135deg);
+}

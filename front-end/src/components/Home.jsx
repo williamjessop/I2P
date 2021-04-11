@@ -10,42 +10,36 @@ class Home extends React.Component {
     render() {
         return (
             <div>
+                <Container fluid>
                 <Carousel indicators={false}>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="/bannerImage.svg"
+                        className="branchGraphic2"
+                        src="/img/Branch2.svg"
                         alt="First slide"
                         />
-                        <Carousel.Caption>
-                        <h3>First slide label</h3>
                         
-                        </Carousel.Caption>
+                        <h3 style={{color:"black"}}>Banner Image 1</h3>
                     </Carousel.Item>
                     <Carousel.Item>
                         <img
-                        className="d-block w-100"
-                        src="/bannerImage.svg"
+                        className="branchGraphic2"
+                        src="/img/Branch2.svg"
                         alt="First slide"
                         />
-                        <Carousel.Caption>
-                        <h3>Second slide label</h3>
-                        
-                        </Carousel.Caption>
+                        <h3 style={{color:"black"}}>Banner Image 2</h3>
                     </Carousel.Item>
-                
                 </Carousel>
+                </Container>
                 <Container className="secondaryBackground" fluid>
                     <br/>
                     <h1>Prevention</h1>
-                    <p>Come to us, to prevent violence in our community. 
+                    <p>
                         Violence comes in all shapes and sizes, 
-                        but there are prevalent concepts that can be taught to anyone to 
-                        look out for this unwanted behavior.
-                         We are a safe space for discussing violence and we look to teach you the 
-                         steps to protect yourself and your peers. Let’s talk about prevention 
-                         and let us aid in the prevention of violence. </p>
-                    <img src="" alt="preventionimg"/>
+                        but that does not mean we are powerless.
+                         At Let's Talk we are a safe space for discussing violence and we look to teach you how
+                         to protect yourself and your peers. Let’s talk about prevention. </p>
+                    <img src="/img/Branch1.svg" alt="branch graphic" className="branchGraphic1"/>
                     <Row><br/></Row>
                 </Container>
                 
@@ -53,33 +47,35 @@ class Home extends React.Component {
                     <br/>
                     <h1>Education</h1>
                     <br/>
-                    <Row>
-                        <Col><img src="" alt="graph"/></Col>
+                    <Row className="align-items-center">
+                        <Col><img src="/img/chart.png" alt="chart" style={{width:"50%"}}/></Col>
                         <Col><p>Become a force of change in your community by taking a course to educate you 
-                            on preventative measures for residents considering violent acts. 
-                            Prevention starts with leaders but require the knowledge and skills to 
-                            help you navigate the violent thoughts that your residents may be feeling.</p></Col>
+                            on violence prevention. 
+                            </p></Col>
                     </Row>
                     <br/>
-                    <Row>
+                    <br/>
+                    <br/>
+                    <Row className="align-items-center">
                         <Col><p>Learn more about the resources available through our 
-                            program to better equip you to handle the situations that may arise on your floor.</p></Col>
-                        <Col><img src="" alt="graphic"/></Col>
+                            program to better equip you to handle situations that may arise.</p></Col>
+                        <Col><img src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/></Col>
                     </Row>
                     <br/>
-                    <Button size="lg" href="#/education">Get Educated</Button>
+                    <Button size="lg" href="#/education">Click To Get Educated</Button>
                     <br/>
                 </Container>
                 <br/>
                 <Container className="secondaryBackground" fluid>
                     <br/>
                     <h1>Communication</h1>
-                    <Row>
-                        <Col><p>o	Start the conversation. An integral part of social awareness begins with communication. 
-                            We encourage you to reach others through starting conversation - whether it is RA-to-peer or peer-to-peer. 
-                            Review our resources to help guide you to better communicate with others, 
-                            especially those you are concerned about.</p></Col>
-                        <Col><img src="" alt="preventionimg"/></Col>
+                    <Row className="align-items-center">
+                        <Col><p>Start the conversation. It all starts with communication. 
+                            We encourage you to reach out - whether it is RA-to-peer or peer-to-peer. 
+                            </p>
+                            <p>
+                            Review our resources to help guide you to better communicate with others.</p></Col>
+                        <Col><img src="/img/communication1.png" alt="preventionimg" style={{width:"70%"}}/></Col>
                     </Row>
                     <br/>
                     <Button size="lg" href="#/education">Link to Reach Out</Button>
