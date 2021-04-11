@@ -38,7 +38,13 @@ class Home extends React.Component {
                 <Container className="secondaryBackground" fluid>
                     <br/>
                     <h1>Prevention</h1>
-                    <p>Fill this spot with the prevention text</p>
+                    <p>Come to us, to prevent violence in our community. 
+                        Violence comes in all shapes and sizes, 
+                        but there are prevalent concepts that can be taught to anyone to 
+                        look out for this unwanted behavior.
+                         We are a safe space for discussing violence and we look to teach you the 
+                         steps to protect yourself and your peers. Let’s talk about prevention 
+                         and let us aid in the prevention of violence. </p>
                     <img src="" alt="preventionimg"/>
                     <Row><br/></Row>
                 </Container>
@@ -49,11 +55,15 @@ class Home extends React.Component {
                     <br/>
                     <Row>
                         <Col><img src="" alt="graph"/></Col>
-                        <Col><p>Fill this spot with the education text</p></Col>
+                        <Col><p>Become a force of change in your community by taking a course to educate you 
+                            on preventative measures for residents considering violent acts. 
+                            Prevention starts with leaders but require the knowledge and skills to 
+                            help you navigate the violent thoughts that your residents may be feeling.</p></Col>
                     </Row>
                     <br/>
                     <Row>
-                        <Col><p>Fill this spot with more education text</p></Col>
+                        <Col><p>Learn more about the resources available through our 
+                            program to better equip you to handle the situations that may arise on your floor.</p></Col>
                         <Col><img src="" alt="graphic"/></Col>
                     </Row>
                     <br/>
@@ -65,7 +75,10 @@ class Home extends React.Component {
                     <br/>
                     <h1>Communication</h1>
                     <Row>
-                        <Col><p>Fill this spot with the prevention text</p></Col>
+                        <Col><p>o	Start the conversation. An integral part of social awareness begins with communication. 
+                            We encourage you to reach others through starting conversation - whether it is RA-to-peer or peer-to-peer. 
+                            Review our resources to help guide you to better communicate with others, 
+                            especially those you are concerned about.</p></Col>
                         <Col><img src="" alt="preventionimg"/></Col>
                     </Row>
                     <br/>
