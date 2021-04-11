@@ -6,3 +6,13 @@
 .navDropShadow {
   box-shadow: 0px 15px 15px #0000001a
 }
+
+.navbar-brand {
+  display: contents !important;
+  position: absolute !important;
+}
+@media only screen and (max-width: 320px) {
+  .navbar {
+    padding: 0.5rem 0.3rem !important;
+  }
+}
