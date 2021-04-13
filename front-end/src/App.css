@@ -7,8 +7,11 @@
   box-shadow: 0px 15px 15px #0000001a
 }
 
-.secondaryBackground {
-  background-color: #e8dfd0;
+.nav-dropdown-override::after {
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
 }
 
 .navbar-brand {
@@ -20,6 +23,10 @@
   .navbar {
     padding: 0.5rem 0.3rem !important;
   }
+}
+
+.secondaryBackground {
+  background-color: #e8dfd0;
 }
 
 .branchGraphic1 {

@@ -1,10 +1,10 @@
-import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs'
 import Communication from './components/Communication'
 import Prevention from './components/Prevention'
 import Resources from './components/Communication'
+import './App.css';
 
 import {
   Switch,
