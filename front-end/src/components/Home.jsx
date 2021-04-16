@@ -20,9 +20,9 @@ class Home extends React.Component {
         this.handleClose = this.handleClose.bind(this);
     }
 
-    
     handleShow(){ this.setState({showSignUp: true});}
     handleClose(){ this.setState({showSignUp: false}); }
+
     render() {
         
         return (
