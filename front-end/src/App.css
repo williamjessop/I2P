@@ -117,7 +117,7 @@ li a {
   display: block;
 }
 
-.active {
+.nav-active {
   text-decoration: underline;
 }
 

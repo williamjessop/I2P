@@ -23,7 +23,7 @@ function Navigation(props) {
     <div className="nav-wrap navDropShadow">
       <button className="primaryBackground" id="btn-nav-collapse" style={{height:"42px"}} ><Icon.List fontSize="2.4rem"/></button>
       <ul className="collapse-nav">
-        <li><a href="default.asp" className="active">Home</a></li>
+        <li><a href="default.asp" className="nav-active">Home</a></li>
         <li><a href="news.asp">News</a></li>
         <li><a href="contact.asp">Contact</a></li>
         <li><a href="about.asp">About</a></li>
