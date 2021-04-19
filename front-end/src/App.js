@@ -13,7 +13,7 @@ import {
 } from "react-router-dom";
 
 function App() {
-  const [token, setToken] = useState();
+  const [token, setToken] = useState(null);
   return (
     <div className="App">
       <Navigation token={token} setToken={setToken}/>

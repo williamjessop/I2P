@@ -5,33 +5,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Footer from './Footer'
-import SignUp from './SignUp'
-import SignIn from './SignIn'
-
 class Home extends React.Component {
-    constructor(props) {
-        super(props);
-
-        this.state = {showSignUp: false}
-
-        // this.handleChange = this.handleChange.bind(this);
-        // this.handleSubmit = this.handleSubmit.bind(this);
-        // this.handleReset = this.handleReset.bind(this);
-        this.handleShow = this.handleShow.bind(this);
-        this.handleClose = this.handleClose.bind(this);
-    }
-
-    handleShow(){ this.setState({showSignUp: true});}
-    handleClose(){ this.setState({showSignUp: false}); }
-
     render() {
         
         return (
             <div>
-                <Button onClick={this.handleShow}>Click Me!</Button>
-                <SignIn show={this.state.showSignUp} handleClose={this.handleClose}/>
-
-
+                
 
                 <Container fluid>
                 <Carousel indicators={false}>

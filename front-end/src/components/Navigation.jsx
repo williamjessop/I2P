@@ -1,9 +1,25 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Nav, Navbar, NavDropdown, Button} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import './theme.scss';
+import SignUp from './SignUp'
+import SignIn from './SignIn'
+import Logout from './Logout'
+import { propTypes } from 'react-bootstrap/esm/Image';
 
-function Navigation() {
+function Navigation(props) {
+
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+
+  const handleCloseSignUp = () => setShowSignUp(false);
+  const handleShowSignUp = () => setShowSignUp(true);
+  const handleCloseSignIn = () => setShowSignIn(false);
+  const handleShowSignIn = () => setShowSignIn(true);
+  const handleCloseLogout = () => setShowLogout(false);
+  const handleShowLogout = () => setShowLogout(true);
+
   return (
     <div className="nav-wrap navDropShadow">
       <button className="primaryBackground" id="btn-nav-collapse" style={{height:"42px"}} ><Icon.List fontSize="2.4rem"/></button>
@@ -13,16 +29,22 @@ function Navigation() {
         <li><a href="contact.asp">Contact</a></li>
         <li><a href="about.asp">About</a></li>
       </ul>
-      <img className="nav-signup-dropdown" id="img-nav-logo" src="./logo512.png" style={{width:"56px", height:"56px", position:"relative", zIndex:"1"}}/>
+      <img className="nav-signup-dropdown" id="img-nav-logo" src="./logo512.png" style={{width:"56px", height:"56px", position:"relative", zIndex:"1"}} alt="nav"/>
       <div className="dropdown">
         <button className="primaryBackground secondaryColor" id="btn-nav-profile"><Icon.PersonCircle fontSize="2rem"/></button>
         <div class="dropdown-content">
-          <a href="#">Sign Up</a>
-          <a href="#">Sign In</a>
-          <a href="#">Logout</a>
+          {(!props.token) && <Button variant="link" onClick={handleShowSignUp}>Sign Up</Button>}
+          {(!props.token)&&<Button variant="link" onClick={handleShowSignIn}>Sign In</Button>}
+          {(props.token) && <Button variant="link" onClick={handleShowLogout}>Logout</Button>}
         </div>
       </div>
       <Button id="btn-nav-help" variant="danger" style={{top:"9px", position:"relative", alignSelf:"center", float:"right"}}>HELP</Button>
+
+      <SignUp show={showSignUp} handleClose={handleCloseSignUp}/>
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} setToken={props.setToken}/>
+      <Logout show={showLogout} handleClose={handleCloseLogout} setToken={props.setToken}/>
+
+
     </div>
   );
 }

@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import { Button, Modal } from 'react-bootstrap';
 import './theme.scss';
 import Form from 'react-bootstrap/Form'
+import Alert from 'react-bootstrap/Alert'
 
 
 async function signUpUser(info) {
@@ -12,25 +13,37 @@ async function signUpUser(info) {
     },
     body: JSON.stringify(info)
   })
-    .then(data => data.json())
+  .then(data => data.json())
 }
 
 function SignUp(props) {
 
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [confirmPassword, setConfirmPassword] = useState();
     const [firstName, setFirstName] = useState();
     const [lastName, setLastName] = useState();
 
+    const [showWarning, setShowWarning] = useState(false);
+
+
     const handleSubmit = async e => {
       e.preventDefault();
-      const response = await signUpUser({
-        email,
-        password,
-        firstName,
-        lastName
-      });
-      console.log(response)
+      if(password===confirmPassword){
+        const response = await signUpUser({
+          email,
+          password,
+          confirmPassword,
+          firstName,
+          lastName
+        });
+
+        //verify sign up was successful
+
+        setShowWarning(false);
+      }else{
+        setShowWarning(true);
+      }
     }
 
     return (
@@ -45,6 +58,7 @@ function SignUp(props) {
             <Modal.Title>Create an Account</Modal.Title>
           </Modal.Header>
           <Modal.Body>
+          {showWarning && <Alert variant="danger">Passwords do not match.</Alert>}
           <Form>
                 <Form.Group controlId="firstName">
                     <Form.Control type="text" placeholder="First Name" onChange={e => setFirstName(e.target.value)}/>
@@ -58,7 +72,7 @@ function SignUp(props) {
                 <Form.Group controlId="formPassword">
                     <Form.Control type="password" placeholder="Password" onChange={e => setPassword(e.target.value)}/>
                 </Form.Group>
-                <Form.Group controlId="formConfirmPassword">
+                <Form.Group controlId="formConfirmPassword" onChange={e => setConfirmPassword(e.target.value)}>
                     <Form.Control type="password" placeholder="Confirm Password" />
                 </Form.Group>
                 <Form.Group controlId="formEmailOptIn">

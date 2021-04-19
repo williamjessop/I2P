@@ -20,7 +20,7 @@ function SignIn(props) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const token = await signInUser({ email, password });
-    //props.setToken(token);
+    props.setToken(token.token);
     //check if login was successful
 
     //display toast about login
