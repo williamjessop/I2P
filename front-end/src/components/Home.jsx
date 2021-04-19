@@ -6,6 +6,7 @@ import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Footer from './Footer'
 import SignUp from './SignUp'
+import SignIn from './SignIn'
 
 class Home extends React.Component {
     constructor(props) {
@@ -28,7 +29,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Button onClick={this.handleShow}>Click Me!</Button>
-                <SignUp show={this.state.showSignUp} handleClose={this.handleClose}/>
+                <SignIn show={this.state.showSignUp} handleClose={this.handleClose}/>
 
 
 
