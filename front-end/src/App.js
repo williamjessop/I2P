@@ -1,10 +1,11 @@
+import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs'
 import Communication from './components/Communication'
 import Prevention from './components/Prevention'
 import Resources from './components/Communication'
-import './App.css';
+import { useState } from 'react'
 
 import {
   Switch,
@@ -12,9 +13,10 @@ import {
 } from "react-router-dom";
 
 function App() {
+  const [token, setToken] = useState(null);
   return (
     <div className="App">
-      <Navigation/>
+      <Navigation token={token} setToken={setToken}/>
       <Switch>
         <Route exact path='/'>
           <Home/>

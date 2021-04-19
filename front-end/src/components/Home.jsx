@@ -5,11 +5,13 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
 import Footer from './Footer'
-
 class Home extends React.Component {
     render() {
+        
         return (
             <div>
+                
+
                 <Container fluid>
                 <Carousel controls={false} indicators={false}>
                     <Carousel.Item>
