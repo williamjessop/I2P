@@ -1,5 +1,5 @@
 import React from 'react';
-import { Nav, Navbar, NavDropdown, Button} from 'react-bootstrap';
+import {Button} from 'react-bootstrap';
 import * as Icon from 'react-bootstrap-icons';
 import './theme.scss';
 
@@ -14,9 +14,9 @@ function Navigation() {
         <li><a href="about.asp">About</a></li>
       </ul>
       <img className="nav-signup-dropdown" id="img-nav-logo" src="./logo512.png" style={{width:"56px", height:"56px", position:"relative", zIndex:"1"}}/>
-      <div className="dropdown">
+      <div className="nav-dropdown">
         <button className="primaryBackground secondaryColor" id="btn-nav-profile"><Icon.PersonCircle fontSize="2rem"/></button>
-        <div class="dropdown-content">
+        <div className="nav-dropdown-content">
           <a href="#">Sign Up</a>
           <a href="#">Sign In</a>
           <a href="#">Logout</a>

@@ -11,7 +11,7 @@ class Home extends React.Component {
         return (
             <div>
                 <Container fluid>
-                <Carousel indicators={false}>
+                <Carousel controls={false} indicators={false}>
                     <Carousel.Item>
                         <img
                         className="branchGraphic2"
