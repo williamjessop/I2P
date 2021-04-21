@@ -1,15 +1,29 @@
+#standard-nav-spacing {
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+
 .App {
   text-align: center;
   background-color: #FFFEF5;
 }
 
-.navDropShadow {
+.dropShadow {
   box-shadow: 0px 15px 15px #0000001a
 }
 
 .nav-wrap {
   height: 56px;
+  width: 99vw;
   text-align: center;
+  position: fixed;
+  z-index: 2;
+  background-color: #FFFEF5;
+}
+
+.collapse-nav {
+  margin-left: 10px;
 }
 
 #btn-nav-collapse {
@@ -38,8 +52,18 @@
   border: transparent;
 }
 
-#img-nav-logo {
-  left: -100px;
+.nav-intro-image {
+  width: 120px;
+  height: 100%;
+  float: left;
+  margin-left: 10px;
+}
+
+.nav-outro-image {
+  width: 50px;
+  height: 100%;
+  float: right;
+  margin-right: 10px;
 }
 
 @media only screen and (max-width: 350px) {
@@ -79,7 +103,8 @@ li {
 li a {
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding-top: 7px;
+  padding-right: 8px;
   text-decoration: none;
 }
 
@@ -143,5 +168,77 @@ li a {
 
 .branchGraphic2 {
   width: 20%;
-  transform: rotate(-135deg);
+  transform: rotate(25deg);
+}
+
+.sidebar {
+  z-index: 5;
+  position: fixed;
+  top: 56px;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #FFF9E5;
+  transition: left 300ms ease-out;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  list-style: none;
+}
+.sidebar li a {
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  color: #212529;
+}
+
+.sidebar-nav-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.sidebar-nav-hidden {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.nav-sidebar-text-container:hover {
+  text-decoration: underline 2px;
+}
+
+.sidebarScreen.active {
+  z-index: 1;
+  position: fixed;
+  left: 300px;
+  top: 56px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+}
+
+.sidebarScreen {
+  left: -300px;
+  transition: left 300ms ease-out;
+}
+
+.sidebar-exit-button {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-text-container {
+  display: inline-block;
+  color: #212529;
+  line-height: 30px;
+  padding-left: 10px;
 }
