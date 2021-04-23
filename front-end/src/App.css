@@ -23,6 +23,9 @@ body {
 .dropShadow {
   box-shadow: 0px 15px 15px #0000001a
 }
+.dropShadow {
+  box-shadow: 0px 10px 10px #0000001f
+}
 
 .nav-wrap {
   height: 56px;
@@ -220,7 +223,7 @@ li a {
 
 .branchGraphic2 {
   width: 20%;
-  transform: rotate(25deg);
+  transform: rotate(5deg);
 }
 
 .sidebar {
@@ -265,6 +268,38 @@ li a {
 
 .nav-sidebar-text-container:hover {
   text-decoration: underline 2px;
+}
+
+/* About Us */
+.secondary {
+  background-color: #e8dfd0 !important;
+}
+.memberRowDescription {
+  margin-right: auto;
+  margin-left: auto;
+}
+  .descriptionOfMember {
+    text-indent: 3ch;
+    text-align: left;
+  }
+  .nameOfMember {
+    display:block;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .personalPhoto {
+    width: 230px;
+  }
+  .memberWidth {
+    width: 230px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+ 
+@media only screen and (min-width: 750px) {
+.logoBanner {
+    width: 330px !important;
+  } 
 }
 
 .sidebarScreen.active {
