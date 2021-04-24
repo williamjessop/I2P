@@ -35,8 +35,8 @@ function Navigation(props) {
     <div>
       <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
       <div className="nav-wrap dropShadow">
-        <Link to="/" passHref><a href="replace"><img className="nav-intro-image" src="/img/LetsTalk-3.svg" alt=""/><p className="lets-colon" style={{ color: "#212529", zIndex: "5", float: "left", lineHeight: "60px" }}>:</p></a></Link>
-        <Link to="/" passHref><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
+        <Link to="/" passhref="true"><a href="replace"><img className="nav-intro-image" src="/img/LetsTalk-3.svg" alt=""/><p className="lets-colon" style={{ color: "#212529", zIndex: "5", float: "left", lineHeight: "60px" }}>:</p></a></Link>
+        <Link to="/" passhref="true"><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
         <button className="primaryBackground" id="btn-nav-collapse" style={{ height: "42px", zIndex: "1"}} onClick={function (event) { showSidebar(); showSidebarScreen() }}><Icon.List fontSize="2.4rem" /></button>
         <ul className="collapse-nav">
           {/*<li>
@@ -45,27 +45,27 @@ function Navigation(props) {
           </Link>
         </li>*/}
           <li>
-            <Link to="/about-us" passHref>
+            <Link to="/about-us" passhref="true">
               <a className="nav-text-container" href="replace">About Us</a>
             </Link>
           </li>
           <li>
-            <Link to="/prevention" passHref>
+            <Link to="/prevention" passhref="true">
               <a className="nav-text-container" href="replace">Prevention</a>
             </Link>
           </li>
           <li>
-            <Link to="/education" passHref>
+            <Link to="/education" passhref="true">
               <a className="nav-text-container" href="replace">Education</a>
             </Link>
           </li>
           <li>
-            <Link to="/communication" passHref>
+            <Link to="/communication" passhref="true">
               <a className="nav-text-container" href="replace">Communication</a>
             </Link>
           </li>
           <li>
-            <Link to="/resources" passHref>
+            <Link to="/resources" passhref="true">
               <a className="nav-text-container" href="replace">Resources</a>
             </Link>
           </li>
@@ -87,7 +87,7 @@ function Navigation(props) {
             <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
             <ul>
               <li>
-                <Link to="/" passHref>
+                <Link to="/" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsHouseShown(true)}
                     onMouseLeave={() => setIsHouseShown(false)}
@@ -100,7 +100,7 @@ function Navigation(props) {
               </li>
               <br /><br />
               <li>
-                <Link to="/about-us" passHref>
+                <Link to="/about-us" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsPeopleShown(true)}
                     onMouseLeave={() => setIsPeopleShown(false)}
@@ -113,7 +113,7 @@ function Navigation(props) {
               </li>
               <br /><br />
               <li>
-                <Link to="/prevention" passHref>
+                <Link to="/prevention" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsShieldShown(true)}
                     onMouseLeave={() => setIsShieldShown(false)}
@@ -126,7 +126,7 @@ function Navigation(props) {
               </li>
               <br /><br />
               <li>
-                <Link to="/education" passHref>
+                <Link to="/education" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsBookShown(true)}
                     onMouseLeave={() => setIsBookShown(false)}
@@ -139,7 +139,7 @@ function Navigation(props) {
               </li>
               <br /><br />
               <li>
-                <Link to="/communication" passHref>
+                <Link to="/communication" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsMegaphoneShown(true)}
                     onMouseLeave={() => setIsMegaphoneShown(false)}
@@ -152,7 +152,7 @@ function Navigation(props) {
               </li>
               <br /><br />
               <li>
-                <Link to="/resources" passHref>
+                <Link to="/resources" passhref="true">
                   <a className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsSignpostShown(true)}
                     onMouseLeave={() => setIsSignpostShown(false)}

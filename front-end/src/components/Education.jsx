@@ -6,8 +6,12 @@ class Education extends React.Component {
     //fetch the state from the DB
     constructor(props) {
         super(props);
+        this.submitQuiz = this.submitQuiz.bind(this);
+        this.hideQuiz = this.hideQuiz.bind(this);
+
         this.state = {
-            test: true,
+            activeQuiz: 0,
+            showQuiz: false,
             lessons: [
                 {
                     pages: [
@@ -21,7 +25,7 @@ class Education extends React.Component {
             quizzes: [
                 {
                     pages: [
-                        {question: "", answers: ["one", "two", "three", "four"], choice: 0},
+                        {question: "this is question 1", answers: ["one", "two", "three", "four", "five"], choice: 0},
                         {question: "", answers: ["one", "two", "three", "four"], choice: 0},
                         {question: "", answers: ["one", "two", "three", "four"], choice: 0}
                     ],
@@ -37,7 +41,8 @@ class Education extends React.Component {
         };
     }
 
-
+    hideQuiz() {this.setState({showQuiz: false})}
+    submitQuiz() {console.log("submit the quiz")}
 
     render() {
         return (
@@ -62,6 +67,13 @@ class Education extends React.Component {
                         </div>
                     </Card>
                 </div>
+                <button onClick={() => {this.setState({showQuiz: true})}}>Click me</button>
+                <Quiz
+                    content={this.state.quizzes[this.state.activeQuiz]} 
+                    show={this.state.showQuiz} 
+                    handleClose={this.hideQuiz}
+                    handleSubmit={this.submitQuiz}
+                /> 
             </div>
 
         );
