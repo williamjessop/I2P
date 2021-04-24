@@ -325,3 +325,32 @@ li a {
   line-height: 40px;
   padding-left: 10px;
 }
+
+/* Begin Education CSS */
+
+  .dash-container {
+    width: 100%;
+    align-content: center;
+  }
+
+  .dash-lesson-container {
+    position: relative;
+    align-self: center;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+  }
+
+  .dash-lesson-card-content {
+    display: flex;
+  }
+
+  .dash-lesson-title {
+
+  }
+
+  .dash-lesson-title-button {
+    
+  }
+
+/* End Education CSS */
