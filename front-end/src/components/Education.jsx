@@ -1,10 +1,12 @@
 import React from "react";
+import Quiz from './Quiz'
 
-class Communication extends React.Component {
+class Education extends React.Component {
     //fetch the state from the DB
     constructor(props) {
         super(props);
         this.state = {
+            test: true,
             lessons: [
                 {
                     pages: [
@@ -15,12 +17,19 @@ class Communication extends React.Component {
                     progress: 0
                 }
             ],
-            quizAttempts: [
+            quizzes: [
                 {
                     pages: [
                         {question: "", answers: ["one", "two", "three", "four"], choice: 0},
                         {question: "", answers: ["one", "two", "three", "four"], choice: 0},
                         {question: "", answers: ["one", "two", "three", "four"], choice: 0}
+                    ],
+                    attempts:[
+                        {score: 0},
+                        {score: 1}
+                    ],
+                    currentAttempt: [
+                        {question1: "choice a"}
                     ]
                 }
             ]
@@ -33,9 +42,10 @@ class Communication extends React.Component {
         return (
             <div>
                 THIS IS THE DASHBOARD
+                <Quiz test={this.state.test}/>
             </div>
         );
     }
 }
 
-export default Communication;
+export default Education;
