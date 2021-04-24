@@ -1,11 +1,12 @@
 import './App.css';
 import Navigation from './components/Navigation';
 import Home from './components/Home';
-import AboutUs from './components/AboutUs'
-import Communication from './components/Communication'
-import Prevention from './components/Prevention'
-import Resources from './components/Communication'
-import { useState } from 'react'
+import AboutUs from './components/AboutUs';
+import Communication from './components/Communication';
+import Prevention from './components/Prevention';
+import Resources from './components/Communication';
+import Education from './components/Education';
+import { useState } from 'react';
 
 import {
   Switch,
@@ -25,11 +26,14 @@ function App() {
         <Route exact path='/about-us'>
           <AboutUs />
         </Route>
-        <Route exact path='/communication'>
-          <Communication />
-        </Route>
         <Route exact path='/prevention'>
           <Prevention />
+        </Route>
+        <Route exact path='/education'>
+          <Education />
+        </Route>
+        <Route exact path='/communication'>
+          <Communication />
         </Route>
         <Route exact path='/resources'>
           <Resources />
