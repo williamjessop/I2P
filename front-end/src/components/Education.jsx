@@ -25,9 +25,9 @@ class Education extends React.Component {
             quizzes: [
                 {
                     pages: [
-                        {question: "this is question 1", answers: ["one", "two", "three", "four", "five"], choice: 0},
-                        {question: "", answers: ["one", "two", "three", "four"], choice: 0},
-                        {question: "", answers: ["one", "two", "three", "four"], choice: 0}
+                        {question: "this is question 1", answers: ["one", "two", "three", "four"], choice: 0},
+                        {question: "This is question 2", answers: ["this", "is", "a", "test"], choice: 0},
+                        
                     ],
                     attempts:[
                         {score: 0},
