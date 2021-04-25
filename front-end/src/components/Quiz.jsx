@@ -10,8 +10,10 @@ class Quiz extends React.Component {
         super(props);
         this.state = {
             answerChoices: [],
+            answers: [],
             currentPage: 0,
-            isLoaded: false
+            isLoaded: false,
+            radioChecked: ""
         }
     }
 
@@ -19,18 +21,7 @@ class Quiz extends React.Component {
         this.setState((state)=>{
             return {currentPage: state.currentPage+direction}
         });
-        this.setState((state) => {
-            let newAnswers = this.state.pages[state.currentPage].answerChoices.map((answer) =>
-                    <Form.Check
-                    type="radio"
-                    label={answer}
-                    name="formHorizontalRadios"
-                />
-            );
-            return {
-                answerChoices: newAnswers
-            }
-        });
+
     };
 
     componentDidMount(){
@@ -45,12 +36,18 @@ class Quiz extends React.Component {
         
     }
 
+    handleSubmit(){
+        let currentAnswers = this.state.answers;
+        
+
+    }
+
     render() {
 
         if(!this.state.isLoaded){
             return("Loading...")
         }else{
-            const { show, handleClose, handleSubmit } = this.props;
+            const { show, handleClose } = this.props;
 
             return (
                 <div>
@@ -62,10 +59,22 @@ class Quiz extends React.Component {
                             <h4>Question {this.state.currentPage+1}:</h4>
                             <p>{this.state.pages[this.state.currentPage].question}</p>
                             <hr/>
-                            <Form>
-                                {this.state.answerChoices}
-                                
-                            </Form>
+
+                            {this.state.pages[this.state.currentPage].answerChoices.map((answer, index) =>
+                                <Form.Check
+                                    type="radio"
+                                    label={answer}
+                                    name={`question${this.state.currentPage}`}
+                                    checked={index === this.state.answers[this.state.currentPage]}
+                                    onChange={()=>{this.setState((state)=>{
+                                        let newAnswers = state.answers;
+                                        newAnswers[state.currentPage] = index;
+                                        return {answers: newAnswers, radioChecked: `${state.currentPage}${index}`};
+                                    })}}
+                                    key={index}
+                                />
+                            )}
+                            
                         </Modal.Body>
                         <Modal.Footer>
                             <Col>
@@ -80,12 +89,15 @@ class Quiz extends React.Component {
                                 <Button 
                                     block 
                                     variant="primary" 
-                                    onClick={()=>{this.handlePaging(1)}}
+                                    onClick={()=>{
+                                        this.handlePaging(1)
+                                        this.setState({radioChecked: false})
+                                    }}
                                     disabled={(this.state.currentPage === this.state.pages.length-1)}
                                 >Next</Button>
                             </Col>
                             {(this.state.currentPage === this.state.pages.length-1) && <Col>
-                                <Button block variant="primary" onClick={handleSubmit}>Submit</Button>
+                                <Button block variant="primary" onClick={this.handleSubmit}>Submit</Button>
                             </Col>}
                         </Modal.Footer>
                     </Modal>

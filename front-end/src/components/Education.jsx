@@ -10,7 +10,6 @@ class Education extends React.Component {
 
     constructor(props) {
         super(props);
-        this.submitQuiz = this.submitQuiz.bind(this);
         this.hideQuiz = this.hideQuiz.bind(this);
 
         this.state = {
@@ -47,7 +46,6 @@ class Education extends React.Component {
     }
 
     hideQuiz() {this.setState({showQuiz: false})}
-    submitQuiz() {console.log("submit the quiz")}
 
     render() {
         return (
