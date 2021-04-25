@@ -4,7 +4,6 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import * as  Icon from 'react-bootstrap-icons';
 import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
 class AboutUs extends React.Component {
     render() {
         return (
@@ -55,7 +54,7 @@ class AboutUs extends React.Component {
                     
                     <Row xs={1} sm={2} lg={3} xl={5}>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto"/>
+                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
                             <h5 className="nameOfMember personalPhoto">Hatten</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -65,7 +64,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto"/>
+                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
                             <h5 className="nameOfMember personalPhoto">Jordan Griffin</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -79,7 +78,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto"/>
+                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
                             <h5 className="nameOfMember personalPhoto">Ashlyn Brown</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -93,7 +92,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>  
                         <Col>
-                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto"/>
+                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
                             <h5 className="nameOfMember personalPhoto">Gabrielle Christensen </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -108,7 +107,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto"/>
+                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
                             <h5 className="nameOfMember personalPhoto">Hannah Brown </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
