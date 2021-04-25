@@ -19,10 +19,6 @@ body {
   text-align: center;
   background-color: #FFFEF5;
 }
-
-.dropShadow {
-  box-shadow: 0px 15px 15px #0000001a
-}
 .dropShadow {
   box-shadow: 0px 10px 10px #0000001f
 }
@@ -217,6 +213,17 @@ li a {
   color: #7da27f;
 }
 
+.btn-primary {
+  background-color: #7DA27F;
+  color: white;
+  border: 1px solid #7DA27F;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
 .branchGraphic1 {
   width: 50%;
 }
@@ -328,29 +335,143 @@ li a {
 
 /* Begin Education CSS */
 
-  .dash-container {
+  .dash-lesson {
     width: 100%;
-    align-content: center;
   }
 
-  .dash-lesson-container {
+  .dash-title {
+    padding: 50px;
+  }
+
+  .dash-lesson-progress-container {
+    text-align: right;
+  }
+
+  .dash-lesson-card {
+    margin-top: 25px !important;
+    margin-bottom: 25px !important;
     position: relative;
     align-self: center;
     width: 90%;
+    padding: 10px;
     max-width: 1000px;
     margin: auto;
   }
 
   .dash-lesson-card-content {
     display: flex;
+    padding: 10px;
+  }
+
+  .dash-lesson-button {
+    width: 175px;
   }
 
   .dash-lesson-title {
+    height: 80%;
+    margin: auto;
+    align-content: flex-start;
+    width: 80%;
+    font-size: 30px;
+    font-weight: 800;
+  }
 
+  .dash-lesson-header {
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+  }
+
+  .dash-lesson-content {
+    border: 1px solid black;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+  }
+
+  .dash-lesson-progress-container {
+    text-align: center;
+    align-content: center;
+    position: relative;
+    align-self: flex-end;
+    width: 200px;
+    border: 1px solid black;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+  }
+
+  .dash-lesson-title-button-container {
+    font-size: 20px;
+    width: 20%;
+  }
+
+  .dash-lesson-description {
+    width: 80%;
+    font-size: 14px;
+    text-align: left;
+    padding-right: 30px;
+  }
+
+  .dash-lesson-description-button-container {
+    width: 20%;
   }
 
   .dash-lesson-title-button {
-    
+    font-size: 24px;
+    border-radius: 10px;
   }
+
+  .dash-lesson-description-button {
+    font-size: 18px;
+    border-radius: 10px;
+  }
+
+  @media only screen and (max-width: 1035px) {
+    .dash-lesson-button {
+      width: 125px;
+    }
+  }
+
+  @media only screen and (max-width: 750px) {
+    .dash-lesson-card-content {
+      display: inline-block;
+    }
+
+    .dash-lesson-title {
+      padding-bottom: 10px;
+    }
+
+    .dash-lesson-description {
+      width: 100%;
+      text-align: center;
+      padding-right: 0px;
+      padding-bottom: 10px;
+    }
+
+    .dash-lesson-title-button-container {
+      margin: auto;
+      width: 80%;
+    }
+
+    .dash-lesson-description-button-container {
+      margin: auto;
+      width: 80%;
+    }
+
+    .dash-lesson-button {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: 500px) {
+    .dash-lesson-title {
+      font-size: 16px;
+    }
+
+    .dash-lesson-description {
+      font-size: 12px;
+    }
+  }
+
 
 /* End Education CSS */

@@ -1,7 +1,16 @@
-//use a card component as the top and render in a text and optional image
-//also provide a couple properties that control layout
+import React from "react";
 
 
-//This will look like variant 1/2/3 (I don't feel like these should be separate components)
-//Create a styles object and choose from 1 of 3
-//Also conditionally render the image
+
+class Lesson extends React.Component {
+    render() {
+        return (
+            <div>
+                <br/><br/>
+                <p>Lesson Temp</p>
+            </div>
+        );
+    }
+}
+
+export default Lesson;
