@@ -1,6 +1,5 @@
 import React from "react";
 import Quiz from './Quiz'
-import  Button  from 'react-bootstrap/Button';
 import  Card  from 'react-bootstrap/Card';
 import { Route, Link } from 'react-router-dom';
 import Lesson from '../components/Lesson';
@@ -82,7 +81,7 @@ class Education extends React.Component {
                         </div>
                     </div>
                 </Card>
-                <Link to={this.props.match.url + "/lesson-1"} passHref><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
+                <Link to={this.props.match.url + "/lesson-1"} passhref={"true"}><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
             
                 <Quiz
                     quiz={this.state.activeQuizTest}
