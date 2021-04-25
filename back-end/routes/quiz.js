@@ -12,9 +12,20 @@ router.get('/', function(req, res) {
 //takes the quiz you want to grade as query parameter
 router.post('/grade', function(req, res) {
     Quiz.findOne({name: req.query.name}).then((quiz)=>{
-      let score = "this would be your score";
-      //grading logic
-      res.send(score);
+      let score = 0;
+      let i = 0;
+      
+      for(answer in quiz.answers){
+        if(answer.correct === req.body.answers[i])
+            score+=1;
+
+        i+=1;
+      }
+      score = score/i;
+      
+      res.status(200).json({
+          score: score
+      });
     })
 });
 

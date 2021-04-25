@@ -3,6 +3,7 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form"
 import Col from "react-bootstrap/Col"
+import axios from "axios"
 
 class Quiz extends React.Component {
     //fetch the state from the DB
@@ -38,8 +39,7 @@ class Quiz extends React.Component {
 
     handleSubmit(){
         let currentAnswers = this.state.answers;
-        
-
+        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`)
     }
 
     render() {
