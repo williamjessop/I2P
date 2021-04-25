@@ -14,9 +14,8 @@ router.post('/grade', function(req, res) {
     Quiz.findOne({name: req.query.name}).then((quiz)=>{
       let score = 0;
       let i = 0;
-      
-      for(answer in quiz.answers){
-        if(answer.correct === req.body.answers[i])
+      for(answer of quiz.answers){
+        if(answer.correct === req.body.answers[i].answer)
             score+=1;
 
         i+=1;

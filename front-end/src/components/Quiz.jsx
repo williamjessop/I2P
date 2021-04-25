@@ -16,6 +16,7 @@ class Quiz extends React.Component {
             isLoaded: false,
             radioChecked: ""
         }
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
     handlePaging(direction){
@@ -38,8 +39,16 @@ class Quiz extends React.Component {
     }
 
     handleSubmit(){
-        let currentAnswers = this.state.answers;
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`)
+        let currentAnswers = {answers:[]};
+        for(let i = 0; i < this.state.answers.length; i+=1){
+            currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
+        }
+
+        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers)
+        .then(res => {
+            console.log(res);
+            console.log(res.data);
+        })
     }
 
     render() {

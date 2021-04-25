@@ -50,8 +50,6 @@ class Education extends React.Component {
     render() {
         return (
             <div className="dash-lesson">
-                
-
                 <Route path={this.props.match.url + "/lesson-1"}>
                     <Lesson/>
                 </Route>
