@@ -7,11 +7,9 @@ const createError = require('http-errors');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
-var dbRouter = require('./routes/dbTest');
-
 const authRoutes = require('./routes/auth');
+const contentRoutes = require('./routes/content');
+const quizRoutes = require('./routes/quiz');
 
 var app = express();
 
@@ -32,10 +30,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/api', authRoutes);
-app.use('/', indexRouter);
-app.use('/users', usersRouter);
-app.use('/dbTest', dbRouter);
+app.use('/auth', authRoutes);
+app.use('/content', authRoutes);
+app.use('/quiz', quizRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

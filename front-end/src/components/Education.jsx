@@ -11,6 +11,7 @@ class Education extends React.Component {
 
         this.state = {
             activeQuiz: 0,
+            activeQuizTest: "Quiz1",
             showQuiz: false,
             lessons: [
                 {
@@ -27,8 +28,8 @@ class Education extends React.Component {
                     pages: [
                         {question: "this is question 1", answers: ["one", "two", "three", "four"], choice: 0},
                         {question: "This is question 2", answers: ["this", "is", "a", "test"], choice: 0},
-                        
                     ],
+                    //ATTEMPTS NEED TO BE STORED IN THE USER OBJECT NOT HERE!
                     attempts:[
                         {score: 0},
                         {score: 1}
@@ -69,6 +70,7 @@ class Education extends React.Component {
                 </div>
                 <button onClick={() => {this.setState({showQuiz: true})}}>Click me</button>
                 <Quiz
+                    quiz={this.state.activeQuizTest}
                     content={this.state.quizzes[this.state.activeQuiz]} 
                     show={this.state.showQuiz} 
                     handleClose={this.hideQuiz}

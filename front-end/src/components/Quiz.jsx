@@ -7,14 +7,13 @@ import Col from "react-bootstrap/Col"
 
 class Quiz extends React.Component {
     //fetch the state from the DB
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.state = {
             answerChoices: [],
-            currentPage: 0
+            currentPage: 0,
+            isLoaded: false
         }
-
-        
     }
 
     handlePaging(direction){
@@ -22,7 +21,7 @@ class Quiz extends React.Component {
             return {currentPage: state.currentPage+direction}
         });
         this.setState((state) => {
-            let newAnswers = this.props.content.pages[state.currentPage].answers.map((answer) =>
+            let newAnswers = this.state.pages[state.currentPage].answerChoices.map((answer) =>
                     <Form.Check
                     type="radio"
                     label={answer}
@@ -36,51 +35,64 @@ class Quiz extends React.Component {
     };
 
     componentDidMount(){
-        this.handlePaging(0);
+        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`)
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({pages: result, isLoaded:true});
+                this.handlePaging(0);
+            }
+        );
+        
     }
 
     render() {
-        const { show, handleClose, handleSubmit } = this.props;
 
-        return (
-            <div>
-                <Modal show={show} onHide={handleClose} centered size="xl">
-                    <Modal.Header closeButton variant="primary">
-                        <h2>Quiz 1</h2>
-                    </Modal.Header>
-                    <Modal.Body>
-                        <h4>Question {this.state.currentPage+1}:</h4>
-                        <p>{this.props.content.pages[this.state.currentPage].question}</p>
-                        <hr/>
-                        <Form>
-                            {this.state.answerChoices}
-                            
-                        </Form>
-                    </Modal.Body>
-                    <Modal.Footer>
-                        <Col>
-                            <Button 
-                                block 
-                                variant="primary" 
-                                onClick={()=>{this.handlePaging(-1)}}
-                                disabled={(this.state.currentPage === 0)}
-                            >Previous</Button>
-                        </Col>
-                        <Col>
-                            <Button 
-                                block 
-                                variant="primary" 
-                                onClick={()=>{this.handlePaging(1)}}
-                                disabled={(this.state.currentPage === this.props.content.pages.length-1)}
-                            >Next</Button>
-                        </Col>
-                        {(this.state.currentPage === this.props.content.pages.length-1) && <Col>
-                            <Button block variant="primary" onClick={handleSubmit}>Submit</Button>
-                        </Col>}
-                    </Modal.Footer>
-                </Modal>
-            </div>
-        );
+        if(!this.state.isLoaded){
+            return("Loading...")
+        }else{
+            const { show, handleClose, handleSubmit } = this.props;
+
+            return (
+                <div>
+                    <Modal show={show} onHide={handleClose} centered size="xl">
+                        <Modal.Header closeButton variant="primary">
+                            <h2>Quiz 1</h2>
+                        </Modal.Header>
+                        <Modal.Body>
+                            <h4>Question {this.state.currentPage+1}:</h4>
+                            <p>{this.state.pages[this.state.currentPage].question}</p>
+                            <hr/>
+                            <Form>
+                                {this.state.answerChoices}
+                                
+                            </Form>
+                        </Modal.Body>
+                        <Modal.Footer>
+                            <Col>
+                                <Button 
+                                    block 
+                                    variant="primary" 
+                                    onClick={()=>{this.handlePaging(-1)}}
+                                    disabled={(this.state.currentPage === 0)}
+                                >Previous</Button>
+                            </Col>
+                            <Col>
+                                <Button 
+                                    block 
+                                    variant="primary" 
+                                    onClick={()=>{this.handlePaging(1)}}
+                                    disabled={(this.state.currentPage === this.state.pages.length-1)}
+                                >Next</Button>
+                            </Col>
+                            {(this.state.currentPage === this.state.pages.length-1) && <Col>
+                                <Button block variant="primary" onClick={handleSubmit}>Submit</Button>
+                            </Col>}
+                        </Modal.Footer>
+                    </Modal>
+                </div>
+            );
+        }
     }
 }
 

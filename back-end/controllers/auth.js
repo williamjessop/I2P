@@ -11,7 +11,6 @@ exports.signup = (req, res, next) => {
     lastname,
     email,
     password,
-    password_confirmation,
   } = req.body;
 
   User.findOne({ email: email })
