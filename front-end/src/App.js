@@ -6,6 +6,7 @@ import Communication from './components/Communication';
 import Prevention from './components/Prevention';
 import Resources from './components/Communication';
 import Education from './components/Education';
+import Footer from './components/Footer';
 import { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 
@@ -33,6 +34,7 @@ function App() {
           <Resources />
         </Route>
       </Switch>
+      <Footer/>
     </div>
   );
 }
