@@ -6,6 +6,8 @@ import Communication from './components/Communication';
 import Prevention from './components/Prevention';
 import Resources from './components/Communication';
 import Education from './components/Education';
+import Footer from './components/Footer';
+import Lesson from './components/Lesson';
 import { useState } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import SignInPage from './components/SignInPage';
@@ -39,6 +41,7 @@ function App() {
           <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
+      <Footer/>
     </div>
   );
 }

@@ -135,12 +135,6 @@ class AboutUs extends React.Component {
                     </Card>
                     <Row><br/></Row>
                 </Container>
-                <br/>
-                <Container className="primaryBackground" fluid>
-                    <br/>
-                    <h1>Footer</h1>
-                </Container>
-                
                 </div>
         );
     }

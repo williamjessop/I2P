@@ -4,7 +4,6 @@ import Carousel from 'react-bootstrap/Carousel'
 import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import Button from 'react-bootstrap/Button'
-import Footer from './Footer'
 class Home extends React.Component {
     render() {
         
@@ -83,8 +82,6 @@ class Home extends React.Component {
                     <Button size="lg" href="#/education">Link to Reach Out</Button>
                     <Row><br/></Row>
                 </Container>
-                <br/>
-                <Footer/>
             </div>
         );
     }
