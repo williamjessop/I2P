@@ -10,6 +10,9 @@ import { useState } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
 import SignInPage from './components/SignInPage';
 
+//{!user ? <Redirect to="/" /> : }
+
+
 function App() {
   const [user, setUser] = useState(null);
   return (
@@ -27,7 +30,7 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-          {!user ? <Redirect to="/" /> : <Education user={user}/>}
+          <Education user={user}/>
         </Route>
         <Route exact path='/communication'>
           <Communication />
