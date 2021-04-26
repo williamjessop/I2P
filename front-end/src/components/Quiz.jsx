@@ -26,7 +26,7 @@ class Quiz extends React.Component {
     };
 
     componentDidMount(){
-        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.token}})
+        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -45,13 +45,11 @@ class Quiz extends React.Component {
         }
         
         const options = {
-            url: `http://localhost:8000/quiz/grade?name=${this.props.quiz}`,
-            date: currentAnswers,
-            headers:{"x-auth-token": this.props.token}
+            data: currentAnswers,
+            headers:{"x-auth-token": this.props.user.token}
         }
-
-        //Put in logic for storing the score and for 
-        axios.post(options)
+        console.log(options);
+        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, options)
         .then(res => {
             console.log(res);
             console.log(res.data);

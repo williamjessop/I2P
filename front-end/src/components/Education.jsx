@@ -12,8 +12,7 @@ class Education extends React.Component {
         this.hideQuiz = this.hideQuiz.bind(this);
 
         this.state = {
-            activeQuiz: 0,
-            activeQuizTest: "Quiz1",
+            activeQuiz: "Quiz1",
             showQuiz: false,
             lessons: [
                 {
@@ -65,11 +64,11 @@ class Education extends React.Component {
                 </Card>
                             
                 <Quiz
-                    quiz={this.state.activeQuizTest}
+                    quiz={this.state.activeQuiz}
                     show={this.state.showQuiz} 
                     handleClose={this.hideQuiz}
                     handleSubmit={this.submitQuiz}
-                    token={this.props.token}
+                    user={this.props.user}
                 /> 
             </div>
         );

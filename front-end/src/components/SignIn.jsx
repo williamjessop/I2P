@@ -19,14 +19,13 @@ function SignIn(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const token = await signInUser({ email, password });
-    props.setToken(token.token);
+    const user = await signInUser({ email, password });
+    props.setUser(user);
     //check if login was successful
 
     //display toast about login
 
     //Close Modal
-    console.log(token)
     props.handleClose();
   };
 

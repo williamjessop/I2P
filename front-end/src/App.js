@@ -11,10 +11,10 @@ import { Switch, Route, Redirect } from "react-router-dom";
 import SignInPage from './components/SignInPage';
 
 function App() {
-  const [token, setToken] = useState(null);
+  const [user, setUser] = useState(null);
   return (
     <div className="App">
-      <Navigation token={token} setToken={setToken} />
+      <Navigation user={user} setUser={setUser} />
       <div id="standard-nav-spacing"></div>
       <Switch>
         <Route exact path='/'>
@@ -27,7 +27,7 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-          {!token ? <Redirect to="/" /> : <Education token={token}/>}
+          {!user ? <Redirect to="/" /> : <Education user={user}/>}
         </Route>
         <Route exact path='/communication'>
           <Communication />
@@ -36,7 +36,7 @@ function App() {
           <Resources />
         </Route>
         <Route exact path='/signin'>
-          <SignInPage setToken={setToken}/>
+          <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
     </div>

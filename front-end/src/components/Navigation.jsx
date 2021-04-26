@@ -50,7 +50,7 @@ function Navigation(props) {
             </Link>
           </li>
           <li>
-            {(props.token) &&<Link to="/education" passhref="true">
+            {(props.user) &&<Link to="/education" passhref="true">
               <a className="nav-text-container" href="replace">Education</a>
             </Link>}
           </li>
@@ -69,14 +69,14 @@ function Navigation(props) {
         <div className="nav-dropdown">
           <button className="primaryBackground secondaryColor" id="btn-nav-profile"><Icon.PersonCircle fontSize="2rem" /></button>
           <div className="nav-dropdown-content">
-            {(!props.token) && <Button variant="link" onClick={handleShowSignUp}>Sign Up</Button>}
-            {(!props.token) && <Button variant="link" onClick={handleShowSignIn}>Sign In</Button>}
-            {(props.token) && <Button variant="link" onClick={handleShowLogout}>Logout</Button>}
+            {(!props.user) && <Button variant="link" onClick={handleShowSignUp}>Sign Up</Button>}
+            {(!props.user) && <Button variant="link" onClick={handleShowSignIn}>Sign In</Button>}
+            {(props.user) && <Button variant="link" onClick={handleShowLogout}>Logout</Button>}
           </div>
         </div>
         <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-        <SignIn show={showSignIn} handleClose={handleCloseSignIn} setToken={props.setToken} />
-        <Logout show={showLogout} handleClose={handleCloseLogout} setToken={props.setToken} />
+        <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={props.setUser} />
+        <Logout show={showLogout} handleClose={handleCloseLogout} setUser={props.setUser} />
         <div>
           <nav className={sidebar ? "sidebar active" : "sidebar"}>
             <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
