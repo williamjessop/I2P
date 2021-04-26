@@ -15,6 +15,7 @@ router.post('/grade', auth, function(req, res) {
     Quiz.findOne({name: req.query.name}).then((quiz)=>{
       let score = 0;
       let i = 0;
+      //Please fix the issue with empty quizzes
       for(answer of quiz.answers){
         if(answer.correct === req.body.answers[i].answer)
             score+=1;

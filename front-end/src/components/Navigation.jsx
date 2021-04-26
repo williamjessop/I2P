@@ -31,6 +31,8 @@ function Navigation(props) {
   const showSidebar = () => setSidebar(!sidebar);
   const showSidebarScreen = () => setSidebarScreen(!sidebarScreen);
 
+  //{(props.user) &&}
+
   return (
     <div>
       <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
@@ -50,9 +52,9 @@ function Navigation(props) {
             </Link>
           </li>
           <li>
-            {(props.user) &&<Link to="/education" passhref="true">
+            <Link to="/education" passhref="true">
               <a className="nav-text-container" href="replace">Education</a>
-            </Link>}
+            </Link>
           </li>
           <li>
             <Link to="/communication" passhref="true">
