@@ -29,7 +29,7 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-          {!user ? <Redirect to="/" /> : <Education user={user}/>}
+          {/*!user ? <Redirect to="/" /> : <Education user={user}/>*/}
         </Route>
         <Route exact path='/communication'>
           <Communication />
