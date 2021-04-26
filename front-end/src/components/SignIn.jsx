@@ -4,7 +4,7 @@ import "./theme.scss";
 import Form from "react-bootstrap/Form";
 
 async function signInUser(info) {
-  return fetch("http://localhost:8000/api/signin", {
+  return fetch("http://localhost:8000/auth/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

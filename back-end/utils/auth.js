@@ -1,5 +1,4 @@
 const jwt = require("jsonwebtoken");
-const fs = require("fs");
 
 exports.createJWT = (email, userId, duration) => {
   const payload = {

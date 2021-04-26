@@ -50,9 +50,9 @@ function Navigation(props) {
             </Link>
           </li>
           <li>
-            <Link to="/education" passhref="true">
+            {(props.token) &&<Link to="/education" passhref="true">
               <a className="nav-text-container" href="replace">Education</a>
-            </Link>
+            </Link>}
           </li>
           <li>
             <Link to="/communication" passhref="true">

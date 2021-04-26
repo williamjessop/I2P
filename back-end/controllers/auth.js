@@ -85,7 +85,7 @@ exports.signin = (req, res) => {
                 .status(400)
                 .json({ errors: [{ password: "incorrect" }] });
             }
-            let access_token = createJWT(user.email, user._id, 3600);
+            let access_token = createJWT(user.email, user._id, "10h");
             jwt.verify(
               access_token,
               process.env.TOKEN_SECRET,

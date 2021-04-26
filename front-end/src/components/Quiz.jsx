@@ -27,7 +27,7 @@ class Quiz extends React.Component {
     };
 
     componentDidMount(){
-        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`)
+        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -40,11 +40,18 @@ class Quiz extends React.Component {
 
     handleSubmit(){
         let currentAnswers = {answers:[]};
+        
         for(let i = 0; i < this.state.answers.length; i+=1){
             currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
+        
+        const options = {
+            url: `http://localhost:8000/quiz/grade?name=${this.props.quiz}`,
+            date: currentAnswers,
+            headers:{"x-auth-token": this.props.token}
+        }
 
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers)
+        axios.post(options)
         .then(res => {
             console.log(res);
             console.log(res.data);
@@ -52,6 +59,7 @@ class Quiz extends React.Component {
     }
 
     render() {
+        
 
         if(!this.state.isLoaded){
             return("Loading...")

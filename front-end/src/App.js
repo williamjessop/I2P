@@ -7,7 +7,7 @@ import Prevention from './components/Prevention';
 import Resources from './components/Communication';
 import Education from './components/Education';
 import { useState } from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 
 function App() {
   const [token, setToken] = useState(null);
@@ -25,7 +25,9 @@ function App() {
         <Route exact path='/prevention'>
           <Prevention />
         </Route>
-        <Route exact path='/education' component={Education}/>
+        <Route exact path='/education'>
+          {!token ? <Redirect to="/" /> : <Education token={token}/>}
+        </Route>
         <Route exact path='/communication'>
           <Communication />
         </Route>

@@ -6,7 +6,7 @@ import Alert from 'react-bootstrap/Alert'
 
 
 async function signUpUser(info) {
-  return fetch('http://localhost:8000/api/signup', {
+  return fetch('http://localhost:8000/auth/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'

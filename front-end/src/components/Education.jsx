@@ -7,7 +7,6 @@ import Lesson from '../components/Lesson';
 class Education extends React.Component {
     //fetch the state from the DB
     
-
     constructor(props) {
         super(props);
         this.hideQuiz = this.hideQuiz.bind(this);
@@ -47,13 +46,16 @@ class Education extends React.Component {
 
     hideQuiz() {this.setState({showQuiz: false})}
 
+    //I axed this for now to work on Auth stuff, we can revisit later
+    // <Route path={this.props.match.url + "/lesson-1"}>
+    //     <Lesson/>
+    // </Route>
+    //  <Link to={this.props.match.url + "/lesson-1"} passhref={"true"}><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
+
     render() {
         return (
             <div className="dash-lesson">
-                <Route path={this.props.match.url + "/lesson-1"}>
-                    <Lesson/>
-                </Route>
-
+                
                 <div className="dash-title">
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>
@@ -77,14 +79,14 @@ class Education extends React.Component {
                         </div>
                     </div>
                 </Card>
-                <Link to={this.props.match.url + "/lesson-1"} passhref={"true"}><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
-            
+                            
                 <Quiz
                     quiz={this.state.activeQuizTest}
                     content={this.state.quizzes[this.state.activeQuiz]} 
                     show={this.state.showQuiz} 
                     handleClose={this.hideQuiz}
                     handleSubmit={this.submitQuiz}
+                    token={this.props.token}
                 /> 
             </div>
         );
