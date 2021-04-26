@@ -7,6 +7,7 @@ import Prevention from './components/Prevention';
 import Resources from './components/Communication';
 import Education from './components/Education';
 import Footer from './components/Footer';
+import Lesson from './components/Lesson';
 import { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 
