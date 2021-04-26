@@ -25,22 +25,6 @@ class Education extends React.Component {
                     progress: 0
                 }
             ],
-            quizzes: [
-                {
-                    pages: [
-                        {question: "this is question 1", answers: ["one", "two", "three", "four"], choice: 0},
-                        {question: "This is question 2", answers: ["this", "is", "a", "test"], choice: 0},
-                    ],
-                    //ATTEMPTS NEED TO BE STORED IN THE USER OBJECT NOT HERE!
-                    attempts:[
-                        {score: 0},
-                        {score: 1}
-                    ],
-                    currentAttempt: [
-                        {question1: "choice a"}
-                    ]
-                }
-            ]
         };
     }
 
@@ -82,7 +66,6 @@ class Education extends React.Component {
                             
                 <Quiz
                     quiz={this.state.activeQuizTest}
-                    content={this.state.quizzes[this.state.activeQuiz]} 
                     show={this.state.showQuiz} 
                     handleClose={this.hideQuiz}
                     handleSubmit={this.submitQuiz}

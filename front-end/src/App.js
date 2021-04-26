@@ -8,6 +8,7 @@ import Resources from './components/Communication';
 import Education from './components/Education';
 import { useState } from 'react';
 import { Switch, Route, Redirect } from "react-router-dom";
+import SignInPage from './components/SignInPage';
 
 function App() {
   const [token, setToken] = useState(null);
@@ -33,6 +34,9 @@ function App() {
         </Route>
         <Route exact path='/resources'>
           <Resources />
+        </Route>
+        <Route exact path='/signin'>
+          <SignInPage setToken={setToken}/>
         </Route>
       </Switch>
     </div>

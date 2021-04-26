@@ -14,7 +14,6 @@ class Quiz extends React.Component {
             answers: [],
             currentPage: 0,
             isLoaded: false,
-            radioChecked: ""
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -51,6 +50,7 @@ class Quiz extends React.Component {
             headers:{"x-auth-token": this.props.token}
         }
 
+        //Put in logic for storing the score and for 
         axios.post(options)
         .then(res => {
             console.log(res);
@@ -86,7 +86,7 @@ class Quiz extends React.Component {
                                     onChange={()=>{this.setState((state)=>{
                                         let newAnswers = state.answers;
                                         newAnswers[state.currentPage] = index;
-                                        return {answers: newAnswers, radioChecked: `${state.currentPage}${index}`};
+                                        return {answers: newAnswers};
                                     })}}
                                     key={index}
                                 />
@@ -108,7 +108,6 @@ class Quiz extends React.Component {
                                     variant="primary" 
                                     onClick={()=>{
                                         this.handlePaging(1)
-                                        this.setState({radioChecked: false})
                                     }}
                                     disabled={(this.state.currentPage === this.state.pages.length-1)}
                                 >Next</Button>
