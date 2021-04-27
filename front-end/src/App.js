@@ -28,11 +28,9 @@ function App() {
   const [showLogout, setShowLogout] = useState(false);
 
   const [user, setUser] = useState(null);
-<<<<<<< HEAD
   const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
   const [lessonDesc, setLessonDesc] = useState({lessonDesc: "Lesson Description"});
   const [quizName, setQuiz] = useState(null);
-=======
 
   const handleCloseSignUp = () => setShowSignUp(false);
   const handleShowSignUp = () => setShowSignUp(true);
@@ -41,7 +39,6 @@ function App() {
   const handleCloseLogout = () => setShowLogout(false);
   const handleShowLogout = () => setShowLogout(true);
 
->>>>>>> Will4
   return (
     <div className="App">
       <Navigation 
@@ -63,17 +60,23 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-<<<<<<< HEAD
-          <Education user={user} setLessonName={setLessonName} setQuiz={setQuiz} setLessonDesc={setLessonDesc} lessonName={lessonName} lessonDesc={lessonDesc}/>
+          <Education 
+            user={user} 
+            setLessonName={setLessonName} 
+            setQuiz={setQuiz} 
+            setLessonDesc={setLessonDesc} 
+            lessonName={lessonName} 
+            lessonDesc={lessonDesc} 
+            showSignIn={showSignIn} 
+            handleClose={handleCloseSignIn} 
+            setUser={setUser}
+          />
         </Route>
         <Route path={`/education/${lessonName}`}>
           <Lesson />
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />
-=======
-          <Education user={user} showSignIn={showSignIn} handleClose={handleCloseSignIn} setUser={setUser}/>
->>>>>>> Will4
         </Route>
         <Route exact path='/communication'>
           <Communication />
