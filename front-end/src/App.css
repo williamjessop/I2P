@@ -1,9 +1,26 @@
+/* Hide scrollbar for Chrome, Safari and Opera */
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+#standard-nav-spacing {
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+
 .App {
   text-align: center;
   background-color: #FFFEF5;
 }
 
-.navDropShadow {
+.dropShadow {
   box-shadow: 0px 15px 15px #0000001a
 }
 .dropShadow {
@@ -12,7 +29,15 @@
 
 .nav-wrap {
   height: 56px;
+  width: 100vw;
   text-align: center;
+  position: fixed;
+  z-index: 5;
+  background-color: #FFFEF5;
+}
+
+.collapse-nav {
+  margin-left: 10px;
 }
 
 #btn-nav-collapse {
@@ -36,13 +61,43 @@
   padding: 0px;
   margin: 12px;
   margin-right: 6px;
-  margin-left: 6px;
+  margin-left: 8px;
   width: 38px;
   border: transparent;
 }
 
-#img-nav-logo {
-  left: -100px;
+.nav-intro-image {
+  width: 120px;
+  height: 100%;
+  float: left;
+  margin-left: 15px;
+  margin-right: 0;
+  cursor: pointer;
+}
+
+.nav-outro-image {
+  width: 50px;
+  height: 100%;
+  float: right;
+  margin-right: 15px;
+  cursor: pointer;
+}
+
+.nav-mobile-image {
+  height: 100%;
+  margin-left: 15px;
+  margin-right: 15px;
+  left: 25px;
+  position: relative;
+  display: none;
+  cursor: pointer;
+}
+
+.lets-colon {
+  font-family: Papyrus, fantasy;
+  margin-left: 3px;
+  font-size: 30px;
+
 }
 
 @media only screen and (max-width: 350px) {
@@ -50,19 +105,40 @@
     transform: scale(0.8);
     left: 5px;
   }
+
+  #btn-nav-collapse {
+    transform: scale(0.8);
+    left: -7px;
+  }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 840px) {
   .collapse-nav {
     display: none !important;
   }
 
   #btn-nav-collapse {
-    display: block;
+    display: inline-block;
   }
 
   #img-nav-logo {
     left: 60px;
+  }
+
+  .nav-intro-image {
+    display: none;
+  }
+
+  .nav-outro-image {
+    display: none;
+  }
+
+  .nav-mobile-image {
+    display: inline-block;
+  }
+
+  .lets-colon {
+    display: none;
   }
 }
 
@@ -82,7 +158,8 @@ li {
 li a {
   display: block;
   text-align: center;
-  padding: 14px 16px;
+  padding-top: 7px;
+  padding-right: 8px;
   text-decoration: none;
 }
 
@@ -106,7 +183,7 @@ li a {
 
 /* Links inside the dropdown */
 .nav-dropdown-content a {
-  color: black;
+  color: #212529;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
@@ -148,6 +225,51 @@ li a {
   width: 20%;
   transform: rotate(5deg);
 }
+
+.sidebar {
+  z-index: 5;
+  position: fixed;
+  top: 56px;
+  left: -300px;
+  width: 300px;
+  height: 100%;
+  background-color: #FFF9E5;
+  transition: left 300ms ease-out;
+}
+.sidebar.active {
+  left: 0;
+}
+.sidebar ul {
+  margin: 0;
+  padding: 0;
+}
+.sidebar li {
+  list-style: none;
+}
+.sidebar li a {
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  color: #212529;
+}
+
+.sidebar-nav-icon {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.sidebar-nav-hidden {
+  font-size: 1.5rem;
+  margin-right: 10px;
+  margin-left: 5px;
+}
+
+.nav-sidebar-text-container:hover {
+  text-decoration: underline 2px;
+}
+
 /* About Us */
 .secondary {
   background-color: #e8dfd0 !important;
@@ -175,8 +297,31 @@ li a {
   }
  
 @media only screen and (min-width: 750px) {
-.logoBanner
-{
- width: 330px !important;
+.logoBanner {
+    width: 330px !important;
+  } 
 }
+
+.sidebarScreen.active {
+  z-index: -1;
+  position: fixed;
+  left: 0;
+  top: 56px;
+  width: 100%;
+  height: 100%;
+  background-color: transparent;
+  backdrop-filter: blur(2px);
+  transition-duration: 300ms;
+}
+
+.sidebar-exit-button {
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.nav-text-container {
+  display: inline-block;
+  color: #212529;
+  line-height: 40px;
+  padding-left: 10px;
 }

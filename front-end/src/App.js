@@ -16,22 +16,23 @@ function App() {
   const [token, setToken] = useState(null);
   return (
     <div className="App">
-      <Navigation token={token} setToken={setToken}/>
+      <Navigation token={token} setToken={setToken} />
+      <div id="standard-nav-spacing"></div>
       <Switch>
         <Route exact path='/'>
-          <Home/>
+          <Home />
         </Route>
-        <Route exact path='/aboutus'>
-          <AboutUs/>
+        <Route exact path='/about-us'>
+          <AboutUs />
         </Route>
         <Route exact path='/communication'>
-          <Communication/>
+          <Communication />
         </Route>
         <Route exact path='/prevention'>
-          <Prevention/>
+          <Prevention />
         </Route>
         <Route exact path='/resources'>
-          <Resources/>
+          <Resources />
         </Route>
       </Switch>
     </div>
