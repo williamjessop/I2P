@@ -17,7 +17,6 @@ class AboutUs extends React.Component {
             
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
-                    
                     <h1 style={{float:"left" }} >Who we are</h1>
                     <br/>
                     <br/>
@@ -36,7 +35,7 @@ class AboutUs extends React.Component {
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
                     
-                    <h1>The Compititon</h1>
+                    <h1>The Competition</h1>
                     <p> Invent 2 Prevent is a program partnered with EdVenture to 
                         encourage students in joining a nation-wide university-level
                          competition based on a specific current issue. This Spring 2021, 
