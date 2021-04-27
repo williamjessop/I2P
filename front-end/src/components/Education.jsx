@@ -52,10 +52,7 @@ class Education extends React.Component {
 
         return (
             <div className="dash-lesson">
-<<<<<<< HEAD
-=======
                 <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} setUser={this.props.setUser}/>
->>>>>>> 78ae3731c812a4b1882541118d0a274d093da5dd
                 <div className="dash-title">
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>
@@ -80,18 +77,6 @@ class Education extends React.Component {
                             <button className="btn-primary dash-lesson-button dash-lesson-description-button" onClick={() => {this.setState({showQuiz: true})}}>Begin Lesson 1 Quiz</button>
                         </div>
                     </div>
-<<<<<<< HEAD
-                </Card>                         
-                <Quiz
-                    quiz={this.state.activeQuiz}
-                    show={this.state.showQuiz} 
-                    handleClose={this.hideQuiz}
-                    handleSubmit={this.submitQuiz}
-                    user={this.props.user}
-                /> 
-
-                <Route path={`${path}/lesson-1`} component={Lesson} />
-=======
                 </Card>
 
                 {this.props.user &&     
@@ -103,7 +88,6 @@ class Education extends React.Component {
                         user={this.props.user}
                     /> 
                 }
->>>>>>> 78ae3731c812a4b1882541118d0a274d093da5dd
             </div>
         );
     }

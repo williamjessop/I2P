@@ -65,13 +65,9 @@ function App() {
           <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
-<<<<<<< HEAD
-      <Footer/>
-=======
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
       <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
       <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />
->>>>>>> 78ae3731c812a4b1882541118d0a274d093da5dd
     </div>
   );
 }
