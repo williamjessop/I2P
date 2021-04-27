@@ -12,18 +12,45 @@ import Footer from './components/Footer';
 import { useState } from 'react';
 import { Switch, Route } from "react-router-dom";
 import SignInPage from './components/SignInPage';
+import SignUp from './components/SignUp'
+import SignIn from './components/SignIn'
+import Logout from './components/Logout'
+
+//{!user ? <Redirect to="/" /> : }
 
 //{!user ? <Redirect to="/" /> : }
 
 
 function App() {
+
+  const [showSignUp, setShowSignUp] = useState(false);
+  const [showSignIn, setShowSignIn] = useState(false);
+  const [showLogout, setShowLogout] = useState(false);
+
   const [user, setUser] = useState(null);
+<<<<<<< HEAD
   const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
   const [lessonDesc, setLessonDesc] = useState({lessonDesc: "Lesson Description"});
   const [quizName, setQuiz] = useState(null);
+=======
+
+  const handleCloseSignUp = () => setShowSignUp(false);
+  const handleShowSignUp = () => setShowSignUp(true);
+  const handleCloseSignIn = () => setShowSignIn(false);
+  const handleShowSignIn = () => setShowSignIn(true);
+  const handleCloseLogout = () => setShowLogout(false);
+  const handleShowLogout = () => setShowLogout(true);
+
+>>>>>>> Will4
   return (
     <div className="App">
-      <Navigation user={user} setUser={setUser} />
+      <Navigation 
+        user={user} 
+        setUser={setUser} 
+        handleShowLogout={handleShowLogout}
+        handleShowSignIn={handleShowSignIn}
+        handleShowSignUp={handleShowSignUp}
+      />
       <div id="standard-nav-spacing"></div>
       <Switch>
         <Route exact path='/'>
@@ -36,6 +63,7 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
+<<<<<<< HEAD
           <Education user={user} setLessonName={setLessonName} setQuiz={setQuiz} setLessonDesc={setLessonDesc} lessonName={lessonName} lessonDesc={lessonDesc}/>
         </Route>
         <Route path={`/education/${lessonName}`}>
@@ -43,6 +71,9 @@ function App() {
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />
+=======
+          <Education user={user} showSignIn={showSignIn} handleClose={handleCloseSignIn} setUser={setUser}/>
+>>>>>>> Will4
         </Route>
         <Route exact path='/communication'>
           <Communication />
@@ -54,7 +85,9 @@ function App() {
           <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
-      <Footer/>
+      <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
+      <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />
     </div>
   );
 }
