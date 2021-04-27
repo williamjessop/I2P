@@ -2,15 +2,18 @@ import React from "react";
 import Quiz from './Quiz'
 import  Card  from 'react-bootstrap/Card';
 import { Route, Link } from 'react-router-dom';
-import Lesson from '../components/Lesson';
+import Lesson from './Lesson';
+import SignIn from './SignIn'
 
 class Education extends React.Component {
     //fetch the state from the DB
     constructor(props) {
         super(props);
         this.hideQuiz = this.hideQuiz.bind(this);
+        this.handleClose = this.handleClose.bind(this);
 
         this.state = {
+            loggedIn: false,
             activeQuiz: "Quiz1",
             showQuiz: false,
             lessons: [
@@ -34,6 +37,14 @@ class Education extends React.Component {
     // </Route>
     //  <Link to={this.props.match.url + "/lesson-1"} passhref={"true"}><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
 
+    componentDidMount(){
+        if(this.props.user) this.setState({loggedIn: true})
+    }
+
+    handleClose(){
+        this.setState({loggedIn: true});
+    }
+
     render() {
 
 
@@ -41,6 +52,10 @@ class Education extends React.Component {
 
         return (
             <div className="dash-lesson">
+<<<<<<< HEAD
+=======
+                <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} setUser={this.props.setUser}/>
+>>>>>>> 78ae3731c812a4b1882541118d0a274d093da5dd
                 <div className="dash-title">
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>
@@ -65,6 +80,7 @@ class Education extends React.Component {
                             <button className="btn-primary dash-lesson-button dash-lesson-description-button" onClick={() => {this.setState({showQuiz: true})}}>Begin Lesson 1 Quiz</button>
                         </div>
                     </div>
+<<<<<<< HEAD
                 </Card>                         
                 <Quiz
                     quiz={this.state.activeQuiz}
@@ -75,6 +91,19 @@ class Education extends React.Component {
                 /> 
 
                 <Route path={`${path}/lesson-1`} component={Lesson} />
+=======
+                </Card>
+
+                {this.props.user &&     
+                    <Quiz
+                        quiz={this.state.activeQuiz}
+                        show={this.state.showQuiz} 
+                        handleClose={this.hideQuiz}
+                        handleSubmit={this.submitQuiz}
+                        user={this.props.user}
+                    /> 
+                }
+>>>>>>> 78ae3731c812a4b1882541118d0a274d093da5dd
             </div>
         );
     }

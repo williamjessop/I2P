@@ -91,7 +91,7 @@ exports.signin = (req, res) => {
               process.env.TOKEN_SECRET,
               (err, decoded) => {
                 if (err) {
-                  res.status(500).json({ erros: err });
+                  res.status(500).json({ errors: err });
                 }
                 if (decoded) {
                   return res.status(200).json({
@@ -105,11 +105,11 @@ exports.signin = (req, res) => {
             );
           })
           .catch((err) => {
-            res.status(500).json({ erros: err });
+            res.status(500).json({ errors: err });
           });
       }
     })
     .catch((err) => {
-      res.status(500).json({ erros: err });
+      res.status(500).json({ errors: err });
     });
 };

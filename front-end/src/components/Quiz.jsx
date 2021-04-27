@@ -43,22 +43,15 @@ class Quiz extends React.Component {
         for(let i = 0; i < this.state.answers.length; i+=1){
             currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
-        
-        const options = {
-            data: currentAnswers,
-            headers:{"x-auth-token": this.props.user.token}
-        }
-        console.log(options);
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, options)
+
+        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
         .then(res => {
             console.log(res);
-            console.log(res.data);
+            console.log(typeof(res.data));
         })
     }
 
     render() {
-        
-
         if(!this.state.isLoaded){
             return("Loading...")
         }else{
