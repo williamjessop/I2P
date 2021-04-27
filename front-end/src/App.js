@@ -6,10 +6,11 @@ import Communication from './components/Communication';
 import Prevention from './components/Prevention';
 import Resources from './components/Communication';
 import Education from './components/Education';
-import Footer from './components/Footer';
 import Lesson from './components/Lesson';
+import Quiz from './components/Quiz';
+import Footer from './components/Footer';
 import { useState } from 'react';
-import { Switch, Route, Redirect } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import SignInPage from './components/SignInPage';
 
 //{!user ? <Redirect to="/" /> : }
@@ -17,6 +18,9 @@ import SignInPage from './components/SignInPage';
 
 function App() {
   const [user, setUser] = useState(null);
+  const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
+  const [lessonDesc, setLessonDesc] = useState({lessonDesc: "Lesson Description"});
+  const [quizName, setQuiz] = useState(null);
   return (
     <div className="App">
       <Navigation user={user} setUser={setUser} />
@@ -32,7 +36,13 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-          <Education user={user}/>
+          <Education user={user} setLessonName={setLessonName} setQuiz={setQuiz} setLessonDesc={setLessonDesc} lessonName={lessonName} lessonDesc={lessonDesc}/>
+        </Route>
+        <Route path={`/education/${lessonName}`}>
+          <Lesson />
+        </Route>
+        <Route path={`/education/${quizName}`}>
+          <Quiz />
         </Route>
         <Route exact path='/communication'>
           <Communication />
