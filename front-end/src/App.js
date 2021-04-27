@@ -88,6 +88,7 @@ function App() {
           <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
+      <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
       <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
       <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />

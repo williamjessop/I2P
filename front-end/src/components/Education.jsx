@@ -13,23 +13,25 @@ class Education extends React.Component {
 
         this.state = {
             lessonName: "Lesson1",
-            lessonDesc: "Lesson Description",
             quizName: "Quiz1",
             loggedIn: false,
             showQuiz: false,
+            isLoaded: false,
         };
     }
 
-    hideQuiz() {this.setState({showQuiz: false})}
-
-    //I axed this for now to work on Auth stuff, we can revisit later
-    // <Route path={this.props.match.url + "/lesson-1"}>
-    //     <Lesson/>
-    // </Route>
-    //  <Link to={this.props.match.url + "/lesson-1"} passhref={"true"}><a href="replace"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a></Link>
+    hideQuiz() {this.setState({showQuiz: false})};
 
     componentDidMount(){
-        if(this.props.user) this.setState({loggedIn: true})
+        if(this.props.user) this.setState({loggedIn: true});
+        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({pages: result, isLoaded:true});
+                this.handlePaging(0);
+            }
+        );
     }
 
     handleClose(){
@@ -45,7 +47,6 @@ class Education extends React.Component {
                 </div>    
                 <LessonCard 
                     lessonName={this.state.lessonName}
-                    lessonDesc={this.state.lessonDesc}
                     setLessonName={this.props.setLessonName} 
                 />              
                 <Quiz

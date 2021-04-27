@@ -4,13 +4,16 @@ var Schema = mongoose.Schema
 
 var LessonSchema = new Schema(
     {
-        name: String,
+        lessonName: String,
+        lessonTitle: String,
+        lessonDesc: String,
         pages: [
-            {content: String},
-        ],
+            [
+                {contentType: String, content: String}
+            ]
+        ]
     },
     {
-        timestamps: true,
         collection: 'lessons',
      }
 );

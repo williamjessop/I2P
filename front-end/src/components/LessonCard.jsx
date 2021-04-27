@@ -6,10 +6,20 @@ class Lesson extends React.Component {
     constructor(props){
         super(props);
         this.state = {
+            
         }
     }
-    handleSetLesson() {
 
+    componentDidMount(){
+        fetch(`http://localhost:8000/lesson?name=${this.props.lessonName}`, {headers:{"x-auth-token": this.props.user.token}})
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({pages: result, isLoaded:true});
+                this.handlePaging(0);
+            }
+        );
+        
     }
 
     render() {
