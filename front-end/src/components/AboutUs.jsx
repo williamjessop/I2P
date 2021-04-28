@@ -7,10 +7,11 @@ import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 class AboutUs extends React.Component {
     render() {
-        return (
-            <div style={{ 
-                backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
-            <br/>
+        return (    
+        <div>
+        <div className="bgimg" style={{backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
+            <div className="bgoverlay">
+                <br/>
                 <br/>
                 <img className="logoBanner" src="/img/Lt-Svg.svg" alt="chart" style={{width:"60%"}}/>
                 <br/>
@@ -19,26 +20,21 @@ class AboutUs extends React.Component {
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
                     
-                    <h1 style={{float:"left" }} >Who we are</h1>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <p> Let’s Talk is a certification built by a group of college students 
+                    <h1 className="titleNames" >Who we are</h1>
+                    <p className="infoWidth"> Let’s Talk is a certification built by a group of college students 
                         driven to empower and educate student leaders and young adults 
                         about early warning signs of targeted violence and how to respond 
                         in a violent situation resulting from targeted violence. Targeted 
                         violence is any violent act that is directed </p>
                     <Row><br/></Row>
                 </Container>
-                <br/>
-                <br/>	
-                <br/>
-                <br/>
+                <div className="blurWidth">
+                </div>
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
                     
-                    <h1>The Compititon</h1>
-                    <p> Invent 2 Prevent is a program partnered with EdVenture to 
+                    <h1 className="titleNames">The Competiton</h1>
+                    <p className="infoWidth"> Invent 2 Prevent is a program partnered with EdVenture to 
                         encourage students in joining a nation-wide university-level
                          competition based on a specific current issue. This Spring 2021, 
                          Invent 2 Prevent challenged students to create a project based on 
@@ -141,7 +137,8 @@ class AboutUs extends React.Component {
                     <br/>
                     <h1>Footer</h1>
                 </Container>
-                
+                </div>
+                </div>
                 </div>
         );
     }

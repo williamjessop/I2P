@@ -271,6 +271,22 @@ li a {
 }
 
 /* About Us */
+.bgimg {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+.bgoverlay {
+  z-index: 9;
+}
+.blurWidth{
+  height:100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
 .secondary {
   background-color: #e8dfd0 !important;
 }
@@ -295,12 +311,58 @@ li a {
     margin-right: auto;
     margin-left: auto;
   }
- 
+  .compWidth {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .infoWidth {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+  }
+  .titleNames
+  {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+
 @media only screen and (min-width: 750px) {
 .logoBanner {
     width: 330px !important;
   } 
+  .compWidth {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .infoWidth {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
 }
+@media only screen and (max-width: 575px) {
+  .memberWidth {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .descriptionOfMember {
+    text-indent: 3ch;
+    text-align: center;
+  }
+  }
 
 .sidebarScreen.active {
   z-index: -1;
