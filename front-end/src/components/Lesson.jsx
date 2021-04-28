@@ -42,7 +42,7 @@ class Lesson extends React.Component {
                                     )
                                 }else if(block.contentType === "image"){
                                     return(
-                                        <img key={index} src={block.content} alt={block.imageAlt}/>
+                                        <img key={index} src={block.content} alt={block.imageAlt} style={{maxHeight:"300px"}}/>
                                     )
                                 }else if(block.contentType === "header"){
                                     return(
