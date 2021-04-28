@@ -3,6 +3,8 @@ import Quiz from './Quiz';
 import LessonCard from './LessonCard';
 import SignIn from './SignIn';
 
+const urlBase = (process.env.NODE_ENV === 'production') ? '100.26.231.32:80' : 'http://localhost:8000'
+
 class Education extends React.Component {
     
     //fetch the state from the DB

@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form"
 import Col from "react-bootstrap/Col"
 import axios from "axios"
 
+const urlBase = (process.env.NODE_ENV === 'production') ? '100.26.231.32:80' : 'http://localhost:8000'
+
 class Quiz extends React.Component {
     //fetch the state from the DB
     constructor(props){
