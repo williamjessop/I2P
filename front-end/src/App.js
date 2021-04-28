@@ -16,11 +16,6 @@ import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Logout from './components/Logout'
 
-//{!user ? <Redirect to="/" /> : }
-
-//{!user ? <Redirect to="/" /> : }
-
-
 function App() {
 
   const [showSignUp, setShowSignUp] = useState(false);
@@ -29,7 +24,6 @@ function App() {
 
   const [user, setUser] = useState(null);
   const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
-  const [lessonDesc, setLessonDesc] = useState({lessonDesc: "Lesson Description"});
   const [quizName, setQuiz] = useState(null);
 
   const handleCloseSignUp = () => setShowSignUp(false);
@@ -63,10 +57,7 @@ function App() {
           <Education 
             user={user} 
             setLessonName={setLessonName} 
-            setQuiz={setQuiz} 
-            setLessonDesc={setLessonDesc} 
-            lessonName={lessonName} 
-            lessonDesc={lessonDesc} 
+            setQuiz={setQuiz}
             showSignIn={showSignIn} 
             handleClose={handleCloseSignIn} 
             setUser={setUser}
