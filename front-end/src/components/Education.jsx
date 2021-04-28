@@ -39,7 +39,6 @@ class Education extends React.Component {
                     />
                 )
                 this.setState({lessons: newLessons, isLoaded:true});
-                console.log(result);
             }
         );
     }

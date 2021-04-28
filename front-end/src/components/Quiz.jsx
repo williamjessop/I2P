@@ -22,7 +22,6 @@ class Quiz extends React.Component {
         this.setState((state)=>{
             return {currentPage: state.currentPage+direction}
         });
-
     };
 
     componentDidMount(){

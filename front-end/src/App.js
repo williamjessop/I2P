@@ -64,7 +64,7 @@ function App() {
           />
         </Route>
         <Route path={`/education/${lessonName}`}>
-          <Lesson />
+          <Lesson lessonName={lessonName}/>
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />
