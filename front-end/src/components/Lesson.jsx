@@ -2,6 +2,8 @@ import React from 'react';
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
+const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+
 class Lesson extends React.Component {
     constructor(props){
         super(props);
@@ -12,7 +14,7 @@ class Lesson extends React.Component {
     }
 
     componentDidMount(){
-        fetch(`http://localhost:8000/lesson?lessonName=${this.props.lessonName}`)
+        fetch(`${urlBase}/lesson?lessonName=${this.props.lessonName}`)
         .then(res => res.json())
         .then(
             (result) => {
@@ -33,22 +35,22 @@ class Lesson extends React.Component {
         }else{
             return (
                 <div>
-                        {this.state.pages[this.state.currentPage].map((block) => {
+                        {this.state.pages[this.state.currentPage].map((block, index) => {
                                 if(block.contentType === "text"){
                                     return(
-                                        <p>{block.content}</p>
+                                        <p key={index}>{block.content}</p>
                                     )
                                 }else if(block.contentType === "image"){
                                     return(
-                                        <img src={block.content} alt={block.imageAlt}/>
+                                        <img key={index} src={block.content} alt={block.imageAlt}/>
                                     )
                                 }else if(block.contentType === "header"){
                                     return(
-                                        <h1>{block.content}</h1>
+                                        <h1 key={index}>{block.content}</h1>
                                     )
                                 }else{
                                     return(
-                                        <p>YOU ARE MISSING SOME TAGS BUDDY!</p>
+                                        <p key={index}>YOU ARE MISSING SOME TAGS BUDDY!</p>
                                     )
                                 }
                             }

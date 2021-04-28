@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form"
 import Col from "react-bootstrap/Col"
 import axios from "axios"
 
+const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+
 class Quiz extends React.Component {
     //fetch the state from the DB
     constructor(props){
@@ -16,14 +18,6 @@ class Quiz extends React.Component {
             isLoaded: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
-        .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({pages: result, isLoaded:true});
-                this.handlePaging(0);
-            }
-        );
     }
 
     handlePaging(direction){
@@ -39,11 +33,22 @@ class Quiz extends React.Component {
             currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
 
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
+        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
         .then(res => {
             console.log(res);
             console.log(typeof(res.data));
         })
+    }
+
+    componentDidMount(){
+        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({pages: result, isLoaded:true});
+                this.handlePaging(0);
+            }
+        );
     }
 
     render() {
