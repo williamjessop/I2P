@@ -8,6 +8,7 @@ class Education extends React.Component {
     //fetch the state from the DB
     constructor(props) {
         super(props);
+        this.showQuiz = this.showQuiz.bind(this);
         this.hideQuiz = this.hideQuiz.bind(this);
         this.handleClose = this.handleClose.bind(this);
 
@@ -21,6 +22,7 @@ class Education extends React.Component {
     }
 
     hideQuiz() {this.setState({showQuiz: false})};
+    showQuiz() {this.setState({showQuiz: true})};
 
     handleClose(){
         this.setState({loggedIn: true});
@@ -36,6 +38,7 @@ class Education extends React.Component {
                         setLessonName={this.props.setLessonName}
                         user={this.props.user}
                         key={lesson.lessonName}
+                        showQuiz={this.showQuiz}
                     />
                 )
                 this.setState({lessons: newLessons, isLoaded:true});
@@ -58,6 +61,7 @@ class Education extends React.Component {
                             setLessonName={this.props.setLessonName}
                             user={this.props.user}
                             key={lesson.lessonName}
+                            showQuiz={this.showQuiz}
                         />
                     )
                     this.setState({lessons: newLessons, isLoaded:true});   
@@ -65,12 +69,6 @@ class Education extends React.Component {
             );
         }
     }
-
-    // {this.state.loggedIn && <LessonCard 
-    //     lessonName={this.state.lessonName}
-    //     setLessonName={this.props.setLessonName}
-    //     user={this.props.user}
-    // />}
 
     render() {
         

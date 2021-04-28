@@ -16,15 +16,6 @@ class Quiz extends React.Component {
             isLoaded: false,
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-    }
-
-    handlePaging(direction){
-        this.setState((state)=>{
-            return {currentPage: state.currentPage+direction}
-        });
-    };
-
-    componentDidMount(){
         fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
         .then(res => res.json())
         .then(
@@ -33,8 +24,13 @@ class Quiz extends React.Component {
                 this.handlePaging(0);
             }
         );
-        
     }
+
+    handlePaging(direction){
+        this.setState((state)=>{
+            return {currentPage: state.currentPage+direction}
+        });
+    };
 
     handleSubmit(){
         let currentAnswers = {answers:[]};

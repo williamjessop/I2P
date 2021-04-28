@@ -29,7 +29,12 @@ class Lesson extends React.Component {
                         {this.props.lessonDesc}
                     </div>
                     <div className="dash-lesson-description-button-container">
-                        <button className="btn-primary dash-lesson-button dash-lesson-description-button" onClick={() => { this.setState({ showQuiz: true }) }}>Begin Lesson {this.props.lessonName[6]} Quiz</button>
+                        <button className="btn-primary dash-lesson-button dash-lesson-description-button" 
+                        onClick={() => { 
+                            this.props.showQuiz()
+                            
+                            //will need to include showing the correct quiz
+                        }}>Begin Lesson {this.props.lessonName.slice(6)} Quiz</button>
                     </div>
                 </div>
             </Card>
