@@ -3,7 +3,7 @@ import Quiz from './Quiz';
 import LessonCard from './LessonCard';
 import SignIn from './SignIn';
 
-const urlBase = process.env.NODE_ENV === 'production' ? 'https://100.26.231.32:80/api' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu/api' : 'http://localhost:8000'
 
 class Education extends React.Component {
     

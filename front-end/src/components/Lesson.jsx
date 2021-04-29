@@ -2,7 +2,7 @@ import React from 'react';
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
 
-const urlBase = process.env.NODE_ENV === 'production' ? 'https://100.26.231.32:80/api' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu/api' : 'http://localhost:8000'
 
 class Lesson extends React.Component {
     constructor(props){
