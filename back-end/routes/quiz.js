@@ -3,6 +3,14 @@ var router = express.Router();
 const auth = require("../middleware/auth");
 const Quiz = require("../models/Quiz");
 
+// Return a list of all licenses in the DB
+//THIS ENDPOINT IS UNTESTED!!!
+router.get('/listquiz', function (req, res, next) {
+  Lesson.find({}, "name").then((quizzes) => {
+    res.send(quizzes);
+  })
+});
+
 //takes name as query param
 router.get('/', auth, function(req, res) {
   Quiz.findOne({name: req.query.name}).then((quiz)=>{

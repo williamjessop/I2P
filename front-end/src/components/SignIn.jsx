@@ -3,8 +3,10 @@ import { Button, Modal } from "react-bootstrap";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
 
+const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+
 async function signInUser(info) {
-  return fetch("http://localhost:8000/auth/signin", {
+  return fetch(urlBase+"/auth/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

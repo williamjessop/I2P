@@ -4,9 +4,10 @@ import './theme.scss';
 import Form from 'react-bootstrap/Form'
 import Alert from 'react-bootstrap/Alert'
 
+const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
 
 async function signUpUser(info) {
-  return fetch('http://localhost:8000/auth/signup', {
+  return fetch(urlBase+'/auth/signup', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
