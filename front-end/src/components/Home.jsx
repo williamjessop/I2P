@@ -11,28 +11,41 @@ class Home extends React.Component {
             <div>
                 
 
-                <Container fluid>
-                <Carousel controls={false} indicators={false}>
+                <Container className="bgCarousel carouselWidth" fluid>
+        <Carousel controls={false} indicators={false}>
                     <Carousel.Item>
+                        <div style={{height:"400px"}}>
                         <img
-                        className="branchGraphic2"
-                        src="/img/Branch2.svg"
+                        className="bannerPhoto1"
+                        src="/img/helena-lopes-PGnqT0rXWLs-unsplash.jpg"
                         alt="First slide"
                         />
-                        
-                        <h3 style={{color:"black"}}>Banner Image 1</h3>
+                        </div>
+                        <h3 className="Overlay" style={{color:"black"}}>Banner Image 1</h3>
                     </Carousel.Item>
                     <Carousel.Item>
+                    <div style={{height:"400px"}}>
                         <img
-                        className="branchGraphic2"
-                        src="/img/Branch2.svg"
+                        className="bannerPhoto2"
+                        src="/img/priscilla-du-preez-XkKCui44iM0-unsplash.jpg"
                         alt="First slide"
                         />
-                        <h3 style={{color:"black"}}>Banner Image 2</h3>
+                        </div>
+                        <h3 className="bannerOverlay"style={{color:"black"}}>Banner Image 2</h3>
+                    </Carousel.Item>
+                    <Carousel.Item>
+                    <div style={{height:"400px"}}>
+                        <img
+                        className="bannerPhoto3"
+                        src="/img/ComsBanner.jpg"
+                        alt="First slide"
+                        />
+                        </div>
+                        <h3 className="bannerOverlay"style={{color:"black"}}>Banner Image 3</h3>
                     </Carousel.Item>
                 </Carousel>
                 </Container>
-                <Container className="secondaryBackground" fluid>
+                <Container className="secondaryBackground Overlay" fluid>
                     <br/>
                     <h1>Prevention</h1>
                     <p>
