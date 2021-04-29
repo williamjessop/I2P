@@ -63,7 +63,7 @@ class Home extends React.Component {
                         <Col><img src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/></Col>
                     </Row>
                     <br/>
-                    <Button size="lg" href="#/education">Click To Get Educated</Button>
+                    <Button size="lg" href="/education">Click To Get Educated</Button>
                     <br/>
                 </Container>
                 <br/>
@@ -79,7 +79,7 @@ class Home extends React.Component {
                         <Col><img src="/img/communication1.png" alt="preventionimg" style={{width:"70%"}}/></Col>
                     </Row>
                     <br/>
-                    <Button size="lg" href="#/education">Link to Reach Out</Button>
+                    <Button size="lg" href="/education">Link to Reach Out</Button>
                     <Row><br/></Row>
                 </Container>
             </div>

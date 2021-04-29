@@ -1,11 +1,21 @@
 import React from "react";
+import { Carousel } from "react-bootstrap";
 
 class Prevention extends React.Component {
     render() {
         return (
             <div>
-                <br/><br/><br /><br />
-                <p>Prevention Page - COMING SOON!</p>
+                <Carousel>
+                    <Carousel.Item>
+                        <img
+                            className="branchGraphic2"
+                            src="/img/Branch2.svg"
+                            alt="First slide"
+                        />
+
+                        <h3 style={{ color: "black" }}>Banner Image 1</h3>
+                    </Carousel.Item>
+                </Carousel>
             </div>
         );
     }
