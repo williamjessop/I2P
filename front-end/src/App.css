@@ -379,9 +379,11 @@ li span {
     display:block;
     margin-right: auto;
     margin-left: auto;
+    width:230px;
   }
   .personalPhoto {
     width: 230px;
+    height: 230px;
   }
   .memberWidth {
     width: 230px;

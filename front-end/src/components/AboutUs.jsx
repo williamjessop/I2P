@@ -29,7 +29,7 @@ class AboutUs extends React.Component {
                 </Container>
                 <div className="blurWidth">
                 </div>
-                <Container className="primaryBackground dropShadow" fluid>
+                <Container className="primaryBackground dropShadow " fluid>
                     <br/>
                     
                     <h1 className="titleNames">The Competiton</h1>
@@ -51,7 +51,7 @@ class AboutUs extends React.Component {
                     <Row xs={1} sm={2} lg={3} xl={5}>
                         <Col>
                             <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember personalPhoto">Hatten</h5>
+                            <h5 className="nameOfMember">Hatten</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
                                     Invent 2 Prevent is a program partnered with EdVenture to 
@@ -61,7 +61,7 @@ class AboutUs extends React.Component {
                         </Col>
                         <Col>
                             <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember personalPhoto">Jordan Griffin</h5>
+                            <h5 className="nameOfMember">Jordan Griffin</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
                                 Jordan Griffin is a senior at Colorado Mesa University
@@ -75,7 +75,7 @@ class AboutUs extends React.Component {
                         </Col>
                         <Col>
                             <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember personalPhoto">Ashlyn Brown</h5>
+                            <h5 className="nameOfMember">Ashlyn Brown</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
                                     Ashlyn Brown is a Senior at Colorado Mesa University 
@@ -89,7 +89,7 @@ class AboutUs extends React.Component {
                         </Col>  
                         <Col>
                             <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember personalPhoto">Gabrielle Christensen </h5>
+                            <h5 className="nameOfMember">Gabrielle Christensen </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
                                 Gabrielle Christensen is a Senior at Colorado Mesa
@@ -104,7 +104,7 @@ class AboutUs extends React.Component {
                         </Col>
                         <Col>
                             <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember personalPhoto">Hannah Brown </h5>
+                            <h5 className="nameOfMember">Hannah Brown </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
                                     Hannah Brown is a Junior at Colorado Mesa University
