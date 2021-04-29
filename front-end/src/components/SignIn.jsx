@@ -3,7 +3,7 @@ import { Button, Modal } from "react-bootstrap";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
 
-const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu/api' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
 async function signInUser(info) {
   return fetch(urlBase+"/auth/signin", {
