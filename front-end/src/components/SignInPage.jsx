@@ -6,7 +6,7 @@ class SignInPage extends React.Component {
         return (
             <div style={{display:"flex", justifyContent:"center"}}>
                 SOMETHING
-                <SignIn setUser={this.props.setUser}/>
+                <SignIn/>
             </div>
         );
     }

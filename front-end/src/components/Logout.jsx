@@ -6,7 +6,7 @@ function Logout(props) {
   const handleLogout = async (e) => {
     e.preventDefault();
     
-    props.setToken(null);
+    sessionStorage.removeItem("user");
 
     props.handleClose();
   };

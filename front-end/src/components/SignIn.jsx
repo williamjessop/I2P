@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert"
 import Spinner from "react-bootstrap/Spinner"
 
-async function signInUser(info, setLoggedIn) {
+async function signInUser(info) {
   return fetch("http://localhost:8000/auth/signin", {
     method: "POST",
     headers: {
@@ -37,7 +37,6 @@ function SignIn(props) {
       setIsLoading(false);
     }else{
       setError(null);
-      props.setUser(response);
       sessionStorage.setItem("user", JSON.stringify(response));
       setIsLoading(false);
       props.handleClose();

@@ -17,6 +17,7 @@ class Education extends React.Component {
             loggedIn: false,
             showQuiz: false,
             isLoaded: false,
+            user: JSON.parse(sessionStorage.user)
         };
     }
 
@@ -25,7 +26,7 @@ class Education extends React.Component {
 
     handleClose(){
         this.setState({loggedIn: true});
-        fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.props.user.token}})
+        fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -35,7 +36,6 @@ class Education extends React.Component {
                         lessonTitle={lesson.lessonTitle}
                         lessonDesc={lesson.lessonDesc}
                         setLessonName={this.props.setLessonName}
-                        user={this.props.user}
                         key={lesson.lessonName}
                         showQuiz={this.showQuiz}
                     />
@@ -46,9 +46,9 @@ class Education extends React.Component {
     }
 
     componentDidMount(){
-        if(this.props.user){ 
+        if(this.state.user){ 
             this.setState({loggedIn: true});
-            fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.props.user.token}})
+            fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
             .then(res => res.json())
             .then(
                 (result) => {
@@ -58,7 +58,6 @@ class Education extends React.Component {
                             lessonTitle={lesson.lessonTitle}
                             lessonDesc={lesson.lessonDesc}
                             setLessonName={this.props.setLessonName}
-                            user={this.props.user}
                             key={lesson.lessonName}
                             showQuiz={this.showQuiz}
                         />
@@ -74,7 +73,7 @@ class Education extends React.Component {
     render() {
         return (
             <div className="dash-lesson">
-                <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} setUser={this.props.setUser} showClose={false}/>
+                <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} showClose={false}/>
                 <div className="dash-title">
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>    
@@ -85,7 +84,6 @@ class Education extends React.Component {
                     quiz={this.state.quizName}
                     show={this.state.showQuiz} 
                     handleClose={this.hideQuiz}
-                    user={this.props.user}
                 />}
             </div>
         );

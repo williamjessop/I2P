@@ -14,9 +14,10 @@ class Quiz extends React.Component {
             answers: [],
             currentPage: 0,
             isLoaded: false,
+            user: JSON.parse(sessionStorage.user)
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -39,7 +40,7 @@ class Quiz extends React.Component {
             currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
 
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
+        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => {
             console.log(res);
             console.log(typeof(res.data));

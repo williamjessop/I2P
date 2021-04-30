@@ -15,7 +15,6 @@ import SignInPage from './components/SignInPage';
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Logout from './components/Logout'
-import { Redirect } from "react-router-dom"
 
 function App() {
 
@@ -23,7 +22,6 @@ function App() {
   const [showSignIn, setShowSignIn] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
 
-  const [user, setUser] = useState(null);
   const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
   const [quizName, setQuiz] = useState(null);
 
@@ -37,8 +35,6 @@ function App() {
   return (
     <div className="App">
       <Navigation 
-        user={user} 
-        setUser={setUser} 
         handleShowLogout={handleShowLogout}
         handleShowSignIn={handleShowSignIn}
         handleShowSignUp={handleShowSignUp}
@@ -57,12 +53,10 @@ function App() {
         <Route exact path='/education'>
 
           <Education 
-            user={user} 
             setLessonName={setLessonName} 
             setQuiz={setQuiz}
             showSignIn={showSignIn} 
             handleClose={handleCloseSignIn} 
-            setUser={setUser}
           />
         </Route>
         <Route path={`/education/${lessonName}`}>
@@ -78,13 +72,13 @@ function App() {
           <Resources />
         </Route>
         <Route exact path='/signin'>
-          <SignInPage setUser={setUser}/>
+          <SignInPage/>
         </Route>
       </Switch>
       <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-      <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} showClose={true}/>
-      <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true}/>
+      <Logout show={showLogout} handleClose={handleCloseLogout}/>
     </div>
   );
 }
