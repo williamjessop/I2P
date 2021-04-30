@@ -7,24 +7,32 @@ import Card from 'react-bootstrap/Card'
 class AboutUs extends React.Component {
     render() {
         return (    
-        <div>
         <div className="bgimg" style={{backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
             <div className="bgoverlay">
                 <br/>
                 <br/>
-                <img className="logoBanner" src="/img/Lt-Svg.svg" alt="chart" style={{width:"60%"}}/>
+                <img className="logoBanner" src="/img/Lt-Svg.svg" alt="Logo" style={{width:"60%"}}/>
                 <br/>
                 <br/>
             
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
+                    <Row xs={1} sm={2}> 
+                    <Col>
+                        <img className="dropShadow rounded" src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/>
+                    </Col>
+                    <Col>
+                        <h1 className="titleNames" >Who we are</h1>
+                        <p className="infoWidth">
+                        “Our goal at “Let’s Talk” is to prevent violence through education and 
+                        better communication. In order to prevent violence, one must be aware of 
+                        the warning signs, start the conversation, and then engage in next steps. 
+                        Our certification course will better equip you with the knowledge you need 
+                        to help those around you be safe.” 
+                        </p>
+                    </Col>
+                    </Row>
                     
-                    <h1 className="titleNames" >Who we are</h1>
-                    <p className="infoWidth"> Let’s Talk is a certification built by a group of college students 
-                        driven to empower and educate student leaders and young adults 
-                        about early warning signs of targeted violence and how to respond 
-                        in a violent situation resulting from targeted violence. Targeted 
-                        violence is any violent act that is directed </p>
                     <Row><br/></Row>
                 </Container>
                 <div className="blurWidth">
@@ -46,16 +54,25 @@ class AboutUs extends React.Component {
                 <Container className="secondaryBackground dropShadow" fluid>
                     <br/>
                     <h1>Meet the Team</h1>
+                    <p className="infoWidth"> Let’s Talk is a certification built by a group of college students 
+                        driven to empower and educate student leaders and young adults 
+                        about early warning signs of targeted violence and how to respond 
+                        in a violent situation resulting from targeted violence. Targeted 
+                        violence is any violent act that is directed </p>
                     <br/><br/>
                     
                     <Row xs={1} sm={2} lg={3} xl={5}>
                         <Col>
                             <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
-                            <h5 className="nameOfMember">Hatten</h5>
+                            <h5 className="nameOfMember">Dr. Tim Hatten</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
-                                    Invent 2 Prevent is a program partnered with EdVenture to 
-                                    encourage students in joining a nation-wide university-level
+                                Dr. Tim Hatten is completing his 26th year as Professor of 
+                                Entrepreneurship and Marketing at Colorado Mesa University. 
+                                He is a two-time Fulbright Scholar to Iceland and Denmark and 
+                                author of a best-selling textbook on Small Business Management 
+                                in its 7th edition. He finds his greatest satisfaction working 
+                                with students in live business applications.
                                 </p> 
                             </div>
                         </Col>
@@ -124,21 +141,15 @@ class AboutUs extends React.Component {
                     <h1>Contacting us</h1>
                     <Card style={{ width: '18rem',position: 'inline', marginLeft: "auto", marginRight: "auto"}}>
                             <ListGroup variant="flush">
-                            <ListGroup.Item className="secondary"><Icon.Telephone style={{float:"left" }}/> +123 456 7891</ListGroup.Item>
-                            <ListGroup.Item className="secondary"><Icon.Envelope style={{float:"left" }}/> john.doe@mail.com</ListGroup.Item>
-                            <ListGroup.Item className="secondary"><Icon.GeoAlt  style={{float:"left" }}/> 123 mainstreet ave</ListGroup.Item>
+                            <ListGroup.Item className="secondary"><Icon.Envelope style={{float:"left" }}/> letstalkcmu@gmail.com</ListGroup.Item>
+                            <ListGroup.Item className="secondary"><Icon.GeoAlt  style={{float:"left" }}/> Colorado Mesa University, 1100 North Ave, Grand Junction, CO 81501</ListGroup.Item>
                         </ListGroup>
                     </Card>
                     <Row><br/></Row>
                 </Container>
-                <br/>
-                <Container className="primaryBackground" fluid>
-                    <br/>
-                    <h1>Footer</h1>
-                </Container>
-                </div>
-                </div>
-                </div>
+            </div>
+        </div>
+
         );
     }
 }
