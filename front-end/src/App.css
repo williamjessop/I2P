@@ -50,6 +50,14 @@ body {
   padding-bottom: 6px;
 }
 
+.bannerShader {
+  position: relative;
+  top: -400px;
+  background-color: rgba(75, 75, 75, 0.25);
+  width: 100%;
+  height: 100%;
+}
+
 /* Begin Nav Bar CSS */
 
 #standard-nav-spacing {
@@ -217,7 +225,7 @@ li span {
   background-color: #FFFEF5;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  z-index: 5;
 }
 
 /* Links inside the dropdown */
@@ -335,6 +343,45 @@ li span {
 /* End Nav Bar CSS */
 
 /* Begin Home CSS */
+.carouselWidth
+{
+  padding: 0px !important;
+}
+.bannerPhoto1{
+  
+  width: 100%;
+  height: 100%;
+  background-size: 100% 90%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 30%;
+}
+.bannerPhoto2{
+  
+  width: 110%;
+  height: 100%;
+  background-size: 100% 90%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 60%;
+}
+.bannerPhoto3{
+  
+  width: 100%;
+  height: 100%;
+  background-size: 80% 80%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 90%;
+}
+.bgCarousel
+{
+  z-index: 0;
+  height:400px;
+}
+.Overlay {
+  z-index: 9 !important;
+}
 
 .branchGraphic1 {
   width: 50%;
@@ -444,6 +491,80 @@ li span {
 }
 
 /* End About Us CSS */
+
+/* Begin Prevention CSS */
+
+.preventionPhoto1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 65%;
+}
+
+.preventionPhoto2 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 50%;
+}
+
+.preventionPhoto3 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 50%;
+}
+
+.preventionBannerText {
+  font-size: 2.5em;
+  margin: auto;
+  position: relative;
+  width: 75%;
+  z-index: 2;
+  top: -350px;
+  color: white;
+  text-shadow: 0px 10px 10px #0000001f;
+}
+
+.preventionLetsTalk {
+  font-size: inherit;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.preventionPrevention {
+  top: -65px;
+  position: relative;
+  font-size: inherit;
+  float: left;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.preventionUnity {
+  position: relative;
+  font-size: inherit;
+  float: right;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 765px) {
+  .preventionBannerText {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .preventionBannerText {
+    font-size: 1.4em;
+  }
+}
+
+/* End Prevention CSS */
 
 /* Begin Education CSS */
 
