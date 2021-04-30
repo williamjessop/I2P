@@ -3,7 +3,6 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Communication from './components/Communication';
-import Prevention from './components/Prevention';
 import Resources from './components/Resources';
 import Education from './components/Education';
 import Lesson from './components/Lesson';
@@ -50,9 +49,6 @@ function App() {
         <Route exact path='/about-us'>
           <AboutUs />
         </Route>
-        <Route exact path='/prevention'>
-          <Prevention />
-        </Route>
         <Route exact path='/education'>
           <Education 
             user={user} 
@@ -79,10 +75,10 @@ function App() {
           <SignInPage setUser={setUser}/>
         </Route>
       </Switch>
-      <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
       <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
       <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />
+      <Footer/>
     </div>
   );
 }

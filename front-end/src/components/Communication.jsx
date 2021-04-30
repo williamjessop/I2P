@@ -4,8 +4,11 @@ class Communication extends React.Component {
     render() {
         return (
             <div>
-                <br /><br /><br /><br />
-                <p>Communication Page - COMING SOON!</p>
+                <div className="bgImgCommunication" style={{backgroundImage: `url("/img/Communication-bg.jpg")`}}>
+                    <div style={{height: "1000px"}}>
+                    </div>
+                </div>
+                
             </div>
         );
     }

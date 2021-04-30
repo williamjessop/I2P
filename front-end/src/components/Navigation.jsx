@@ -8,7 +8,7 @@ function Navigation(props) {
 
   const [isHouseShown, setIsHouseShown] = useState(false);
   const [isPeopleShown, setIsPeopleShown] = useState(false);
-  const [isShieldShown, setIsShieldShown] = useState(false);
+  //const [isShieldShown, setIsShieldShown] = useState(false);
   const [isBookShown, setIsBookShown] = useState(false);
   const [isMegaphoneShown, setIsMegaphoneShown] = useState(false);
   const [isSignpostShown, setIsSignpostShown] = useState(false);
@@ -25,20 +25,20 @@ function Navigation(props) {
     <div>
       <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
       <div className="nav-wrap dropShadow">
-        <a href="/"><img className="nav-intro-image" src="/img/LetsTalk-3.svg" alt=""/><p className="lets-colon" style={{ color: "#212529", zIndex: "5", float: "left", lineHeight: "60px" }}>:</p></a>
-        <a href="/"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt=""/></a>
-        <button className="primaryBackground" id="btn-nav-collapse" style={{ height: "42px", zIndex: "1"}} onClick={function (event) { showSidebar(); showSidebarScreen() }}><Icon.List fontSize="2.4rem" /></button>
+        <a href="/"><img className="nav-intro-image" src="/img/LetsTalk-3.svg" alt="" /><p className="lets-colon" style={{ color: "#212529", zIndex: "5", float: "left", lineHeight: "60px" }}>:</p></a>
+        <a href="/"><img className="nav-mobile-image" src="/img/LetsTalk-2.svg" alt="" /></a>
+        <button className="primaryBackground" id="btn-nav-collapse" style={{ height: "42px", zIndex: "1" }} onClick={function (event) { showSidebar(); showSidebarScreen() }}><Icon.List fontSize="2.4rem" /></button>
         <ul className="collapse-nav">
           <li>
             <Link to="/about-us" passhref="true">
               <span className="nav-text-container" href="replace">About Us</span>
             </Link>
           </li>
-          <li>
+          {/*<li>
             <Link to="/prevention" passhref="true">
               <span className="nav-text-container" href="replace">Prevention</span>
             </Link>
-          </li>
+          </li>*/}
           <li>
             <Link to="/education" passhref="true">
               <span className="nav-text-container" href="replace">Education</span>
@@ -55,7 +55,7 @@ function Navigation(props) {
             </Link>
           </li>
         </ul>
-        <img className="nav-outro-image" src="/img/LetsTalk-4.svg" alt=""/>
+        <img className="nav-outro-image" src="/img/LetsTalk-4.svg" alt="" />
         <div className="nav-dropdown">
           <button className="primaryBackground primaryColor" id="btn-nav-profile"><Icon.PersonCircle fontSize="2rem" /></button>
           <div className="nav-dropdown-content">
@@ -64,7 +64,7 @@ function Navigation(props) {
             {(props.user) && <Button variant="link" onClick={props.handleShowLogout}>Logout</Button>}
           </div>
         </div>
-        
+
         <div>
           <nav className={sidebar ? "sidebar active" : "sidebar"}>
             <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
@@ -95,7 +95,7 @@ function Navigation(props) {
                 </Link>
               </li>
               <br /><br />
-              <li>
+              {/*<li>
                 <Link to="/prevention" passhref="true">
                   <span className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsShieldShown(true)}
@@ -106,7 +106,7 @@ function Navigation(props) {
                 Prevention
             </span>
                 </Link>
-              </li>
+              </li>*/}
               <br /><br />
               <li>
                 <Link to="/education" passhref="true">
