@@ -46,12 +46,10 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Home />
+          <Footer/>
         </Route>
         <Route exact path='/about-us'>
           <AboutUs />
-        </Route>
-        <Route exact path='/prevention'>
-          <Prevention />
         </Route>
         <Route exact path='/education'>
           <Education 
@@ -62,24 +60,30 @@ function App() {
             handleClose={handleCloseSignIn} 
             setUser={setUser}
           />
+          <Footer/>
         </Route>
         <Route path={`/education/${lessonName}`}>
           <Lesson lessonName={lessonName}/>
+          <Footer/>
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />
+          <Footer/>
         </Route>
         <Route exact path='/communication'>
           <Communication />
+          <Footer/>
         </Route>
         <Route exact path='/resources'>
           <Resources />
+          <Footer/>
         </Route>
         <Route exact path='/signin'>
           <SignInPage setUser={setUser}/>
+          <Footer/>
         </Route>
       </Switch>
-      <Footer/>
+      
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
       <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
       <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />

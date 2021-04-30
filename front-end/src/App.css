@@ -432,6 +432,9 @@ li span {
 .bgoverlay {
   z-index: 9;
 }
+.footerfix{
+  position: relative;
+}
 .blurWidth{
   height:100px;
   margin-right: auto;
@@ -479,6 +482,32 @@ li span {
     margin-left: auto;
     display:block;
   }
+  .infoWidthMission
+  {
+    float: left;
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+    text-indent: 3ch;
+    text-align: left;
+    
+  }
+  .infoWidthComp
+  {
+    float: left;
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+    text-indent: 3ch;
+    text-align: left;
+    
+  }
   .titleNames
   {
     width: auto;
@@ -501,6 +530,18 @@ li span {
     width: 750px;
     margin-right: auto;
     margin-left: auto;
+  }
+ 
+}
+@media only screen and (min-width: 770px) {
+  .mobileMission
+  {
+    display: none;
+  }
+}
+@media only screen and (max-width: 770px) {
+  .desktopMission{
+    display: none;
   }
 }
 @media only screen and (max-width: 575px) {

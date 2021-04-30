@@ -71,20 +71,28 @@ class Home extends React.Component {
                     <Row xs={1} sm={2}>
                     <Col>
                         <h1>Let's talk about Education</h1>
-                        <p>Become a force of change in your community by taking a course to educate you 
-                        on violence prevention.</p>
+                        <p>
+                        Become a force of change in your community by taking a course to educate you 
+                        on violence prevention.
+                        </p>
                     </Col>
                     <Col>
-                        <img className="dropShadow rounded" src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/>
+                        <img className="educationPhoto dropShadow rounded" src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/>
                     </Col>
                     <Col>
-                        <p>Become a force of change in your community by taking a course to educate you 
-                        on violence prevention.</p>
-                        <p>Learn more about the resources available through our 
-                        program to better equip you to handle situations that may arise.</p>
+                        <p>
+                        Become a force of change in your community by taking a course to educate you 
+                        on violence prevention.
+                        </p>
+                        <p>
+                        Learn more about the resources available through our 
+                        program to better equip you to handle situations that may arise.
+                        </p>
                     </Col>
                     <Col>
-                    <p>Learn more about our program to better equip you to handle sticky situations</p>
+                        <p>
+                        Learn more about our program to better equip you to handle sticky situations
+                        </p>
                         <Button size="lg" href="#/education">Try our certification course!</Button>
                     </Col>
                     </Row>
@@ -98,10 +106,10 @@ class Home extends React.Component {
                     <Row xs={2} sm={2}>
                     <Col>
                         <p> Start the conversation. An integral part of social awareness
-                             begins with communication. We encourage you to reach others 
-                             through starting conversation - whether it is RA-to-peer or 
-                             peer-to-peer. Review our resources to help guide you to better 
-                             communicate with others, especially those you are concerned about. 
+                            begins with communication. We encourage you to reach others 
+                            through starting conversation - whether it is RA-to-peer or 
+                            peer-to-peer. Review our resources to help guide you to better 
+                            communicate with others, especially those you are concerned about. 
                         </p>
 
                     </Col>
