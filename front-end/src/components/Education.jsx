@@ -4,7 +4,6 @@ import LessonCard from './LessonCard';
 import SignIn from './SignIn';
 
 class Education extends React.Component {
-    
     //fetch the state from the DB
     constructor(props) {
         super(props);
@@ -70,11 +69,12 @@ class Education extends React.Component {
         }
     }
 
+    //decide on rendering a back to home button
+
     render() {
-        
         return (
             <div className="dash-lesson">
-                <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} setUser={this.props.setUser}/>
+                <SignIn show={!this.state.loggedIn} handleClose={this.handleClose} setUser={this.props.setUser} showClose={false}/>
                 <div className="dash-title">
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>    

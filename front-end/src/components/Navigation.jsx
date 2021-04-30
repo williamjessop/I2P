@@ -19,8 +19,6 @@ function Navigation(props) {
   const showSidebar = () => setSidebar(!sidebar);
   const showSidebarScreen = () => setSidebarScreen(!sidebarScreen);
 
-  //{(props.user) &&}
-
   return (
     <div>
       <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>

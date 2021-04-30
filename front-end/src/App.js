@@ -15,6 +15,7 @@ import SignInPage from './components/SignInPage';
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Logout from './components/Logout'
+import { Redirect } from "react-router-dom"
 
 function App() {
 
@@ -54,6 +55,7 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
+
           <Education 
             user={user} 
             setLessonName={setLessonName} 
@@ -81,7 +83,7 @@ function App() {
       </Switch>
       <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-      <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} />
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} setUser={setUser} showClose={true}/>
       <Logout show={showLogout} handleClose={handleCloseLogout} setUser={setUser} />
     </div>
   );
