@@ -28,14 +28,6 @@ class Lesson extends React.Component {
                     <div className="dash-lesson-description">
                         {this.props.lessonDesc}
                     </div>
-                    <div className="dash-lesson-description-button-container">
-                        <button className="btn-primary dash-lesson-button dash-lesson-description-button" 
-                        onClick={() => { 
-                            this.props.showQuiz()
-                            
-                            //will need to include showing the correct quiz
-                        }}>Begin Lesson {this.props.lessonName.slice(6)} Quiz</button>
-                    </div>
                 </div>
             </Card>
         );

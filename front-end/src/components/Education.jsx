@@ -3,6 +3,8 @@ import Quiz from './Quiz';
 import LessonCard from './LessonCard';
 import SignIn from './SignIn';
 
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
+
 class Education extends React.Component {
     //fetch the state from the DB
     constructor(props) {
@@ -26,7 +28,7 @@ class Education extends React.Component {
 
     handleClose(){
         this.setState({loggedIn: true});
-        fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
+        fetch(urlBase+"/lesson/listlesson", {headers:{"x-auth-token": this.props.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -48,7 +50,7 @@ class Education extends React.Component {
     componentDidMount(){
         if(this.state.user){ 
             this.setState({loggedIn: true});
-            fetch("http://localhost:8000/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
+            fetch(urlBase+"/lesson/listlesson", {headers:{"x-auth-token": this.props.user.token}})
             .then(res => res.json())
             .then(
                 (result) => {

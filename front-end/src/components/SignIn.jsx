@@ -5,8 +5,10 @@ import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert"
 import Spinner from "react-bootstrap/Spinner"
 
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
+
 async function signInUser(info) {
-  return fetch("http://localhost:8000/auth/signin", {
+  return fetch(urlBase+"/auth/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",

@@ -5,6 +5,8 @@ import Form from "react-bootstrap/Form"
 import Col from "react-bootstrap/Col"
 import axios from "axios"
 
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
+
 class Quiz extends React.Component {
     //fetch the state from the DB
     constructor(props){
@@ -17,7 +19,7 @@ class Quiz extends React.Component {
             user: JSON.parse(sessionStorage.user)
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        fetch(`http://localhost:8000/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
+        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -40,11 +42,22 @@ class Quiz extends React.Component {
             currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
 
-        axios.post(`http://localhost:8000/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.state.user.token}})
+        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
         .then(res => {
             console.log(res);
             console.log(typeof(res.data));
         })
+    }
+
+    componentDidMount(){
+        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({pages: result, isLoaded:true});
+                this.handlePaging(0);
+            }
+        );
     }
 
     render() {

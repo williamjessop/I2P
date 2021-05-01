@@ -4,8 +4,8 @@ class Resources extends React.Component {
     render() {
         return (
             <div>
-                <br/><br/>
-                <p>Resources Temp</p>
+                <br /><br /><br /><br />
+                <p>Resources Page - COMING SOON!</p>
             </div>
         );
     }
