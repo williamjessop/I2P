@@ -10,6 +10,7 @@ require('dotenv').config();
 const authRoutes = require('./routes/auth');
 const lessonRoutes = require('./routes/lesson');
 const quizRoutes = require('./routes/quiz');
+const userRoutes = require('./routes/user');
 
 var app = express();
 
@@ -33,6 +34,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/auth', authRoutes);
 app.use('/lesson', lessonRoutes);
 app.use('/quiz', quizRoutes);
+app.use('/user', userRoutes);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

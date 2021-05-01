@@ -10,12 +10,13 @@ var UserSchema = new Schema(
         lastName: { type: String, required: false, max: 30 },
         appData: {
             lessonProgress: [{name: String, progress: Number}],
-            quizAttempts: [{name: String, scores: [Number]}]
+            Quiz1: Number,
+            Quiz2: Number
         }
     },
     {
         timestamps: true,
-        collection: 'users',
+        collection: 'users'
      }
 );
 

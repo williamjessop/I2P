@@ -28,13 +28,13 @@ class Quiz extends React.Component {
     };
 
     handleSubmit(){
-        let currentAnswers = {answers:[]};
+        let body = {answers:[], user:this.state.user.user};
         
         for(let i = 0; i < this.state.answers.length; i+=1){
-            currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
+            body.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
 
-        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
+        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, body, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => {
             console.log(res);
             console.log(typeof(res.data));
