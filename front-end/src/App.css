@@ -342,10 +342,6 @@ li span {
 
 /* End Nav Bar CSS */
 
-/* Begin Footer CSS */
-
-/* End Footer CSS */
-
 /* Begin Home CSS */
 .carouselWidth
 {
@@ -397,6 +393,15 @@ li span {
   transform: rotate(5deg);
   float: left;
 }
+
+.branchRight
+{
+  left: 200;
+  width: 20%;
+  transform: rotate(175deg);
+  float: right;
+}
+
 .branchCentered
 {
   width: 20%;
@@ -410,26 +415,79 @@ li span {
 {
   width: 100%;
 }
+
+
+.educationPhoto{
+  height: 250px;
+  width: 354px;
+  position: relative;
+  object-fit: cover;
+  background-size: 20% 20%;
+}
+.educationText{
+ /* Text setup */
+}
+
+/* @medias HOME Page */
+@media only screen and (max-width: 767px)
+{
+.educationText1{
+  display: none;
+}
+
+}
+@media only screen and (min-width: 768px)
+{
+.educationText2{
+  display: none;
+}
+
+
+}
 @media only screen and (max-width: 575px) {
-  .branchLeft {
-    display: none;
-    
-  }
   .branchCentered {
     display: block;
+    width: 330px;
+    margin-left:auto;
+    margin-right:auto;
   }
+  .branchLeft {
+    display: none;
+  }
+
+  .brarnchRight {
+    display: none;
+  }
+  .comunicationPhoto{width: 258px !important;}
 }
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: 576px) {
   
   .branchLeft {
     display: inline-block;
     width: 330px;
     left: 200px;
   }
+
+  .branchRight {
+    display: inline-block;
+    width: 330px;
+    left: 200px;
+  }
+
   .branchCentered {
     display: none;
   }
+ 
 }
+@media only screen and (min-width: 900px) {
+  .comunicationPhoto{width: 420px;}
+}
+
+@media only screen and (max-width: 900px) {
+  .educationPhoto{width: 354px}
+  .comunicationPhoto{width:100%}
+}
+
 /* End Home CSS */
 
 /* Begin About Us CSS */
@@ -443,6 +501,9 @@ li span {
 }
 .bgoverlay {
   z-index: 9;
+}
+.footerfix{
+  position: relative;
 }
 .blurWidth{
   height:100px;
@@ -491,6 +552,31 @@ li span {
     margin-left: auto;
     display:block;
   }
+  .infoWidthMission
+  {
+    float: left;
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+    text-indent: 3ch;
+    text-align: left; 
+  }
+  .infoWidthComp
+  {
+    float: left;
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    display:block;
+    text-indent: 3ch;
+    text-align: left;
+    
+  }
   .titleNames
   {
     width: auto;
@@ -513,6 +599,18 @@ li span {
     width: 750px;
     margin-right: auto;
     margin-left: auto;
+  }
+ 
+}
+@media only screen and (min-width: 767px) {
+  .mobileMission
+  {
+    display: none;
+  }
+}
+@media only screen and (max-width: 769px) {
+  .desktopMission{
+    display: none;
   }
 }
 @media only screen and (max-width: 575px) {
@@ -769,3 +867,12 @@ z-index: 100;
 }
 
 /* End Communication CSS */
+
+/* Begin Footer CSS */
+
+.marginFix
+{
+   margin-right: 0px !important;
+}
+
+/* End Footer CSS */

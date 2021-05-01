@@ -4,10 +4,12 @@ import Row from 'react-bootstrap/Row'
 import Col from 'react-bootstrap/Col'
 import * as  Icon from 'react-bootstrap-icons';
 import Card from 'react-bootstrap/Card'
+import Footer from '../components/Footer';
 class AboutUs extends React.Component {
     render() {
-        return (    
-        <div className="bgimg" style={{backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
+        return ( 
+        <div>   
+            <div className="bgimg" style={{backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
             <div className="bgoverlay">
                 <br/>
                 <br/>
@@ -17,19 +19,22 @@ class AboutUs extends React.Component {
             
                 <Container className="primaryBackground dropShadow" fluid>
                     <br/>
-                    <Row xs={1} sm={2}> 
-                    <Col>
-                        <img className="dropShadow rounded" src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/>
+                    <Row   xs={1} sm={1} md={2}> 
+                    <Col className="desktopMission">
+                        <img className="dropShadow rounded" src="/img/LetsTalk-main.jpeg" alt="Lets-Talk-Main" style={{width:"70%"}}/>
                     </Col>
                     <Col>
-                        <h1 className="titleNames" >Who we are</h1>
-                        <p className="infoWidth">
+                        <h1 className="titleNames" >Our Mission</h1>
+                        <p className="infoWidthMission">
                         “Our goal at “Let’s Talk” is to prevent violence through education and 
                         better communication. In order to prevent violence, one must be aware of 
                         the warning signs, start the conversation, and then engage in next steps. 
                         Our certification course will better equip you with the knowledge you need 
                         to help those around you be safe.” 
                         </p>
+                    </Col>
+                    <Col className="mobileMission" >
+                        <img className="dropShadow rounded" src="/img/LetsTalk-main.jpeg" alt="Lets-Talk-Main" style={{width:"70%"}}/>
                     </Col>
                     </Row>
                     
@@ -41,7 +46,7 @@ class AboutUs extends React.Component {
                     <br/>
                     
                     <h1 className="titleNames">The Competiton</h1>
-                    <p className="infoWidth"> Invent 2 Prevent is a program partnered with EdVenture to 
+                    <p className="infoWidthComp"> Invent 2 Prevent is a program partnered with EdVenture to 
                         encourage students in joining a nation-wide university-level
                          competition based on a specific current issue. This Spring 2021, 
                          Invent 2 Prevent challenged students to create a project based on 
@@ -63,7 +68,7 @@ class AboutUs extends React.Component {
                     
                     <Row xs={1} sm={2} lg={3} xl={5}>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
+                            <img src="/img/LetsTalk-hatten.jpeg"  className="dropShadow rounded personalPhoto" alt="Tim"/>
                             <h5 className="nameOfMember">Dr. Tim Hatten</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -77,7 +82,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
+                            <img src="/img/LetsTalk-jordan.jpeg"  className="dropShadow rounded personalPhoto" alt="Jordan"/>
                             <h5 className="nameOfMember">Jordan Griffin</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -91,7 +96,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg"  className="dropShadow rounded personalPhoto" alt=""/>
+                            <img src="/img/LetsTalk-profile1.jpeg"  className="dropShadow rounded personalPhoto" alt="Ashlyn"/>
                             <h5 className="nameOfMember">Ashlyn Brown</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -105,7 +110,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>  
                         <Col>
-                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
+                            <img src="/img/LetsTalk-profile3.jpeg" className="dropShadow rounded personalPhoto" alt="Gabrielle"/>
                             <h5 className="nameOfMember">Gabrielle Christensen </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -120,7 +125,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/personFiller.jpg" className="dropShadow rounded personalPhoto" alt=""/>
+                            <img src="/img/LetsTalk-profile2.jpeg" className="dropShadow rounded personalPhoto" alt="Hannah"/>
                             <h5 className="nameOfMember">Hannah Brown </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -148,8 +153,9 @@ class AboutUs extends React.Component {
                     <Row><br/></Row>
                 </Container>
             </div>
+            <Footer/>
+            </div>
         </div>
-
         );
     }
 }
