@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Button, Card } from "react-bootstrap";
+import { Button, Card, Container } from "react-bootstrap";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
 import Alert from "react-bootstrap/Alert"
@@ -43,47 +43,50 @@ function SignIn(props) {
       setError(null);
       sessionStorage.setItem("user", JSON.stringify(response));
       setIsLoading(false);
-      props.setLoggedIn(true);
+      props.setLoggedIn(true); //I think what this line is doing is forcing SignIn to re-render?
       setRedirect("/education");
     }
   };
 
   return (
-    <div>
-      {redirect ? <Redirect to={redirect}/> :<Card>
-        <Card.Header variant="primary">
-          <Card.Title>Please Sign In To Access This Page</Card.Title>
-        </Card.Header>
-        <Card.Body>
-        {error && <Alert variant="danger">
-          {error}
-        </Alert>}
-          <Form>
-            <Form.Group controlId="formEmail">
-              <Form.Control
-                type="email"
-                placeholder="Email"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </Form.Group>
-            <Form.Group controlId="formPassword">
-              <Form.Control
-                type="password"
-                placeholder="Password"
-                onChange={(e) => setPassword(e.target.value)}
-              />
-            </Form.Group>
-          </Form>
-        </Card.Body>
-        <Card.Footer>
-          {isLoading ? <Spinner animation="border" variant="primary" />
-            :
-            <Button block variant="primary" onClick={handleSubmit}>
-              Continue
-            </Button>
-          }
-        </Card.Footer>
-      </Card>}
+    <div style={{padding:"50px"}}>
+      {redirect ? <Redirect to={redirect}/> :
+      <Container>
+        <Card bg="secondary">
+          <Card.Header variant="primary">
+            <Card.Title>Please Sign In To Access This Page</Card.Title>
+          </Card.Header>
+          <Card.Body>
+          {error && <Alert variant="danger">
+            {error}
+          </Alert>}
+            <Form>
+              <Form.Group controlId="formEmail">
+                <Form.Control
+                  type="email"
+                  placeholder="Email"
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+              </Form.Group>
+              <Form.Group controlId="formPassword">
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+              </Form.Group>
+            </Form>
+          </Card.Body>
+          <Card.Footer>
+            {isLoading ? <Spinner animation="border" variant="primary" />
+              :
+              <Button block variant="primary" onClick={handleSubmit}>
+                Continue
+              </Button>
+            }
+          </Card.Footer>
+        </Card>
+      </Container>}
     </div>
   );
 }
