@@ -398,16 +398,47 @@ li span {
 {
   width: 100%;
 }
+
+
+.educationPhoto{
+  height: 250px;
+  width: 354px;
+  position: relative;
+  object-fit: cover;
+  background-size: 20% 20%;
+}
+.educationText{
+ /* Text setup */
+}
+/* @medias HOME Page */
+@media only screen and (max-width: 767px)
+{
+.educationText1{
+  display: none;
+}
+
+}
+@media only screen and (min-width: 768px)
+{
+.educationText2{
+  display: none;
+}
+
+
+}
 @media only screen and (max-width: 575px) {
-  .branchLeft {
-    display: none;
-    
-  }
   .branchCentered {
     display: block;
+    width: 330px;
+    margin-left:auto;
+    margin-right:auto;
   }
+  .branchLeft {
+    display: none;
+  }
+  .comunicationPhoto{width: 258px !important;}
 }
-@media only screen and (min-width: 575px) {
+@media only screen and (min-width: 576px) {
   
   .branchLeft {
     display: inline-block;
@@ -417,7 +448,17 @@ li span {
   .branchCentered {
     display: none;
   }
+ 
 }
+@media only screen and (min-width: 900px) {
+  .comunicationPhoto{width: 420px;}
+}
+
+@media only screen and (max-width: 900px) {
+  .educationPhoto{width: 354px}
+  .comunicationPhoto{width:100%}
+}
+
 /* End Home CSS */
 
 /* Begin About Us CSS */
@@ -492,8 +533,7 @@ li span {
     margin-left: auto;
     display:block;
     text-indent: 3ch;
-    text-align: left;
-    
+    text-align: left; 
   }
   .infoWidthComp
   {
@@ -533,13 +573,13 @@ li span {
   }
  
 }
-@media only screen and (min-width: 770px) {
+@media only screen and (min-width: 767px) {
   .mobileMission
   {
     display: none;
   }
 }
-@media only screen and (max-width: 770px) {
+@media only screen and (max-width: 769px) {
   .desktopMission{
     display: none;
   }
@@ -701,3 +741,8 @@ li span {
   }
 
 /* End Education CSS */
+/* Footer */
+.marginFix
+{
+   margin-right: 0px !important;
+}

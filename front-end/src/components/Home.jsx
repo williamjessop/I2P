@@ -24,7 +24,7 @@ class Home extends React.Component {
                             <div style={{height:"400px"}}>
                                 <img
                                 className="bannerPhoto2"
-                                src="/img/priscilla-du-preez-XkKCui44iM0-unsplash.jpg"
+                                src="/img/Coms.jpg"
                                 alt="First slide"
                                 />
                             </div>
@@ -68,34 +68,37 @@ class Home extends React.Component {
                 
                 <Container fluid>
                     <br/>
-                    <Row xs={1} sm={2}>
+                    <Row xs={1}sm={1} md={2}>
                     <Col>
                         <h1>Let's talk about Education</h1>
-                        <p>
-                        Become a force of change in your community by taking a course to educate you 
-                        on violence prevention.
+                        <p className="educationText1">
+                        Become a force of change in your community by taking a course 
+                        to educate you on preventative measures for residents considering 
+                        violent acts. Prevention starts with leaders but require the 
+                        knowledge and skills to help you navigate the violent thoughts 
+                        that your residents may be feeling. Learn more about the resources
+                        available through our program to better equip you to handle the 
+                        situations that may arise on your floor.
                         </p>
                     </Col>
-                    <Col>
-                        <img className="educationPhoto dropShadow rounded" src="/img/education1.jpg" alt="branch graphic" style={{width:"70%"}}/>
+                    <Col className="educationPhotoDrop">
+                        <div classname="imageContainer">
+                            <img className="educationPhoto dropShadow rounded" src="/img/I_Read_A_Book_A_Day.jpg" alt="branch graphic" />
+                        </div>
                     </Col>
                     <Col>
-                        <p>
-                        Become a force of change in your community by taking a course to educate you 
-                        on violence prevention.
+                        <p className="educationText2">
+                        Become a force of change in your community by taking a course 
+                        to educate you on preventative measures for residents considering 
+                        violent acts. Prevention starts with leaders but require the 
+                        knowledge and skills to help you navigate the violent thoughts 
+                        that your residents may be feeling. Learn more about the resources
+                        available through our program to better equip you to handle the 
+                        situations that may arise on your floor.
                         </p>
-                        <p>
-                        Learn more about the resources available through our 
-                        program to better equip you to handle situations that may arise.
-                        </p>
-                    </Col>
-                    <Col>
-                        <p>
-                        Learn more about our program to better equip you to handle sticky situations
-                        </p>
-                        <Button size="lg" href="#/education">Try our certification course!</Button>
                     </Col>
                     </Row>
+                     <Button size="lg" href="#/education">Try our certification course!</Button>
                     <br/>
                     <br/>
                 </Container>
@@ -103,7 +106,10 @@ class Home extends React.Component {
                 <Container className="secondaryBackground" fluid>
                     <br/>
                     <h1> Let's talk about Communication</h1>
-                    <Row xs={2} sm={2}>
+                    <Row xs={1} sm={2}>
+                    <Col>
+                        <img className="comunicationPhoto dropShadow rounded"src="/img/ComsBanner.jpg" alt="preventionimg"/>
+                    </Col>
                     <Col>
                         <p> Start the conversation. An integral part of social awareness
                             begins with communication. We encourage you to reach others 
@@ -111,14 +117,10 @@ class Home extends React.Component {
                             peer-to-peer. Review our resources to help guide you to better 
                             communicate with others, especially those you are concerned about. 
                         </p>
-
-                    </Col>
-                    <Col>
-                        <img className="dropShadow rounded"src="/img/communication1.png" alt="preventionimg" style={{width:"70%"}}/>
+                        <Button size="lg" href="#/education">Link to Reach Out</Button>
                     </Col>
                     </Row>
                     <br/>
-                    <Button size="lg" href="#/education">Link to Reach Out</Button>
                     <Row><br/></Row>
                 </Container>
             </div>

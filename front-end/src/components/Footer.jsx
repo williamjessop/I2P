@@ -5,7 +5,7 @@ class Footer extends React.Component {
     render() {
         return (
             <div>
-                <Row xs={3} sm={3}>
+                <Row xs={3} className="marginFix">
                     <Col>
                     <p>Join Lets Talk to help solve and provent violence and
                          support resident assistants with conflicts </p>
@@ -18,13 +18,6 @@ class Footer extends React.Component {
                     <p>Education</p>
                     <p>Comunication</p>
                     <p>Resources</p>
-                    </Col>
-                    <Col>
-                        <p>This website was made possible by Mesa Digital 
-                            Experince team who are students at Colorado 
-                            Mesa University
-                        </p>
-                        <img src="/img/MDX_logo_Black.svg" alt="mdxlogo" style={{width:"100%", padding:"20px"}}/>
                     </Col>
                 </Row>
                 
