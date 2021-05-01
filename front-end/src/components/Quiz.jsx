@@ -19,14 +19,6 @@ class Quiz extends React.Component {
             user: JSON.parse(sessionStorage.user)
         }
         this.handleSubmit = this.handleSubmit.bind(this);
-        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
-        .then(res => res.json())
-        .then(
-            (result) => {
-                this.setState({pages: result, isLoaded:true});
-                this.handlePaging(0);
-            }
-        );
     }
 
     handlePaging(direction){
@@ -50,7 +42,7 @@ class Quiz extends React.Component {
     }
 
     componentDidMount(){
-        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -70,7 +62,7 @@ class Quiz extends React.Component {
                 <div>
                     <Modal show={show} onHide={handleClose} centered size="xl">
                         <Modal.Header closeButton variant="primary">
-                            <h2>Quiz 1</h2>
+                            <h2>{this.props.quizTitle}</h2>
                         </Modal.Header>
                         <Modal.Body>
                             <h4>Question {this.state.currentPage+1}:</h4>
