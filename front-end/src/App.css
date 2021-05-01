@@ -344,25 +344,6 @@ li span {
 
 /* Begin Footer CSS */
 
-.bgImgCommunication {
-  top: -200px;
-  margin-top: 300px;
-  width: 100%;
-  height: 200%;
-  position: relative;
-  object-fit: cover;
-  z-index: 0;
-  background-size: 100% 100%;
-}
-
-.communicationBodyWrap {
-  top: 100px;
-}
-
-.communicationTest {
-z-index: 100;
-}
-
 /* End Footer CSS */
 
 /* Begin Home CSS */
@@ -765,3 +746,26 @@ z-index: 100;
   }
 
 /* End Education CSS */
+
+/* Begin Communication CSS */
+
+.bgImgCommunication {
+  top: -200px;
+  margin-top: 300px;
+  width: 100%;
+  height: 200%;
+  position: relative;
+  object-fit: cover;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+
+.communicationBodyWrap {
+  top: 100px;
+}
+
+.communicationTest {
+z-index: 100;
+}
+
+/* End Communication CSS */
