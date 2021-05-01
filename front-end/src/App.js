@@ -10,7 +10,7 @@ import Lesson from './components/Lesson';
 import Quiz from './components/Quiz';
 import Footer from './components/Footer';
 import { useState } from 'react';
-import { Switch, Route } from "react-router-dom";
+import { Switch, Route, Redirect } from "react-router-dom";
 import SignInPage from './components/SignInPage';
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
@@ -21,6 +21,7 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
 
   const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
   const [quizName, setQuiz] = useState(null);
@@ -51,13 +52,12 @@ function App() {
           <Prevention />
         </Route>
         <Route exact path='/education'>
-
-          <Education 
+          {(sessionStorage.user) ? <Education 
             setLessonName={setLessonName} 
             setQuiz={setQuiz}
             showSignIn={showSignIn} 
             handleClose={handleCloseSignIn} 
-          />
+          />: <Redirect to="signin"/>}
         </Route>
         <Route path={`/education/${lessonName}`}>
           <Lesson lessonName={lessonName}/>
@@ -72,12 +72,12 @@ function App() {
           <Resources />
         </Route>
         <Route exact path='/signin'>
-          <SignInPage/>
+          <SignInPage setLoggedIn={setLoggedIn}/>
         </Route>
       </Switch>
       <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true}/>
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true} setLoggedIn={setLoggedIn}/>
       <Logout show={showLogout} handleClose={handleCloseLogout}/>
     </div>
   );

@@ -21,10 +21,12 @@ router.get('/', auth, function(req, res) {
 
 //takes the quiz you want to grade as query parameter
 router.post('/grade', auth, function(req, res) {
-    Quiz.findOne({name: req.query.name}).then(async (quiz)=>{
+    Quiz.findOne({name: req.query.name}).then((quiz)=>{
       let score = 0;
       let i = 0;
+
       //Please fix the issue with empty quizzes
+      //I need to loop through the answers in req, not the answers in the quiz
       for(answer of quiz.answers){
         if(answer.correct === req.body.answers[i].answer)
             score+=1;
@@ -35,11 +37,19 @@ router.post('/grade', auth, function(req, res) {
 
       recordName = "appData." + req.query.name
 
-      response = await User.updateOne({ email: req.body.user }, {$set: {[recordName]: score}});
+      User.findOneAndUpdate({ email: req.body.user }, {$set: {[recordName]: score}}, {new: true, useFindAndModify: true}, (err, doc)=>{
+        if(err){
+          console.log(err)
+          //this would be where to return errors
+        }
 
-      res.status(200).json({
-          score: score
+        res.status(200).json({
+          user: doc
+        });
       });
+
+
+      
     })
 });
 

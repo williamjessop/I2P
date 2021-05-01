@@ -35,10 +35,7 @@ class Quiz extends React.Component {
         }
 
         axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, body, {headers:{"x-auth-token": this.state.user.token}})
-        .then(res => {
-            console.log(res);
-            console.log(typeof(res.data));
-        })
+        .then(res => sessionStorage.setItem("user", JSON.stringify(res.data.user)))
     }
 
     componentDidMount(){
