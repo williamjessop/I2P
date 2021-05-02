@@ -1,6 +1,7 @@
 import React from 'react';
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+import axios from "axios"
 
 const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
@@ -24,6 +25,8 @@ class Lesson extends React.Component {
     }
 
     handlePaging(direction){
+        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
+        .then(res => sessionStorage.setItem("user", JSON.stringify(res.data.user)))
         this.setState((state)=>{
             return {currentPage: state.currentPage+direction}
         });
