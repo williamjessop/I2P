@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 858.81 705.22">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+      }
+
+      .cls-2 {
+        clip-path: url(#clip-path);
+      }
+
+      .cls-3, .cls-4, .cls-5 {
+        fill: #fff;
+      }
+
+      .cls-3 {
+        opacity: 0.08;
+      }
+
+      .cls-4 {
+        opacity: 0.25;
+      }
+
+      .cls-4, .cls-5 {
+        isolation: isolate;
+      }
+
+      .cls-5 {
+        opacity: 0.5;
+      }
+    </style>
+    <clipPath id="clip-path">
+      <rect class="cls-1" y="213.55" width="588.57" height="270.13"/>
+    </clipPath>
+  </defs>
+  <title>BannerScreen</title>
+  <g id="Layer_2" data-name="Layer 2">
+    <g id="Layer_1-2" data-name="Layer 1">
+      <g class="cls-2">
+        <rect class="cls-3" y="213.55" width="588.57" height="270.13"/>
+        <circle id="Ellipse_6" data-name="Ellipse 6" class="cls-4" cx="506.21" cy="352.61" r="352.61"/>
+        <circle id="Ellipse_5" data-name="Ellipse 5" class="cls-4" cx="506.21" cy="352.61" r="274.49"/>
+        <circle id="Ellipse_4" data-name="Ellipse 4" class="cls-5" cx="506.21" cy="352.61" r="218.44"/>
+        <circle id="Ellipse_4-2" data-name="Ellipse 4" class="cls-5" cx="506.21" cy="352.61" r="155.84"/>
+      </g>
+    </g>
+  </g>
+</svg>

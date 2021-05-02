@@ -4,6 +4,7 @@ import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Communication from './components/Communication';
 import Resources from './components/Resources';
+import Prevention from './components/Prevention';
 import Education from './components/Education';
 import Lesson from './components/Lesson';
 import Quiz from './components/Quiz';
@@ -73,6 +74,10 @@ function App() {
         <Route exact path='/resources'>
           <Resources />
           <Footer />
+        </Route>
+        <Route exact path='/prevention'>
+          <Prevention />
+          <Footer/>
         </Route>
         <Route exact path='/signin'>
           <SignInPage setLoggedIn={setLoggedIn} />
