@@ -1,26 +1,85 @@
+/* Template Pieces */
+
+.primaryBackground {
+  background-color: #FFFEF5 !important;
+}
+
+.secondaryBackground {
+  background-color: #e8dfd0;
+}
+
+.transparentBackground {
+  background-color: transparent;
+}
+
+.primaryColor {
+  color: #212529;
+}
+
+.secondaryColor {
+  color: #7da27f;
+}
+
+.hoverColor {
+  color: #628067;
+}
+
 /* Hide scrollbar for Chrome, Safari and Opera */
+
 body::-webkit-scrollbar {
   display: none;
 }
 
 /* Hide scrollbar for IE, Edge and Firefox */
-body {
-  -ms-overflow-style: none;  /* IE and Edge */
-  scrollbar-width: none;  /* Firefox */
-}
 
-#standard-nav-spacing {
-  position: relative;
-  height: 56px;
-  width: 100%;
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */
 }
 
 .App {
   text-align: center;
   background-color: #FFFEF5;
 }
+
 .dropShadow {
   box-shadow: 0px 10px 10px #0000001f
+}
+
+.btn-primary {
+  background-color: #7DA27F;
+  color: white;
+  border: 1px solid #7DA27F;
+  border-radius: 4px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+
+.bannerShader {
+  position: relative;
+  top: -800px;
+  background-color: rgba(75, 75, 75, 0.25);
+  width: 100%;
+  height: 100%;
+}
+
+.pageSplit {
+  color: transparent;
+  background-color: transparent;
+  height: 25px;
+  width: 100%;
+}
+
+/* Begin Nav Bar CSS */
+
+#standard-nav-spacing {
+  position: relative;
+  height: 56px;
+  width: 100%;
 }
 
 .nav-wrap {
@@ -46,8 +105,8 @@ body {
   background-color: transparent;
   border-radius: 12px;
   border: 1px solid;
-  color: rgba(0,0,0,.5);
-  border-color: rgba(0,0,0,.1);
+  color: rgba(0, 0, 0, .5);
+  border-color: rgba(0, 0, 0, .1);
 }
 
 #btn-nav-profile {
@@ -93,7 +152,6 @@ body {
   font-family: Papyrus, fantasy;
   margin-left: 3px;
   font-size: 30px;
-
 }
 
 @media only screen and (max-width: 350px) {
@@ -101,7 +159,6 @@ body {
     transform: scale(0.8);
     left: 5px;
   }
-
   #btn-nav-collapse {
     transform: scale(0.8);
     left: -7px;
@@ -112,27 +169,21 @@ body {
   .collapse-nav {
     display: none !important;
   }
-
   #btn-nav-collapse {
     display: inline-block;
   }
-
   #img-nav-logo {
     left: 60px;
   }
-
   .nav-intro-image {
     display: none;
   }
-
   .nav-outro-image {
     display: none;
   }
-
   .nav-mobile-image {
     display: inline-block;
   }
-
   .lets-colon {
     display: none;
   }
@@ -159,13 +210,23 @@ li a {
   text-decoration: none;
 }
 
+li span {
+  display: block;
+  text-align: center;
+  padding-top: 7px;
+  padding-right: 8px;
+  text-decoration: none;
+}
+
 /* The container <div> - needed to position the dropdown content */
+
 .nav-dropdown {
   position: relative;
   float: right;
 }
 
 /* Dropdown Content (Hidden by Default) */
+
 .nav-dropdown-content {
   display: none;
   position: absolute;
@@ -173,11 +234,12 @@ li a {
   right: 0px;
   background-color: #FFFEF5;
   min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 5;
 }
 
 /* Links inside the dropdown */
+
 .nav-dropdown-content a {
   color: #212529;
   padding: 12px 16px;
@@ -185,52 +247,31 @@ li a {
   display: block;
 }
 
+.nav-dropdown-content span {
+  color: #212529;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
 /* Change color of dropdown links on hover */
-.nav-dropdown-content a:hover {background-color: #FFFEF5}
+
+.nav-dropdown-content a:hover {
+  background-color: #FFFEF5
+}
+
+.nav-dropdown-content span:hover {
+  background-color: #FFFEF5
+}
 
 /* Show the dropdown menu on hover */
+
 .nav-dropdown:hover .nav-dropdown-content {
   display: block;
 }
 
 .nav-active {
   text-decoration: underline;
-}
-
-.primaryBackground {
-  background-color: #FFFEF5
-}
-
-.secondaryBackground {
-  background-color: #e8dfd0;
-}
-
-.primaryColor {
-  color: #212529;
-}
-
-.secondaryColor {
-  color: #7da27f;
-}
-
-.btn-primary {
-  background-color: #7DA27F;
-  color: white;
-  border: 1px solid #7DA27F;
-  border-radius: 4px;
-  padding-left: 12px;
-  padding-right: 12px;
-  padding-top: 6px;
-  padding-bottom: 6px;
-}
-
-.branchGraphic1 {
-  width: 50%;
-}
-
-.branchGraphic2 {
-  width: 20%;
-  transform: rotate(5deg);
 }
 
 .sidebar {
@@ -243,17 +284,29 @@ li a {
   background-color: #FFF9E5;
   transition: left 300ms ease-out;
 }
+
 .sidebar.active {
   left: 0;
 }
+
 .sidebar ul {
   margin: 0;
   padding: 0;
 }
+
 .sidebar li {
   list-style: none;
 }
+
 .sidebar li a {
+  font-size: 18px;
+  text-decoration: none;
+  padding: 10px;
+  display: flex;
+  color: #212529;
+}
+
+.sidebar li span {
   font-size: 18px;
   text-decoration: none;
   padding: 10px;
@@ -276,100 +329,6 @@ li a {
 .nav-sidebar-text-container:hover {
   text-decoration: underline 2px;
 }
-
-/* About Us */
-.bgimg {
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: 0;
-  background-size: 100% 100%;
-}
-.bgoverlay {
-  z-index: 9;
-}
-.blurWidth{
-  height:100px;
-  margin-right: auto;
-  margin-left: auto;
-}
-
-.secondary {
-  background-color: #e8dfd0 !important;
-}
-.memberRowDescription {
-  margin-right: auto;
-  margin-left: auto;
-}
-  .descriptionOfMember {
-    text-indent: 3ch;
-    text-align: left;
-  }
-  .nameOfMember {
-    display:block;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .personalPhoto {
-    width: 230px;
-  }
-  .memberWidth {
-    width: 230px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .compWidth {
-    width: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .infoWidth {
-    width: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-right: auto;
-    margin-left: auto;
-    display:block;
-  }
-  .titleNames
-  {
-    width: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-
-@media only screen and (min-width: 750px) {
-.logoBanner {
-    width: 330px !important;
-  } 
-  .compWidth {
-    width: 750px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .infoWidth {
-    width: 750px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-}
-@media only screen and (max-width: 575px) {
-  .memberWidth {
-    width: auto;
-    padding-right: 20px;
-    padding-left: 20px;
-    margin-right: auto;
-    margin-left: auto;
-  }
-  .descriptionOfMember {
-    text-indent: 3ch;
-    text-align: center;
-  }
-  }
 
 .sidebarScreen.active {
   z-index: -1;
@@ -395,145 +354,606 @@ li a {
   padding-left: 10px;
 }
 
+.nav-text-container:hover {
+  color: #628067;
+  text-decoration: underline;
+}
+
+/* End Nav Bar CSS */
+
+/* Begin Home CSS */
+
+.carouselWidth {
+  padding: 0px !important;
+}
+
+.bannerPhoto1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 30%;
+}
+
+.bannerPhoto2 {
+  width: 110%;
+  height: 100%;
+  background-size: 100% 90%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 60%;
+}
+
+.bannerPhoto3 {
+  width: 100%;
+  height: 100%;
+  background-size: 80% 80%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 90%;
+}
+
+.bgCarousel {
+  z-index: 0;
+  height: 400px;
+}
+
+.Overlay {
+  z-index: 9 !important;
+}
+
+.branchGraphic1 {
+  width: 50%;
+}
+
+.branchLeft {
+  left: 200;
+  width: 20%;
+  transform: rotate(5deg);
+  float: left;
+}
+
+.branchRight {
+  left: 200;
+  width: 20%;
+  transform: rotate(175deg);
+  float: right;
+}
+
+.branchCentered {
+  width: 20%;
+  float: center;
+}
+
+.branchGraphic2 {
+  width: 20%;
+  transform: rotate(5deg);
+}
+
+.branchScale {
+  width: 100%;
+}
+
+.educationPhoto {
+  height: 250px;
+  width: 354px;
+  position: relative;
+  object-fit: cover;
+  background-size: 20% 20%;
+}
+
+.educationText{
+ /* Text setup */
+}
+
+/* @medias HOME Page */
+
+@media only screen and (max-width: 767px) {
+  .educationText1 {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .educationText2 {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .branchCentered {
+    display: block;
+    width: 330px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .branchLeft {
+    display: none;
+  }
+  .brarnchRight {
+    display: none;
+  }
+  .comunicationPhoto {
+    width: 258px !important;
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .branchLeft {
+    display: inline-block;
+    width: 330px;
+    left: 200px;
+  }
+  .branchRight {
+    display: inline-block;
+    width: 330px;
+    left: 200px;
+  }
+  .branchCentered {
+    display: none;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  .comunicationPhoto {
+    width: 420px;
+  }
+}
+
+@media only screen and (max-width: 900px) {
+  .educationPhoto {
+    width: 354px
+  }
+  .comunicationPhoto {
+    width: 100%
+  }
+}
+
+/* End Home CSS */
+
+/* Begin About Us CSS */
+
+.bgimg {
+  width: 100%;
+  height: 130%;
+  position: absolute;
+  object-fit: cover;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+
+.bgoverlay {
+  z-index: 9;
+}
+
+.footerfix {
+  position: relative;
+}
+
+.blurWidth {
+  height: 100px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.secondary {
+  background-color: #e8dfd0 !important;
+}
+
+.memberRowDescription {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.descriptionOfMember {
+  text-indent: 3ch;
+  text-align: left;
+}
+
+.nameOfMember {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  width: 230px;
+}
+
+.personalPhoto {
+  width: 230px;
+  height: 230px;
+}
+
+.memberWidth {
+  width: 230px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.compWidth {
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.infoWidth {
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+.infoWidthMission {
+  float: left;
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  text-indent: 3ch;
+  text-align: left;
+}
+
+.infoWidthComp {
+  float: left;
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+  text-indent: 3ch;
+  text-align: left;
+}
+
+.titleNames {
+  width: auto;
+  padding-right: 20px;
+  padding-left: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media only screen and (min-width: 750px) {
+  .logoBanner {
+    width: 330px !important;
+  }
+  .compWidth {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .infoWidth {
+    width: 750px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+}
+
+@media only screen and (min-width: 767px) {
+  .mobileMission {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 769px) {
+  .desktopMission {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 575px) {
+  .memberWidth {
+    width: auto;
+    padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
+  }
+  .descriptionOfMember {
+    text-indent: 3ch;
+    text-align: center;
+  }
+}
+
+/* End About Us CSS */
+
+/* Begin Prevention CSS  */
+.preventionPhoto1 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 65%;
+}
+
+.preventionPhoto2 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 50%;
+}
+
+.preventionPhoto3 {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  object-fit: cover;
+  object-position: 100% 50%;
+}
+
+.preventionBannerText {
+  font-size: 2.5em;
+  margin: auto;
+  position: relative;
+  width: 75%;
+  z-index: 2;
+  top: -350px;
+  color: white;
+  text-shadow: 0px 10px 10px #0000001f;
+}
+
+.preventionLetsTalk {
+  font-size: inherit;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.preventionPrevention {
+  top: -65px;
+  position: relative;
+  font-size: inherit;
+  float: left;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.preventionUnity {
+  position: relative;
+  font-size: inherit;
+  float: right;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+@media only screen and (max-width: 765px) {
+  .preventionBannerText {
+    font-size: 2em;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .preventionBannerText {
+    font-size: 1.4em;
+  }
+}
+
+ /* End Prevention CSS */
+
 /* Begin Education CSS */
 
-  .dash-lesson {
+.dash-lesson {
+  width: 100%;
+}
+
+.dash-title {
+  padding: 50px;
+}
+
+.dash-lesson-progress-container {
+  text-align: right;
+}
+
+.dash-lesson-card {
+  margin-top: 25px !important;
+  margin-bottom: 25px !important;
+  position: relative;
+  align-self: center;
+  width: 90%;
+  padding: 10px;
+  max-width: 1000px;
+  margin: auto;
+}
+
+.dash-lesson-card-content {
+  display: flex;
+  padding: 10px;
+}
+
+.dash-lesson-button {
+  width: 175px;
+}
+
+.dash-lesson-title {
+  height: 80%;
+  margin: auto;
+  align-content: flex-start;
+  width: 80%;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.dash-lesson-header {
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+}
+
+.dash-lesson-content {
+  border: 1px solid black;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+.dash-lesson-progress-container {
+  text-align: center;
+  align-content: center;
+  position: relative;
+  align-self: flex-end;
+  width: 200px;
+  border: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.dash-lesson-title-button-container {
+  font-size: 20px;
+  width: 20%;
+}
+
+.dash-lesson-description {
+  width: 80%;
+  font-size: 14px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+.dash-lesson-description-button-container {
+  width: 20%;
+}
+
+.dash-lesson-title-button {
+  font-size: 24px;
+  border-radius: 10px;
+}
+
+.dash-lesson-description-button {
+  font-size: 18px;
+  border-radius: 10px;
+}
+
+@media only screen and (max-width: 1035px) {
+  .dash-lesson-button {
+    width: 125px;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  .dash-lesson-card-content {
+    display: inline-block;
+  }
+  .dash-lesson-title {
+    padding-bottom: 10px;
+  }
+  .dash-lesson-description {
+    width: 100%;
+    text-align: center;
+    padding-right: 0px;
+    padding-bottom: 10px;
+  }
+  .dash-lesson-title-button-container {
+    margin: auto;
+    width: 80%;
+  }
+  .dash-lesson-description-button-container {
+    margin: auto;
+    width: 80%;
+  }
+  .dash-lesson-button {
     width: 100%;
   }
+}
 
-  .dash-title {
-    padding: 50px;
-  }
-
-  .dash-lesson-progress-container {
-    text-align: right;
-  }
-
-  .dash-lesson-card {
-    margin-top: 25px !important;
-    margin-bottom: 25px !important;
-    position: relative;
-    align-self: center;
-    width: 90%;
-    padding: 10px;
-    max-width: 1000px;
-    margin: auto;
-  }
-
-  .dash-lesson-card-content {
-    display: flex;
-    padding: 10px;
-  }
-
-  .dash-lesson-button {
-    width: 175px;
-  }
-
+@media only screen and (max-width: 500px) {
   .dash-lesson-title {
-    height: 80%;
-    margin: auto;
-    align-content: flex-start;
-    width: 80%;
-    font-size: 30px;
-    font-weight: 800;
+    font-size: 16px;
   }
-
-  .dash-lesson-header {
-    border: 1px solid black;
-    border-top-left-radius: 10px;
-  }
-
-  .dash-lesson-content {
-    border: 1px solid black;
-    border-bottom-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-  }
-
-  .dash-lesson-progress-container {
-    text-align: center;
-    align-content: center;
-    position: relative;
-    align-self: flex-end;
-    width: 200px;
-    border: 1px solid black;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
-  }
-
-  .dash-lesson-title-button-container {
-    font-size: 20px;
-    width: 20%;
-  }
-
   .dash-lesson-description {
-    width: 80%;
-    font-size: 14px;
-    text-align: left;
-    padding-right: 30px;
+    font-size: 12px;
   }
-
-  .dash-lesson-description-button-container {
-    width: 20%;
-  }
-
-  .dash-lesson-title-button {
-    font-size: 24px;
-    border-radius: 10px;
-  }
-
-  .dash-lesson-description-button {
-    font-size: 18px;
-    border-radius: 10px;
-  }
-
-  @media only screen and (max-width: 1035px) {
-    .dash-lesson-button {
-      width: 125px;
-    }
-  }
-
-  @media only screen and (max-width: 750px) {
-    .dash-lesson-card-content {
-      display: inline-block;
-    }
-
-    .dash-lesson-title {
-      padding-bottom: 10px;
-    }
-
-    .dash-lesson-description {
-      width: 100%;
-      text-align: center;
-      padding-right: 0px;
-      padding-bottom: 10px;
-    }
-
-    .dash-lesson-title-button-container {
-      margin: auto;
-      width: 80%;
-    }
-
-    .dash-lesson-description-button-container {
-      margin: auto;
-      width: 80%;
-    }
-
-    .dash-lesson-button {
-      width: 100%;
-    }
-  }
-
-  @media only screen and (max-width: 500px) {
-    .dash-lesson-title {
-      font-size: 16px;
-    }
-
-    .dash-lesson-description {
-      font-size: 12px;
-    }
-  }
-
+}
 
 /* End Education CSS */
+
+/* Begin Communication CSS */
+
+.bgImgCommunication {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position-y: center;
+  
+  position: relative;
+  object-fit: cover;
+  z-index: 0;
+  background-size: 100% 100%;
+}
+
+.communicationBodyWrap {
+  top: 100px;
+}
+
+.communicationTest {
+  z-index: 100;
+}
+
+.branchLeftComms {
+  left: 200;
+  width: 300px;
+  transform: rotate(5deg);
+  float: left;
+}
+
+.branchRightComms {
+  left: 200;
+  width: 300px;
+  transform: rotate(175deg);
+  float: right;
+}
+
+@media only screen and (max-width: 1200px) {
+  .branchLeftComms {
+    width: 200px;
+  }
+  .branchRightComms {
+    width: 200px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .branchLeftComms {
+    width: 100px;
+  }
+  .branchRightComms {
+    width: 100px;
+  }
+  #commsPaddingRight {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 770px) {
+  .branchLeftComms {
+    display: none;
+  }
+  .branchRightComms {
+    display: none;
+  }
+}
+
+/* End Communication CSS */
+
+/* Begin Footer CSS */
+
+.marginFix {
+  margin-right: 0px !important;
+}
+.vl {
+  border-left: 1px solid #7DA27F;
+  height: 100%;
+  display:"inline";
+  float: left;
+  padding-left: 15px;
+}
+.hl
+{
+  border-top: 1px solid #7DA27F;
+  width: 96%;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* End Footer CSS */

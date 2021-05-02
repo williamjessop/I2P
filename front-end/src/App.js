@@ -3,8 +3,8 @@ import Navigation from './components/Navigation';
 import Home from './components/Home';
 import AboutUs from './components/AboutUs';
 import Communication from './components/Communication';
-import Prevention from './components/Prevention';
 import Resources from './components/Resources';
+import Prevention from './components/Prevention';
 import Education from './components/Education';
 import Lesson from './components/Lesson';
 import Quiz from './components/Quiz';
@@ -23,7 +23,7 @@ function App() {
   const [showLogout, setShowLogout] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false); //DO NOT REMOVE THIS UNUSED STATE VAR, THIS MAKES THE LOGIN PAGE WORK
 
-  const [lessonName, setLessonName] = useState({lessonName: "Lesson1"});
+  const [lessonName, setLessonName] = useState({ lessonName: "Lesson1" });
   const [quizName, setQuiz] = useState(null);
 
   const handleCloseSignUp = () => setShowSignUp(false);
@@ -35,7 +35,7 @@ function App() {
 
   return (
     <div className="App">
-      <Navigation 
+      <Navigation
         handleShowLogout={handleShowLogout}
         handleShowSignIn={handleShowSignIn}
         handleShowSignUp={handleShowSignUp}
@@ -44,41 +44,49 @@ function App() {
       <Switch>
         <Route exact path='/'>
           <Home />
+          <Footer />
         </Route>
         <Route exact path='/about-us'>
           <AboutUs />
         </Route>
-        <Route exact path='/prevention'>
-          <Prevention />
-        </Route>
         <Route exact path='/education'>
-          {(sessionStorage.user) ? <Education 
-            setLessonName={setLessonName} 
+          {(sessionStorage.user) ? <Education
+            setLessonName={setLessonName}
             setQuiz={setQuiz}
-            showSignIn={showSignIn} 
-            handleClose={handleCloseSignIn} 
-          />: <Redirect to="signin"/>}
+            showSignIn={showSignIn}
+            handleClose={handleCloseSignIn}
+          /> : <Redirect to="signin" />}
+          <Footer />
+
         </Route>
         <Route path={`/education/${lessonName}`}>
-          <Lesson lessonName={lessonName} setLessonName={setLessonName}/>
+          <Lesson lessonName={lessonName} />
+          <Footer />
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />
+          <Footer />
         </Route>
         <Route exact path='/communication'>
           <Communication />
+          <Footer />
         </Route>
         <Route exact path='/resources'>
           <Resources />
+          <Footer />
+        </Route>
+        <Route exact path='/prevention'>
+          <Prevention />
+          <Footer/>
         </Route>
         <Route exact path='/signin'>
-          <SignInPage setLoggedIn={setLoggedIn}/>
+          <SignInPage setLoggedIn={setLoggedIn} />
+          <Footer />
         </Route>
       </Switch>
-      <Footer/>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true} setLoggedIn={setLoggedIn}/>
-      <Logout show={showLogout} handleClose={handleCloseLogout}/>
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true} setLoggedIn={setLoggedIn} />
+      <Logout show={showLogout} handleClose={handleCloseLogout} />
     </div>
   );
 }
