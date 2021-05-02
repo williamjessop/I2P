@@ -59,22 +59,22 @@ exports.signin = (req, res) => {
   let { email, password } = req.body;
   let errors = [];
   if (!email) {
-    errors.push({ email: "required" });
+    errors.push({ error: "required" });
   }
-  if (!emailRegexp.test(email)) {
-    errors.push({ email: "invalid email" });
+  else if (!emailRegexp.test(email)) {
+    errors.push({ error: "invalid email" });
   }
-  if (!password) {
-    errors.push({ password: "required" });
+  else if (!password) {
+    errors.push({ error: "required" });
   }
-  if (errors.length > 0) {
+  else if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
   }
   User.findOne({ email: email })
     .then((user) => {
       if (!user) {
         return res.status(404).json({
-          errors: [{ user: "not found" }],
+          errors: [{ error: "Incorrect Email or Password" }],
         });
       } else {
         bcrypt
@@ -83,7 +83,7 @@ exports.signin = (req, res) => {
             if (!isMatch) {
               return res
                 .status(400)
-                .json({ errors: [{ password: "incorrect" }] });
+                .json({ errors: [{ error: "Incorrect Email or Password" }] });
             }
             let access_token = createJWT(user.email, user._id, "10h");
             jwt.verify(

@@ -1,8 +1,9 @@
 import React from 'react';
 import Col from "react-bootstrap/Col"
 import Button from "react-bootstrap/Button"
+import axios from "axios"
 
-const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
 class Lesson extends React.Component {
     constructor(props){
@@ -14,6 +15,7 @@ class Lesson extends React.Component {
     }
 
     componentDidMount(){
+        this.setState({user: JSON.parse(sessionStorage.getItem("user"))})
         fetch(`${urlBase}/lesson?lessonName=${this.props.lessonName}`)
         .then(res => res.json())
         .then(
@@ -25,8 +27,21 @@ class Lesson extends React.Component {
 
     handlePaging(direction){
         this.setState((state)=>{
+            let body = {
+                user: this.state.user.user,
+                page: this.state.currentPage+1,
+                lessonNumber: this.props.lessonName.slice(6)
+            };
+
+            axios.post(`${urlBase}/lesson/updateProgress`, body, {headers:{"x-auth-token": this.state.user.token}})
+            .then(res => { 
+                sessionStorage.setItem("user", JSON.stringify(res.data.user));
+                this.setState({user: res.data.user});
+            });
+        
             return {currentPage: state.currentPage+direction}
         });
+        
     };
 
     render() {

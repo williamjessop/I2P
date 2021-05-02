@@ -9,13 +9,15 @@ var UserSchema = new Schema(
         firstName: { type: String, required: false, max: 30 },
         lastName: { type: String, required: false, max: 30 },
         appData: {
-            lessonProgress: [{name: String, progress: Number}],
-            quizAttempts: [{name: String, scores: [Number]}]
+            lessonProgress: [{progress: Number}],
+            Quiz1: Number,
+            Quiz2: Number
         }
     },
     {
         timestamps: true,
         collection: 'users',
+        strict: false
      }
 );
 

@@ -5,7 +5,7 @@ import Form from "react-bootstrap/Form"
 import Col from "react-bootstrap/Col"
 import axios from "axios"
 
-const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
 class Quiz extends React.Component {
     //fetch the state from the DB
@@ -16,6 +16,7 @@ class Quiz extends React.Component {
             answers: [],
             currentPage: 0,
             isLoaded: false,
+            user: JSON.parse(sessionStorage.user)
         }
         this.handleSubmit = this.handleSubmit.bind(this);
     }
@@ -27,21 +28,18 @@ class Quiz extends React.Component {
     };
 
     handleSubmit(){
-        let currentAnswers = {answers:[]};
+        let body = {answers:[], user:this.state.user.user};
         
         for(let i = 0; i < this.state.answers.length; i+=1){
-            currentAnswers.answers[i] = {"id": i, "answer": this.state.answers[i]};
+            body.answers[i] = {"id": i, "answer": this.state.answers[i]};
         }
 
-        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, currentAnswers, {headers:{"x-auth-token": this.props.user.token}})
-        .then(res => {
-            console.log(res);
-            console.log(typeof(res.data));
-        })
+        axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, body, {headers:{"x-auth-token": this.state.user.token}})
+        .then(res => sessionStorage.setItem("user", JSON.stringify(res.data.user)))
     }
 
     componentDidMount(){
-        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.props.user.token}})
+        fetch(`${urlBase}/quiz?name=${this.props.quiz}`, {headers:{"x-auth-token": this.state.user.token}})
         .then(res => res.json())
         .then(
             (result) => {
@@ -61,7 +59,7 @@ class Quiz extends React.Component {
                 <div>
                     <Modal show={show} onHide={handleClose} centered size="xl">
                         <Modal.Header closeButton variant="primary">
-                            <h2>Quiz 1</h2>
+                            <h2>{this.props.quizTitle}</h2>
                         </Modal.Header>
                         <Modal.Body>
                             <h4>Question {this.state.currentPage+1}:</h4>

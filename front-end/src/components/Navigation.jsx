@@ -19,8 +19,6 @@ function Navigation(props) {
   const showSidebar = () => setSidebar(!sidebar);
   const showSidebarScreen = () => setSidebarScreen(!sidebarScreen);
 
-  //{(props.user) &&}
-
   return (
     <div>
       <div className={sidebarScreen ? "sidebarScreen active" : "sidebarScreen"} onClick={function (event) { showSidebar(); showSidebarScreen() }}></div>
@@ -59,9 +57,9 @@ function Navigation(props) {
         <div className="nav-dropdown">
           <button className="primaryBackground primaryColor" id="btn-nav-profile"><Icon.PersonCircle fontSize="2rem" /></button>
           <div className="nav-dropdown-content">
-            {(!props.user) && <Button variant="link" onClick={props.handleShowSignUp}>Sign Up</Button>}
-            {(!props.user) && <Button variant="link" onClick={props.handleShowSignIn}>Sign In</Button>}
-            {(props.user) && <Button variant="link" onClick={props.handleShowLogout}>Logout</Button>}
+            {(!sessionStorage.user) && <Button variant="link" onClick={props.handleShowSignUp}>Sign Up</Button>}
+            {(!sessionStorage.user) && <Button variant="link" onClick={props.handleShowSignIn}>Sign In</Button>}
+            {(sessionStorage.user) && <Button variant="link" onClick={props.handleShowLogout}>Logout</Button>}
           </div>
         </div>
 

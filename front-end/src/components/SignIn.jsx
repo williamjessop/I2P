@@ -2,8 +2,10 @@ import React, { useState } from "react";
 import { Button, Modal } from "react-bootstrap";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
+import Alert from "react-bootstrap/Alert"
+import Spinner from "react-bootstrap/Spinner"
 
-const urlBase = process.env.NODE_ENV === 'production' ? '100.26.231.32:80' : 'http://localhost:8000'
+const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
 async function signInUser(info) {
   return fetch(urlBase+"/auth/signin", {
@@ -12,33 +14,48 @@ async function signInUser(info) {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(info),
-  }).then((data) => data.json());
+  }).then(
+    (data) => data.json(),
+    (error) => error
+  );
 }
 
 function SignIn(props) {
   const [email, setEmail] = useState();
   const [password, setPassword] = useState();
+  const [error, setError] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const user = await signInUser({ email, password });
-    props.setUser(user);
-    //check if login was successful
 
-    //display toast about login
+    setIsLoading(true);
+    
+    const response = await signInUser({ email, password });
 
-    //Close Modal
-    props.handleClose();
+    if(response.errors){
+      console.log(response.errors);
+      setError(response.errors[0].error);
+      setIsLoading(false);
+    }else{
+      setError(null);
+      sessionStorage.setItem("user", JSON.stringify(response));
+      setIsLoading(false);
+      props.handleClose();
+    }
   };
 
   return (
     <div>
       <p>{props.show}</p>
-      <Modal show={props.show} onHide={props.handleClose} centered>
-        <Modal.Header closeButton variant="primary">
+      <Modal show={props.show} onHide={props.handleClose} centered backdrop="static">
+        <Modal.Header closeButton={props.showClose} variant="primary">
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
+        {error && <Alert variant="danger">
+          {error}
+        </Alert>}
           <Form>
             <Form.Group controlId="formEmail">
               <Form.Control
@@ -57,9 +74,12 @@ function SignIn(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          <Button block variant="primary" onClick={handleSubmit}>
-            Continue
-          </Button>
+          {isLoading ? <Spinner animation="border" variant="primary" />
+            :
+            <Button block variant="primary" onClick={handleSubmit}>
+              Continue
+            </Button>
+          }
         </Modal.Footer>
       </Modal>
     </div>
