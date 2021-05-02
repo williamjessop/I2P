@@ -17,21 +17,9 @@ router.post('/updateProgress', async (req, res) => {
   user = await User.findOne({ email: req.body.user });
   user.appData.lessonProgress[req.body.lessonNumber] = {"progress": req.body.page};
   console.log(user);
-  user.save().then((savedUser)=>{
+  user.update().then((savedUser)=>{
     res.send(savedUser);
   });
-  // recordName = `appData.lessonProgress.${req.body.lessonNumber}.progress`;
-  // User.findOneAndUpdate({ email: req.body.user }, {$set: {[recordName]: req.body.page}}, {new: true, useFindAndModify: true}, (err, doc)=>{
-  //   if(err){
-  //     console.log(err)
-  //     //this would be where to return errors
-  //   }
-
-  //   res.status(200).json({
-  //     user: doc
-  //   });
-  // });
-
 });
 
 //takes name as query param
