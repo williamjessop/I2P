@@ -8,7 +8,7 @@ import Footer from '../components/Footer';
 class AboutUs extends React.Component {
     render() {
         return ( 
-        <div>   
+        <div className="primaryBackground">   
             <div className="bgimg" style={{backgroundImage: `url("/img/nazar-hrabovyi-lIuxlN0zSjs-unsplash.jpg")`}}>
             <div className="bgoverlay">
                 <br/>

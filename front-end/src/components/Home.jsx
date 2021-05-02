@@ -8,17 +8,19 @@ class Home extends React.Component {
     render() {
         
         return (
-            <div>
-                
-
+            <div className="primaryBackground">
                 <Container className="bgCarousel carouselWidth" fluid>
                     <Carousel controls={false} indicators={false}>
                         <Carousel.Item>
                             <div style={{height:"400px"}}>
                                 <img className="bannerPhoto1"src="/img/helena-lopes-PGnqT0rXWLs-unsplash.jpg"alt="First slide"/>
                             </div>
-                            <h3  style={{color:"black"}}>Lets Talk: </h3>
-                            <h3  style={{color:"black"}}>Violence Prevention </h3>
+                            <div className="bannerShader"></div>
+                            <div className="preventionBannerText">
+                        <p className="preventionLetsTalk">Lets Talk:</p>
+                        <p className="preventionPrevention">Prevention...</p>
+                        <p className="preventionUnity">...Unity</p>
+                         </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div style={{height:"400px"}}>
@@ -28,7 +30,11 @@ class Home extends React.Component {
                                 alt="First slide"
                                 />
                             </div>
-                            <h3 className="bannerOverlay"style={{color:"black"}}>Banner Image 2</h3>
+                            <div className="preventionBannerText">
+                        <p className="preventionLetsTalk">Lets Talk:</p>
+                        <p className="preventionPrevention">Prevention...</p>
+                        <p className="preventionUnity">...Unity</p>
+                         </div>
                         </Carousel.Item>
                         <Carousel.Item>
                             <div style={{height:"400px"}}>
@@ -38,7 +44,11 @@ class Home extends React.Component {
                                 alt="First slide"
                                 />
                             </div>
-                            <h3 className="bannerOverlay"style={{color:"black"}}>Banner Image 3</h3>
+                            <div className="preventionBannerText">
+                            <p className="preventionLetsTalk">Lets Talk:</p>
+                            <p className="preventionPrevention">Prevention...</p>
+                            <p className="preventionUnity">...Unity</p>
+                            </div>
                         </Carousel.Item>
                     </Carousel>
                 </Container>
@@ -82,9 +92,7 @@ class Home extends React.Component {
                         </p>
                     </Col>
                     <Col className="educationPhotoDrop">
-                        <div classname="imageContainer">
                             <img className="educationPhoto dropShadow rounded" src="/img/I_Read_A_Book_A_Day.jpg" alt="branch graphic" />
-                        </div>
                     </Col>
                     <Col>
                         <p className="educationText2">
@@ -98,6 +106,8 @@ class Home extends React.Component {
                         </p>
                     </Col>
                     </Row>
+                    <br/>
+                <br/>
                      <Button size="lg" href="#/education">Try our certification course!</Button>
                     <br/>
                     <br/>
