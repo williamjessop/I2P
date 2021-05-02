@@ -1,6 +1,7 @@
 import React from "react";
 import Quiz from './Quiz';
 import LessonCard from './LessonCard';
+import {Link} from 'react-router-dom'
 
 const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
@@ -19,8 +20,11 @@ class Education extends React.Component {
         };
     }
 
-    hideQuiz() {this.setState({quizName: false})};
-    showQuiz(quizName) {this.setState({showQuiz: true, quizName: quizName})};
+    hideQuiz() {
+        this.setState({quizName: false, isLoaded: false});
+        this.forceUpdate();
+    };
+    showQuiz(quizName){this.setState({showQuiz: true, quizName: quizName})};
 
     componentDidMount(){
         fetch(urlBase+"/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
@@ -31,13 +35,10 @@ class Education extends React.Component {
                     let lessonActive = true;
                     let lessonNumber = lesson.lessonName.slice(6)
                     let previousLesson = `Lesson${lessonNumber-1}`
-                    console.log(this.state.user.appData[previousLesson]);
                     if(lessonNumber-1 === 0){
                         lessonActive = false
-                        console.log("hit")
                     }else if(this.state.user.appData[previousLesson] === true){
                         lessonActive = false
-                        console.log("hit")
                     }
                     return(<LessonCard 
                         lessonName={lesson.lessonName}
@@ -53,6 +54,35 @@ class Education extends React.Component {
             }
         );
     }
+    componentDidUpdate(){
+        if(!this.state.isLoaded){
+            fetch(urlBase+"/lesson/listlesson", {headers:{"x-auth-token": this.state.user.token}})
+            .then(res => res.json())
+            .then(
+                (result) => {
+                    let newLessons = result.map((lesson) =>{
+                        let lessonActive = true;
+                        let lessonNumber = lesson.lessonName.slice(6)
+                        let previousLesson = `Lesson${lessonNumber-1}`
+                        if(lessonNumber-1 === 0){
+                            lessonActive = false
+                        }else if(this.state.user.appData[previousLesson] === true){
+                            lessonActive = false
+                        }
+                        return(<LessonCard 
+                            lessonName={lesson.lessonName}
+                            lessonTitle={lesson.lessonTitle}
+                            lessonDesc={lesson.lessonDesc}
+                            setLessonName={this.props.setLessonName}
+                            key={lesson.lessonName}
+                            lessonActive={lessonActive}
+                        />)
+                    }
+                    )
+                    this.setState({lessons: newLessons, isLoaded:true, user: JSON.parse(sessionStorage.user)});   
+                }
+        );}
+    }
 
     render() {
 
@@ -65,14 +95,13 @@ class Education extends React.Component {
                     Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
                 </div>
 
-                {!!userData.Quiz1 && <p>This is where we will show your pre quiz score: {userData.Quiz1}</p>}
-                <p>Note for you guys, I want this button to be disabled if the user took the pre-quiz already. I am assuming you can only take the pre-quiz once.</p>
-                <p>I have it disabled now but a user could not really tell. There is some work to be done here</p>
+                {!!userData.Quiz1 ? <p>You scored {userData.Quiz1*100}% on the Pre-Quiz.</p>:
                 
-                <button className="btn-primary dash-lesson-button dash-lesson-description-button" 
-                    onClick={() => {this.showQuiz("Quiz1")}}
-                    disabled={userData.Quiz1}
-                >Begin Pre-Quiz</button>
+                    <button className="btn-primary dash-lesson-button dash-lesson-description-button" 
+                        onClick={() => {this.showQuiz("Quiz1")}}
+                        disabled={userData.Quiz1}
+                    >Begin Pre-Quiz</button>
+                }
 
                 {this.state.lessons}
 
@@ -85,11 +114,24 @@ class Education extends React.Component {
                     //Without the !! it would render a 0 on the page
                 }
                 
-                {!!userData.Quiz2 && <p>Final Quiz Score: {userData.Quiz2}</p>}
-
-                <button className="btn-primary dash-lesson-button dash-lesson-description-button"
-                    onClick={() => {this.showQuiz("Quiz2")}}        
-                >Begin Post-Quiz</button>
+                {userData.Quiz2 > .7 ? 
+                
+                    <div>
+                        <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>
+                        <Link onClick={() => { this.props.setLessonName(this.props.lessonName) }} to={`/certificate`}>
+                            <button className="btn-primary dash-lesson-button dash-lesson-title-button">Click Here to see your Certificate!</button>
+                        </Link>
+                    </div>
+                
+                :
+                    <div>
+                        {!!userData.Quiz2 && <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>}
+                        <button className="btn-primary dash-lesson-button dash-lesson-description-button"
+                            onClick={() => {this.showQuiz("Quiz2")}}        
+                        >Begin Post-Quiz</button>
+                    </div>
+                }
+                
 
                 {(this.state.quizName==="Quiz1") && <Quiz
                     quiz="Quiz1"

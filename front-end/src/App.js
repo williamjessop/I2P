@@ -15,6 +15,7 @@ import SignInPage from './components/SignInPage';
 import SignUp from './components/SignUp'
 import SignIn from './components/SignIn'
 import Logout from './components/Logout'
+import Certificate from './components/Certificate'
 
 function App() {
 
@@ -82,6 +83,9 @@ function App() {
         <Route exact path='/signin'>
           <SignInPage setLoggedIn={setLoggedIn} />
           <Footer />
+        </Route>
+        <Route exact path={`/certificate`}>
+          <Certificate/>
         </Route>
       </Switch>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />

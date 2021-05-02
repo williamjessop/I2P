@@ -74,29 +74,29 @@ class Lesson extends React.Component {
                             }
                         )}
                         <Col>
-                                <Button 
-                                    block 
-                                    variant="primary" 
-                                    onClick={()=>{this.handlePaging(-1)}}
-                                    disabled={(this.state.currentPage === 0)}
-                                    id="prev-button"
-                                >Previous Page</Button>
-                            </Col>
-                            <Col>
-                                {(this.state.currentPage !== this.state.pages.length-1) ? <Button 
-                                    block 
-                                    variant="primary" 
-                                    onClick={()=>{this.handlePaging(1)}}
-                                    id="next-button"
-                                >Next Page</Button>
-                                :
-                                <Button 
-                                    block 
-                                    variant="primary" 
-                                    onClick={()=>{this.updateProgress()}}
-                                    id="next-button"
-                                >Finish Lesson!</Button>}
-                            </Col>
+                            <Button 
+                                block 
+                                variant="primary" 
+                                onClick={()=>{this.handlePaging(-1)}}
+                                disabled={(this.state.currentPage === 0)}
+                                id="prev-button"
+                            >Previous Page</Button>
+                        </Col>
+                        <Col>
+                            {(this.state.currentPage !== this.state.pages.length-1) ? <Button 
+                                block 
+                                variant="primary" 
+                                onClick={()=>{this.handlePaging(1)}}
+                                id="next-button"
+                            >Next Page</Button>
+                            :
+                            <Button 
+                                block 
+                                variant="primary" 
+                                onClick={()=>{this.updateProgress()}}
+                                id="next-button"
+                            >Finish Lesson!</Button>}
+                        </Col>
                 </div>
             );
         }

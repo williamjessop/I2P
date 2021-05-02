@@ -35,7 +35,11 @@ class Quiz extends React.Component {
         }
 
         axios.post(`${urlBase}/quiz/grade?name=${this.props.quiz}`, body, {headers:{"x-auth-token": this.state.user.token}})
-        .then(res => sessionStorage.setItem("user", JSON.stringify(res.data.user)))
+        .then(res => sessionStorage.setItem("user", JSON.stringify(res.data.user)));
+
+        this.setState({user: JSON.parse(sessionStorage.getItem("user"))})
+
+        this.props.handleClose();
     }
 
     componentDidMount(){
@@ -43,7 +47,7 @@ class Quiz extends React.Component {
         .then(res => res.json())
         .then(
             (result) => {
-                this.setState({pages: result, isLoaded:true});
+                this.setState({pages: result, isLoaded:true, currentPage: 0});
                 this.handlePaging(0);
             }
         );
