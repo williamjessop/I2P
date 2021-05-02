@@ -27,23 +27,32 @@ class Education extends React.Component {
         .then(res => res.json())
         .then(
             (result) => {
-                let newLessons = result.map((lesson) =>
-                    <LessonCard 
+                let newLessons = result.map((lesson) =>{
+                    let lessonActive = true;
+                    let lessonNumber = lesson.lessonName.slice(6)
+                    let previousLesson = `Lesson${lessonNumber-1}`
+                    console.log(this.state.user.appData[previousLesson]);
+                    if(lessonNumber-1 === 0){
+                        lessonActive = false
+                        console.log("hit")
+                    }else if(this.state.user.appData[previousLesson] === true){
+                        lessonActive = false
+                        console.log("hit")
+                    }
+                    return(<LessonCard 
                         lessonName={lesson.lessonName}
                         lessonTitle={lesson.lessonTitle}
                         lessonDesc={lesson.lessonDesc}
                         setLessonName={this.props.setLessonName}
                         key={lesson.lessonName}
-                    />
+                        lessonActive={lessonActive}
+                    />)
+                }
                 )
                 this.setState({lessons: newLessons, isLoaded:true, user: JSON.parse(sessionStorage.user)});   
             }
         );
     }
-
-
-
-    //
 
     render() {
 

@@ -20,7 +20,7 @@ class Lesson extends React.Component {
                     <div className="dash-lesson-title">{`${this.props.lessonTitle}`}</div>
                     <div className="dash-lesson-title-button-container">
                         <Link onClick={() => { this.props.setLessonName(this.props.lessonName) }} to={`/education/${this.props.lessonName}`}>
-                            <button className="btn-primary dash-lesson-button dash-lesson-title-button" onClick={() => { this.props.setLessonName(this.props.lessonName) }}>{`Begin Lesson ${this.props.lessonName.slice(6)}`}</button>
+                            <button disabled={this.props.lessonActive} className="btn-primary dash-lesson-button dash-lesson-title-button" onClick={() => { this.props.setLessonName(this.props.lessonName) }}>{`Begin Lesson ${this.props.lessonName.slice(6)}`}</button>
                         </Link>
                     </div>
                 </div>

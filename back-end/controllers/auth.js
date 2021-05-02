@@ -25,6 +25,16 @@ exports.signup = (req, res, next) => {
           lastname: lastname,
           email: email,
           password: password,
+          appData: {
+            Quiz1: false,
+            Quiz2: false,
+            Lesson1: false,
+            Lesson2: false,
+            Lesson3: false,
+            Lesson4: false,
+            Lesson5: false,
+            Lesson6: false
+          }
         });
 
         bcrypt.genSalt(10, (err, salt) => {

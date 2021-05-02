@@ -60,7 +60,7 @@ function App() {
           />: <Redirect to="signin"/>}
         </Route>
         <Route path={`/education/${lessonName}`}>
-          <Lesson lessonName={lessonName}/>
+          <Lesson lessonName={lessonName} setLessonName={setLessonName}/>
         </Route>
         <Route path={`/education/${quizName}`}>
           <Quiz />

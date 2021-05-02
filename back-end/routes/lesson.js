@@ -13,13 +13,27 @@ router.get('/listlesson', function (req, res, next) {
 });
 
 //in req.body there will be a lessonNumber and a page.
-router.post('/updateProgress', async (req, res) => {
-  user = await User.findOne({ email: req.body.user });
-  user.appData.lessonProgress[req.body.lessonNumber] = {"progress": req.body.page};
-  console.log(user);
-  user.update().then((savedUser)=>{
-    res.send(savedUser);
+router.post('/updateProgress', (req, res) => {
+  // user = await User.findOne({ email: req.body.user });
+  // user.appData.lessonProgress[req.body.lessonNumber] = {"progress": req.body.page};
+  // console.log(user);
+  // user.save().then((savedUser)=>{
+  //   res.send(savedUser);
+  // });
+
+  recordName = `appData.Lesson${req.body.lessonNumber}`
+  console.log(recordName)
+
+  User.findOneAndUpdate({ email: req.body.user }, {$set: {[recordName]: req.body.done}}, {new: true, useFindAndModify: true}, (err, doc)=>{
+    if(err){
+      console.log(err)
+      //this would be where to return errors
+    }
+    res.status(200).json({
+      user: doc
+    });
   });
+  
 });
 
 //takes name as query param
