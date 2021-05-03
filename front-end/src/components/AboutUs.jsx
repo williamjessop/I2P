@@ -16,9 +16,10 @@ class AboutUs extends React.Component {
                 <img className="logoBanner" src="/img/Lt-Svg.svg" alt="Logo" style={{width:"60%"}}/>
                 <br/>
                 <br/>
-            
                 <Container className="primaryBackground dropShadow" fluid>
-                    <br/>
+                    <h1 style={{marginBottom: "0", width: "100%", padding: "25px"}}>Let's Talk: About Us</h1>
+                </Container>
+                <Container className="primaryBackground dropShadow" fluid>
                     <Row   xs={1} sm={1} md={2}> 
                     <Col className="desktopMission">
                         <img className="dropShadow rounded" src="/img/LetsTalk-main.jpeg" alt="Lets-Talk-Main" style={{width:"70%"}}/>
@@ -68,7 +69,7 @@ class AboutUs extends React.Component {
                     
                     <Row xs={1} sm={2} lg={3} xl={5}>
                         <Col>
-                            <img src="/img/LetsTalk-hatten.jpeg"  className="dropShadow rounded personalPhoto" alt="Tim"/>
+                            <img src="/img/LetsTalk-hatten1.jpg"  className="dropShadow rounded personalPhoto" alt="Tim" style={{objectFit: "scale-down"}}/>
                             <h5 className="nameOfMember">Dr. Tim Hatten</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -82,7 +83,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/LetsTalk-jordan.jpeg"  className="dropShadow rounded personalPhoto" alt="Jordan"/>
+                            <img src="/img/LetsTalk-jordan1.jpg"  className="dropShadow rounded personalPhoto" alt="Jordan" style={{objectFit: "scale-down"}}/>
                             <h5 className="nameOfMember">Jordan Griffin</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -96,7 +97,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/LetsTalk-profile1.jpeg"  className="dropShadow rounded personalPhoto" alt="Ashlyn"/>
+                            <img src="/img/LetsTalk-ashlyn1.jpg"  className="dropShadow rounded personalPhoto" alt="Ashlyn" style={{objectFit: "scale-down"}}/>
                             <h5 className="nameOfMember">Ashlyn Brown</h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -110,7 +111,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>  
                         <Col>
-                            <img src="/img/LetsTalk-profile3.jpeg" className="dropShadow rounded personalPhoto" alt="Gabrielle"/>
+                            <img src="/img/LetsTalk-gabrielle1.jpg" className="dropShadow rounded personalPhoto" alt="Gabrielle" style={{objectFit: "scale-down"}}/>
                             <h5 className="nameOfMember">Gabrielle Christensen </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -125,7 +126,7 @@ class AboutUs extends React.Component {
                             </div>
                         </Col>
                         <Col>
-                            <img src="/img/LetsTalk-profile2.jpeg" className="dropShadow rounded personalPhoto" alt="Hannah"/>
+                            <img src="/img/LetsTalk-hannah1.jpg" className="dropShadow rounded personalPhoto" alt="Hannah" style={{objectFit: "scale-down"}}/>
                             <h5 className="nameOfMember">Hannah Brown </h5>
                             <div className="memberWidth">
                                 <p className="descriptionOfMember">
@@ -144,7 +145,7 @@ class AboutUs extends React.Component {
                     <br/>
                     <Row><br/></Row>
                     <h1>Contacting us</h1>
-                    <Card style={{ width: '18rem',position: 'inline', marginLeft: "auto", marginRight: "auto"}}>
+                    <Card className="aboutUsCardScale" style={{ width: '18rem',position: 'inline', marginLeft: "auto", marginRight: "auto"}}>
                             <ListGroup variant="flush">
                             <ListGroup.Item className="secondary"><Icon.Envelope style={{float:"left" }}/> letstalkcmu@gmail.com</ListGroup.Item>
                             <ListGroup.Item className="secondary"><Icon.GeoAlt  style={{float:"left" }}/> Colorado Mesa University, 1100 North Ave, Grand Junction, CO 81501</ListGroup.Item>

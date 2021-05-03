@@ -49,6 +49,10 @@ function App() {
         <Route exact path='/about-us'>
           <AboutUs />
         </Route>
+        <Route exact path='/prevention'>
+          <Prevention />
+          <Footer />
+        </Route>
         <Route exact path='/education'>
           {(sessionStorage.user) ? <Education
             setLessonName={setLessonName}
@@ -74,10 +78,6 @@ function App() {
         <Route exact path='/resources'>
           <Resources />
           <Footer />
-        </Route>
-        <Route exact path='/prevention'>
-          <Prevention />
-          <Footer/>
         </Route>
         <Route exact path='/signin'>
           <SignInPage setLoggedIn={setLoggedIn} />

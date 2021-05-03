@@ -18,6 +18,9 @@ class Communication extends React.Component {
                         <Container>
                             <Row className="pageSplit"></Row>
                         </Container>
+                        <Container className="secondaryBackground Overlay dropShadow" style={{textShadow: "text-shadow: 0px 10px 10px #0000001f;"}}>
+                            <h1 style={{marginBottom: "0px"}}>Let's Talk: Communication</h1>
+                        </Container>
                         <Container className="secondaryBackground Overlay dropShadow" style={{ paddingBottom: "50px" }}>
                             <Row>
                                 <Col>
