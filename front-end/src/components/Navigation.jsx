@@ -8,10 +8,10 @@ function Navigation(props) {
 
   const [isHouseShown, setIsHouseShown] = useState(false);
   const [isPeopleShown, setIsPeopleShown] = useState(false);
-  //const [isShieldShown, setIsShieldShown] = useState(false);
+  const [isShieldShown, setIsShieldShown] = useState(false);
   const [isBookShown, setIsBookShown] = useState(false);
   const [isMegaphoneShown, setIsMegaphoneShown] = useState(false);
-  const [isSignpostShown, setIsSignpostShown] = useState(false);
+  //const [isSignpostShown, setIsSignpostShown] = useState(false);
 
   const [sidebar, setSidebar] = useState(false);
   const [sidebarScreen, setSidebarScreen] = useState(false);
@@ -32,11 +32,11 @@ function Navigation(props) {
               <span className="nav-text-container" href="replace">About Us</span>
             </Link>
           </li>
-          {/*<li>
+          <li>
             <Link to="/prevention" passhref="true">
               <span className="nav-text-container" href="replace">Prevention</span>
             </Link>
-          </li>*/}
+          </li>
           <li>
             <Link to="/education" passhref="true">
               <span className="nav-text-container" href="replace">Education</span>
@@ -47,11 +47,11 @@ function Navigation(props) {
               <span className="nav-text-container" href="replace">Communication</span>
             </Link>
           </li>
-          <li>
+          {/*<li>
             <Link to="/resources" passhref="true">
               <span className="nav-text-container" href="replace">Resources</span>
             </Link>
-          </li>
+          </li>*/}
         </ul>
         <img className="nav-outro-image" src="/img/LetsTalk-4.svg" alt="" />
         <div className="nav-dropdown">
@@ -93,7 +93,7 @@ function Navigation(props) {
                 </Link>
               </li>
               <br /><br />
-              {/*<li>
+              <li>
                 <Link to="/prevention" passhref="true">
                   <span className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsShieldShown(true)}
@@ -104,7 +104,7 @@ function Navigation(props) {
                 Prevention
             </span>
                 </Link>
-              </li>*/}
+              </li>
               <br /><br />
               <li>
                 <Link to="/education" passhref="true">
@@ -132,7 +132,7 @@ function Navigation(props) {
                 </Link>
               </li>
               <br /><br />
-              <li>
+              {/*<li>
                 <Link to="/resources" passhref="true">
                   <span className="nav-sidebar-text-container" href="replace"
                     onMouseEnter={() => setIsSignpostShown(true)}
@@ -143,7 +143,7 @@ function Navigation(props) {
                 Resources
             </span>
                 </Link>
-              </li>
+              </li>*/}
               <br /><br />
             </ul>
           </nav>

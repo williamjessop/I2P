@@ -59,13 +59,14 @@ class Home extends React.Component {
                             <img src="/img/Branch1.svg" alt="branch graphic" className="branchLeft branchScale"/>
                         </Col>
                         <Col> 
-                            <h1 className="moveRight">Let’s talk about Prevention</h1>
+                            <h1 className="homeText moveRight" style={{marginBottom: "50px"}}>Let's Talk About: Prevention</h1>
                             <p>
                                 Violence comes in all shapes and sizes, 
                                 but that does not mean we are powerless.
                                  At Let's Talk we are a safe space for discussing violence and we look to teach you how
                                 to protect yourself and your peers. 
                             </p>
+                            <Button size="lg" href="/prevention">Learn About Prevention</Button>
                          </Col>
                         <Col>
                             <img src="/img/Branch1.svg" alt="branch graphic" className="branchCentered branchScale"/>
@@ -80,7 +81,7 @@ class Home extends React.Component {
                     <br/>
                     <Row xs={1}sm={1} md={2}>
                     <Col>
-                        <h1>Let's talk about Education</h1>
+                        <h1 className="homeText" style={{marginBottom: "50px"}}>Let's Talk About: Education</h1>
                         <p className="educationText1">
                         Become a force of change in your community by taking a course 
                         to educate you on preventative measures for residents considering 
@@ -108,14 +109,14 @@ class Home extends React.Component {
                     </Row>
                     <br/>
                 <br/>
-                     <Button size="lg" href="#/education">Try our certification course!</Button>
+                     <Button size="lg" href="/education">Try our Certification Course!</Button>
                     <br/>
                     <br/>
                 </Container>
                 <br/>
                 <Container className="secondaryBackground" fluid>
                     <br/>
-                    <h1> Let's talk about Communication</h1>
+                    <h1 className="homeText" style={{marginBottom: "50px"}}> Let's Talk About: Communication</h1>
                     <Row xs={1} sm={2}>
                     <Col>
                         <img className="comunicationPhoto dropShadow rounded"src="/img/ComsBanner.jpg" alt="preventionimg"/>
@@ -127,7 +128,7 @@ class Home extends React.Component {
                             peer-to-peer. Review our resources to help guide you to better 
                             communicate with others, especially those you are concerned about. 
                         </p>
-                        <Button size="lg" href="#/education">Link to Reach Out</Button>
+                        <Button size="lg" href="/communication" style={{marginTop: "75px"}}>Reach Out</Button>
                     </Col>
                     </Row>
                     <br/>
