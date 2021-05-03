@@ -11,8 +11,8 @@ class Footer extends React.Component {
                 <br />
                 <Row xs={3} className="marginFix">
                     <Col id="footerLeft">
-                        <p className="noneFooterText" >Join Lets Talk to help solve and provent violence and
-                         support resident assistants with conflicts </p>
+                        <p className="noneFooterText" >Join Lets Talk to help solve and prevent violence and
+                         support Resident Assistants with conflicts </p>
                         <Col>
                         </Col>
                         <Col>
