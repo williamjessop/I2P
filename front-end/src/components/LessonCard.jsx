@@ -13,9 +13,6 @@ class Lesson extends React.Component {
     render() {
         return (
             <Card className="dash-lesson-card dropShadow" style={{ backgroundColor: "#FFFEF5", borderRadius: "10px" }}>
-                <div className="primaryBackground dash-lesson-progress-container">
-                    [Progress Bar Here]
-                    </div>
                 <div className="primaryBackground dash-lesson-card-content dash-lesson-header">
                     <div className="dash-lesson-title">{`${this.props.lessonTitle}`}</div>
                     <div className="dash-lesson-title-button-container">
