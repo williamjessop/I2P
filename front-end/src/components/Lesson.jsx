@@ -65,6 +65,10 @@ class Lesson extends React.Component {
                                 }else if(block.contentType === "header"){
                                     return(
                                         <h1 key={index}>{block.content}</h1>
+                                    )  
+                                }else if(block.contentType === "bold"){
+                                    return(
+                                        <p key={index}><b>{block.content}</b></p>
                                     )
                                 }else{
                                     return(
