@@ -70,6 +70,10 @@ class Lesson extends React.Component {
                                     return(
                                         <p key={index}><b>{block.content}</b></p>
                                     )
+                                }else if(block.contentType === "link"){
+                                    return(
+                                        <a key={index} href={block.link}>{block.linkText}</a>
+                                    )
                                 }else{
                                     return(
                                         <p key={index}>YOU ARE MISSING SOME TAGS BUDDY!</p>
