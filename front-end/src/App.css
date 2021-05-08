@@ -780,6 +780,12 @@ li span {
 
 /* Begin Education CSS */
 
+.lessonContent {
+  width: 90%;
+  max-width: 1250px;
+  margin: auto;
+}
+
 .dash-lesson {
   width: 100%;
 }
