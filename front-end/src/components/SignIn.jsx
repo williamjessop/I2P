@@ -32,6 +32,7 @@ function SignIn(props) {
     setIsLoading(true);
     
     const response = await signInUser({ email, password });
+    console.log(response);
 
     if(response.errors){
       console.log(response.errors);
