@@ -6,12 +6,7 @@ const { createJWT } = require("../utils/auth");
 const emailRegexp = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?(?:\.[a-zA-Z0-9](?:[a-zA-Z0-9-]{0,61}[a-zA-Z0-9])?)*$/;
 
 exports.signup = (req, res, next) => {
-  let {
-    firstname,
-    lastname,
-    email,
-    password,
-  } = req.body;
+  let { firstname, lastname, email, password } = req.body;
 
   User.findOne({ email: email })
     .then((user) => {
@@ -33,8 +28,8 @@ exports.signup = (req, res, next) => {
             Lesson3: false,
             Lesson4: false,
             Lesson5: false,
-            Lesson6: false
-          }
+            Lesson6: false,
+          },
         });
 
         bcrypt.genSalt(10, (err, salt) => {
@@ -70,14 +65,11 @@ exports.signin = (req, res) => {
   let errors = [];
   if (!email) {
     errors.push({ error: "required" });
-  }
-  else if (!emailRegexp.test(email)) {
+  } else if (!emailRegexp.test(email)) {
     errors.push({ error: "invalid email" });
-  }
-  else if (!password) {
+  } else if (!password) {
     errors.push({ error: "required" });
-  }
-  else if (errors.length > 0) {
+  } else if (errors.length > 0) {
     return res.status(422).json({ errors: errors });
   }
   User.findOne({ email: email })
@@ -108,7 +100,7 @@ exports.signin = (req, res) => {
                     success: true,
                     token: access_token,
                     appData: user.appData,
-                    user: user.email
+                    user: user.email,
                   });
                 }
               }

@@ -1,14 +1,18 @@
 import React, { useState } from "react";
-import { Button, Modal } from "react-bootstrap";
+import Modal from "react-bootstrap/Modal";
+import Button from "react-bootstrap/Button";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert"
-import Spinner from "react-bootstrap/Spinner"
+import Alert from "react-bootstrap/Alert";
+import Spinner from "react-bootstrap/Spinner";
 
-const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
+const urlBase =
+  process.env.NODE_ENV === "production"
+    ? "https://lets-talk-cmu.com/api"
+    : "http://localhost:8000";
 
 async function signInUser(info) {
-  return fetch(urlBase+"/auth/signin", {
+  return fetch(urlBase + "/auth/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -30,15 +34,15 @@ function SignIn(props) {
     e.preventDefault();
 
     setIsLoading(true);
-    
+
     const response = await signInUser({ email, password });
     console.log(response);
 
-    if(response.errors){
+    if (response.errors) {
       console.log(response.errors);
       setError(response.errors[0].error);
       setIsLoading(false);
-    }else{
+    } else {
       setError(null);
       sessionStorage.setItem("user", JSON.stringify(response));
       setIsLoading(false);
@@ -49,14 +53,17 @@ function SignIn(props) {
   return (
     <div>
       <p>{props.show}</p>
-      <Modal show={props.show} onHide={props.handleClose} centered backdrop="static">
+      <Modal
+        show={props.show}
+        onHide={props.handleClose}
+        centered
+        backdrop="static"
+      >
         <Modal.Header closeButton={props.showClose} variant="primary">
           <Modal.Title>Sign In</Modal.Title>
         </Modal.Header>
         <Modal.Body>
-        {error && <Alert variant="danger">
-          {error}
-        </Alert>}
+          {error && <Alert variant="danger">{error}</Alert>}
           <Form>
             <Form.Group controlId="formEmail">
               <Form.Control
@@ -75,12 +82,13 @@ function SignIn(props) {
           </Form>
         </Modal.Body>
         <Modal.Footer>
-          {isLoading ? <Spinner animation="border" variant="primary" />
-            :
+          {isLoading ? (
+            <Spinner animation="border" variant="primary" />
+          ) : (
             <Button block variant="primary" onClick={handleSubmit}>
               Continue
             </Button>
-          }
+          )}
         </Modal.Footer>
       </Modal>
     </div>

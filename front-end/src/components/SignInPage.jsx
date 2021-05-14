@@ -1,15 +1,20 @@
 import React, { useState } from "react";
-import { Button, Card, Container } from "react-bootstrap";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import Container from "react-bootstrap/Container";
 import "./theme.scss";
 import Form from "react-bootstrap/Form";
-import Alert from "react-bootstrap/Alert"
-import Spinner from "react-bootstrap/Spinner"
+import Alert from "react-bootstrap/Alert";
+import Spinner from "react-bootstrap/Spinner";
 import { Redirect } from "react-router";
 
-const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
+const urlBase =
+  process.env.NODE_ENV === "production"
+    ? "https://lets-talk-cmu.com/api"
+    : "http://localhost:8000";
 
 async function signInUser(info) {
-  return fetch(urlBase+"/auth/signin", {
+  return fetch(urlBase + "/auth/signin", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
@@ -32,14 +37,14 @@ function SignIn(props) {
     e.preventDefault();
 
     setIsLoading(true);
-    
+
     const response = await signInUser({ email, password });
 
-    if(response.errors){
+    if (response.errors) {
       console.log(response.errors);
       setError(response.errors[0].error);
       setIsLoading(false);
-    }else{
+    } else {
       setError(null);
       sessionStorage.setItem("user", JSON.stringify(response));
       setIsLoading(false);
@@ -48,44 +53,46 @@ function SignIn(props) {
   };
 
   return (
-    <div style={{padding:"50px"}}>
-      {redirect ? <Redirect to={redirect}/> :
-      <Container>
-        <Card bg="secondary">
-          <Card.Header variant="primary">
-            <Card.Title>Please Sign In To Access This Page</Card.Title>
-          </Card.Header>
-          <Card.Body>
-          {error && <Alert variant="danger">
-            {error}
-          </Alert>}
-            <Form>
-              <Form.Group controlId="formEmail">
-                <Form.Control
-                  type="email"
-                  placeholder="Email"
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-              </Form.Group>
-              <Form.Group controlId="formPassword">
-                <Form.Control
-                  type="password"
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                />
-              </Form.Group>
-            </Form>
-          </Card.Body>
-          <Card.Footer>
-            {isLoading ? <Spinner animation="border" variant="primary" />
-              :
-              <Button block variant="primary" onClick={handleSubmit}>
-                Continue
-              </Button>
-            }
-          </Card.Footer>
-        </Card>
-      </Container>}
+    <div style={{ padding: "50px" }}>
+      {redirect ? (
+        <Redirect to={redirect} />
+      ) : (
+        <Container>
+          <Card bg="secondary">
+            <Card.Header variant="primary">
+              <Card.Title>Please Sign In To Access This Page</Card.Title>
+            </Card.Header>
+            <Card.Body>
+              {error && <Alert variant="danger">{error}</Alert>}
+              <Form>
+                <Form.Group controlId="formEmail">
+                  <Form.Control
+                    type="email"
+                    placeholder="Email"
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                </Form.Group>
+                <Form.Group controlId="formPassword">
+                  <Form.Control
+                    type="password"
+                    placeholder="Password"
+                    onChange={(e) => setPassword(e.target.value)}
+                  />
+                </Form.Group>
+              </Form>
+            </Card.Body>
+            <Card.Footer>
+              {isLoading ? (
+                <Spinner animation="border" variant="primary" />
+              ) : (
+                <Button block variant="primary" onClick={handleSubmit}>
+                  Continue
+                </Button>
+              )}
+            </Card.Footer>
+          </Card>
+        </Container>
+      )}
     </div>
   );
 }
