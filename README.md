@@ -2,21 +2,28 @@
 This project is the first project for MDX (Mesa Digital Experience), a club on campus. This website is designed to be a learning platform to teach Resident Assistants about targeted violence prevention. This goal is achieved via a competency based training course and a simple quiz. This website was developed for the Invent to Prevent competition put on by the Department of Homeland Security and in cooperation with the CMU Marketing department.
 
 You can see the website hosted in action here: [lets-talk-cmu.com](https://lets-talk-cmu.com)
-# Evidence
+
+# Repo Structure
+In the root directory you will see a back-end Folder. This folder contains the backend Express API that is responsible for handling Auth requests and content requests.
+
+Also in the root directory you will see a front-end folder. This folder contains a single page react app that is served statically.
+
+Lastly you will also find an "evidence" folder in the root directory. This folder contains gifs that show the application in action.
+# Assignment Evidence
 This section will show off the various features of the website in action.
 
-### Sign in
-IMAGE HERE
+### Sign Up
+![A user signing up](./evidence/01_Signup.gif)
 
-### Sign up
-IMAGE HERE
-### Users Accessing Lessons
-IMAGE HERE
-### Users Accessing Quizzes
-IMAGE HERE
+### Sign In
+![A user signing in](./evidence/02_Signin.gif)
+### Users Taking Quizzes
+![A user taking a quiz](./evidence/03_Quiz.gif)
+### Users Taking Lessons
+![A user taking a lesson](./evidence/04_Lesson.gif)
 
 ### Users Accessing Certificate of Completion
-IMAGE HERE
+![A user accessing their certificate](./evidence/05_Certificate.gif)
 # Credit
 ## William Jessop (CSCI 310 - Adv JS)
 - JSX for Auth components (login/logout/sign up)
