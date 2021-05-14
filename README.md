@@ -1,5 +1,7 @@
 # Final Project - Let's Talk CMU
 This project is the first project for MDX (Mesa Digital Experience), a club on campus. This website is designed to be a learning platform to teach Resident Assistants about targeted violence prevention. This goal is achieved via a competency based training course and a simple quiz. This website was developed for the Invent to Prevent competition put on by the Department of Homeland Security and in cooperation with the CMU Marketing department.
+
+You can see the website hosted in action here: [lets-talk-cmu.com](https://lets-talk-cmu.com)
 # Evidence
 This section will show off the various features of the website in action.
 
@@ -17,10 +19,10 @@ IMAGE HERE
 IMAGE HERE
 # Credit
 ## William Jessop (CSCI 310 - Adv JS)
-- Frontend Routing configuration
 - JSX for Auth components (login/logout/sign up)
 - JSX for Quizzes
 - JSX for initial Home page
+- Frontend Routing configuration
 - Frontend Content loading logic
 - Frontend Auth logic
 - MongoDB setup and configuration
