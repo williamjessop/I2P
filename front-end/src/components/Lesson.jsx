@@ -12,19 +12,19 @@ class Lesson extends React.Component {
         this.state = {
             currentPage: 0,
             isLoaded: false,
-            redirect: false
+            redirect: false,
+            user: JSON.parse(sessionStorage.getItem("user"))
         }
     }
 
     componentDidMount() {
-        this.setState({ user: JSON.parse(sessionStorage.getItem("user")) })
         fetch(`${urlBase}/lesson?lessonName=${this.props.lessonName}`)
-            .then(res => res.json())
-            .then(
-                (result) => {
-                    this.setState({ pages: result, isLoaded: true });
-                }
-            );
+        .then(res => res.json())
+        .then(
+            (result) => {
+                this.setState({ pages: result, isLoaded: true });
+            }
+        );
     }
 
     handlePaging(direction) {
@@ -41,8 +41,12 @@ class Lesson extends React.Component {
         };
 
         axios.post(`${urlBase}/lesson/updateProgress`, body, { headers: { "x-auth-token": this.state.user.token } })
-            .then(res => { sessionStorage.setItem("user", JSON.stringify(res.data.user)); });
-        this.setState({ redirect: true });
+            .then(res => { 
+                let newUser = this.state.user;
+                newUser.appData = res.data.user.appData;
+                sessionStorage.setItem("user", JSON.stringify(newUser)); 
+                this.setState({ redirect: true });
+            });
     }
 
     listParser(content, listType, answer) {

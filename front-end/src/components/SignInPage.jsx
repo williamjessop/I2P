@@ -43,7 +43,6 @@ function SignIn(props) {
       setError(null);
       sessionStorage.setItem("user", JSON.stringify(response));
       setIsLoading(false);
-      props.setLoggedIn(true); //I think what this line is doing is forcing SignIn to re-render?
       setRedirect("/education");
     }
   };

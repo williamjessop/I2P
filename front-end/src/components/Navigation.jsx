@@ -11,7 +11,6 @@ function Navigation(props) {
   const [isShieldShown, setIsShieldShown] = useState(false);
   const [isBookShown, setIsBookShown] = useState(false);
   const [isMegaphoneShown, setIsMegaphoneShown] = useState(false);
-  //const [isSignpostShown, setIsSignpostShown] = useState(false);
 
   const [sidebar, setSidebar] = useState(false);
   const [sidebarScreen, setSidebarScreen] = useState(false);
@@ -47,11 +46,6 @@ function Navigation(props) {
               <span className="nav-text-container" href="replace">Communication</span>
             </Link>
           </li>
-          {/*<li>
-            <Link to="/resources" passhref="true">
-              <span className="nav-text-container" href="replace">Resources</span>
-            </Link>
-          </li>*/}
         </ul>
         <img className="nav-outro-image" src="/img/LetsTalk-4.svg" alt="" />
         <div className="nav-dropdown">
@@ -132,18 +126,6 @@ function Navigation(props) {
                 </Link>
               </li>
               <br /><br />
-              {/*<li>
-                <Link to="/resources" passhref="true">
-                  <span className="nav-sidebar-text-container" href="replace"
-                    onMouseEnter={() => setIsSignpostShown(true)}
-                    onMouseLeave={() => setIsSignpostShown(false)}
-                    onClick={function (event) { showSidebar(); showSidebarScreen() }}>
-                    {isSignpostShown && (<Icon.SignpostSplitFill className="sidebar-nav-icon secondaryColor" />)}
-                    {!isSignpostShown && (<Icon.SignpostSplit className="sidebar-nav-hidden secondaryColor" />)}
-                Resources
-            </span>
-                </Link>
-              </li>*/}
               <br /><br />
             </ul>
           </nav>

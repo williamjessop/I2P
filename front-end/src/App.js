@@ -21,7 +21,6 @@ function App() {
   const [showSignUp, setShowSignUp] = useState(false);
   const [showSignIn, setShowSignIn] = useState(false);
   const [showLogout, setShowLogout] = useState(false);
-  const [loggedIn, setLoggedIn] = useState(false); //DO NOT REMOVE THIS UNUSED STATE VAR, THIS MAKES THE LOGIN PAGE WORK
 
   const [lessonName, setLessonName] = useState({ lessonName: "Lesson1" });
   const [quizName, setQuiz] = useState(null);
@@ -75,7 +74,7 @@ function App() {
           <Footer />
         </Route>
         <Route exact path='/signin'>
-          <SignInPage setLoggedIn={setLoggedIn} />
+          <SignInPage/>
           <Footer />
         </Route>
         <Route exact path={`/certificate`}>
@@ -83,7 +82,7 @@ function App() {
         </Route>
       </Switch>
       <SignUp show={showSignUp} handleClose={handleCloseSignUp} />
-      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true} setLoggedIn={setLoggedIn} />
+      <SignIn show={showSignIn} handleClose={handleCloseSignIn} showClose={true}/>
       <Logout show={showLogout} handleClose={handleCloseLogout} />
     </div>
   );
