@@ -61,7 +61,6 @@ function App() {
             handleClose={handleCloseSignIn}
           /> : <Redirect to="signin" />}
           <Footer />
-
         </Route>
         <Route path={`/education/${lessonName}`}>
           <Lesson lessonName={lessonName} />

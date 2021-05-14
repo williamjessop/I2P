@@ -2,6 +2,8 @@ import React from "react";
 import Quiz from './Quiz';
 import LessonCard from './LessonCard';
 import {Link} from 'react-router-dom'
+import ProgressBar from 'react-bootstrap/ProgressBar'
+import Row from 'react-bootstrap/Row'
 
 const urlBase = process.env.NODE_ENV === 'production' ? 'https://lets-talk-cmu.com/api' : 'http://localhost:8000'
 
@@ -90,13 +92,24 @@ class Education extends React.Component {
 
         return (
             <div className="dash-lesson">
-                
-                <div className="dash-title">
-                    Welcome to the Education page! Take the lessons below then take the quizzes. At the end, you'll receive a certificate!
-                </div>
+                <Row style={{justifyContent: "center"}}>
+                    <div className="dash-title">
+                        Welcome to the Education page! Here you can take a pre-quiz, take our lessons, and take your post-quiz. Once you score 70% or better on the post quiz, you will be able to view your certificate.
+                    </div>
+                </Row>
 
-                {!!userData.Quiz1 ? <p>You scored {userData.Quiz1*100}% on the Pre-Quiz.</p>:
-                
+                {!!userData.Quiz1 ? 
+                    <div >
+                        <Row style={{justifyContent: "center"}}>
+                            <ProgressBar now={userData.Quiz1*100} variant="primary" style={{width: "40%"}}/>
+                        </Row>
+                        <Row style={{justifyContent: "center"}}>
+                            <p>You scored {userData.Quiz1*100}% on the Pre-Quiz.</p>
+                        </Row>
+                    </div>
+                    
+                    :
+
                     <button className="btn-primary dash-lesson-button dash-lesson-description-button" 
                         onClick={() => {this.showQuiz("Quiz1")}}
                         disabled={userData.Quiz1}
@@ -104,10 +117,7 @@ class Education extends React.Component {
                 }
 
                 {this.state.lessons}
-
-                <p>This is where we will render your post quiz score. (Will will only store one for now, whichever is highest)</p>
-                
-                
+          
                 {
                     //usage here of the !! is to force userData.Quiz2 to be either true or false, it just forces the bool out of a truthy/falsy value
                     //this condition is only here to make sure there is a score to render
@@ -117,7 +127,14 @@ class Education extends React.Component {
                 {userData.Quiz2 > .7 ? 
                 
                     <div>
-                        <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>
+                        <div >
+                            <Row style={{justifyContent: "center"}}>
+                                <ProgressBar now={userData.Quiz2*100} variant="primary" style={{width: "40%"}}/>
+                            </Row>
+                            <Row style={{justifyContent: "center"}}>
+                                <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>
+                            </Row>
+                        </div>
                         <Link onClick={() => { this.props.setLessonName(this.props.lessonName) }} to={`/certificate`}>
                             <button className="btn-primary dash-lesson-button dash-lesson-title-button">Click Here to see your Certificate!</button>
                         </Link>
@@ -125,13 +142,21 @@ class Education extends React.Component {
                 
                 :
                     <div>
-                        {!!userData.Quiz2 && <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>}
+                        {!!userData.Quiz2 && 
+                            <div >
+                                <Row style={{justifyContent: "center"}}>
+                                    <ProgressBar now={userData.Quiz2*100} variant="primary" style={{width: "40%"}}/>
+                                </Row>
+                                <Row style={{justifyContent: "center"}}>
+                                    <p>You scored {userData.Quiz2*100}% on the Post-Quiz.</p>
+                                </Row>
+                            </div>
+                        }
                         <button className="btn-primary dash-lesson-button dash-lesson-description-button"
                             onClick={() => {this.showQuiz("Quiz2")}}        
                         >Begin Post-Quiz</button>
                     </div>
                 }
-                
 
                 {(this.state.quizName==="Quiz1") && <Quiz
                     quiz="Quiz1"
